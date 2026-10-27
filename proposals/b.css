@@ -1,0 +1,65 @@
+/* 案B：ワールド一体型 — 空のグラデーションにキャラ画像を溶け込ませる */
+:root{--ink:#1f2a4d;--sub:#5f6b8e;--bg:#fff;--line:#e3e8f5;--accent:#e5386f;--sky:#7cc8ff}
+.sky{background:linear-gradient(180deg,#8fd0ff 0%,#c4e7ff 38%,#ffe3ef 72%,#fff 100%);padding-bottom:8px;position:relative}
+.hd{display:flex;align-items:center;justify-content:space-between;padding-block:14px 0}
+.logo{height:46px;width:auto}
+.hero-img{margin:4px 0 0;position:relative}
+.hero-img img{width:100%;aspect-ratio:996/560;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%)}
+.copy{text-align:center;margin-top:-12px}
+.kick{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--accent);border-radius:99px;padding:3px 14px;margin-bottom:12px}
+.copy h1{font-size:clamp(36px,10.5vw,46px);margin-bottom:14px}
+.copy h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:16px;font-weight:600;margin-bottom:22px}
+.start{text-align:left}
+.start label{display:block;font-size:14px;font-weight:800;margin-bottom:6px}
+.start input{width:100%;height:56px;border:0;border-radius:99px;padding:0 24px;font-size:17px;font-weight:600;background:#fff;color:var(--ink);box-shadow:0 2px 0 #b9d6ee inset;outline:2px solid transparent}
+.start input:focus{outline-color:var(--accent)}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:60px;margin-top:12px;border-radius:99px;background:var(--accent);color:#fff;font-size:18px;font-weight:900;text-decoration:none}
+.facts{margin:16px 0 8px;font-size:14px;font-weight:700;color:var(--sub)}
+.facts b{font-size:20px;color:var(--ink)}
+.world{padding-top:48px;text-align:center}
+.eyb{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);margin-bottom:8px}
+.world h2{font-size:28px;margin-bottom:10px}
+.sub{font-weight:600;margin-bottom:20px}
+.vign{margin:8px 0 0}
+.vign img{width:100%;aspect-ratio:994/390;object-fit:cover}
+.how{padding-top:44px}
+.how h2{font-size:26px;margin-bottom:22px}
+.how ol{list-style:none;display:grid;gap:18px}
+.how li{display:grid;grid-template-columns:48px 1fr;gap:12px}
+.how b{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:16px}
+.how h3{font-size:18px;margin-bottom:2px}.how p{font-size:15px;color:#46507a}
+
+/* 結果：タイプ色（ACTP=青）で上部を一色に。画像は枠に入れず背景へ直置き */
+body.b{--tone:#53a8f0;--tone2:#bfe3ff}
+.stage{background:linear-gradient(180deg,var(--tone) 0%,var(--tone2) 100%);text-align:center;padding-bottom:56px;position:relative}
+.stage::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:#fff;border-radius:40px 40px 0 0}
+.bar-top .logo{filter:none}
+.share{background:#fff;border-radius:99px;padding:8px 18px;font-weight:800;font-size:14px}
+.who{font-size:14px;font-weight:800;color:#fff;margin-top:6px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.ttl{display:block;overflow:hidden;max-width:420px;margin:6px auto 0;aspect-ratio:2.27/1}
+.ttl img{width:100%;margin-top:-5%}
+.cast{width:min(74vw,310px);margin:-6px auto 0;position:relative;z-index:1}
+.body{padding-top:20px}
+.catch{font-size:26px;line-height:1.45;margin-bottom:16px}
+.intro{font-size:16px;line-height:1.95}
+.axes{margin-top:40px;padding:24px 20px 8px;background:#f2f8ff;border-radius:24px}
+.axes-h h2{font-size:22px}
+.axes-h p{font-size:14px;color:var(--sub);margin:4px 0 6px}
+.row{padding:16px 0;border-bottom:1px solid #dbe8f7}.row:last-child{border:0}
+.rh{display:flex;align-items:center;gap:10px}
+.an{font-size:13px;font-weight:800;color:var(--sub);min-width:3.4em}
+.av{flex:1;font-size:17px}.av b{font-size:24px;font-weight:900}
+.bar{height:12px;border-radius:99px;background:#dbe6f5;margin:10px 0 6px;overflow:hidden;display:flex}
+.bar i{background:var(--c);border-radius:99px}.bar.rev{justify-content:flex-end}
+.ends{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--sub)}
+.body .cta{margin-top:32px}
+.sub-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.sub-actions button{border:1.5px solid var(--line);border-radius:14px;padding:12px 4px;font-size:13px;font-weight:800;background:#fff;line-height:1.3}
+/* v2 */
+.cast{width:min(86vw,360px);margin:4px auto 0}
+.copy h1{font-size:clamp(32px,9.6vw,44px)}
+.copy h1 em{white-space:nowrap}
+.hero-img img{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%)}
+.copy{margin-top:-4px}
+.catch{font-size:clamp(21px,6.1vw,26px)}

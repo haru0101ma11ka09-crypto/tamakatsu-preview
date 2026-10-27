@@ -1,0 +1,64 @@
+/* 案C：エディトリアル — 白地・大きな左揃え見出し・罫線・色は最小限 */
+:root{--ink:#14213d;--sub:#5d667c;--bg:#fff;--line:#e4e7ee;--accent:#e0306f;--soft:#f5f7fb}
+.hd{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
+.logo{height:42px;width:auto}
+.tag{font-size:12px;font-weight:800;border:1.5px solid var(--ink);border-radius:99px;padding:2px 12px}
+.hero{padding-top:20px}
+.kick{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--accent);margin-bottom:14px}
+.hero h1{font-size:clamp(46px,14vw,60px);line-height:1.18;letter-spacing:-.02em;margin-bottom:20px}
+.lead{font-size:16px;font-weight:500;color:#2f3a55;margin-bottom:28px}
+.start label{display:block;font-size:13px;font-weight:800;color:var(--sub);margin-bottom:4px}
+.start input{width:100%;height:56px;border:0;border-bottom:2.5px solid var(--ink);padding:0 2px;font-size:20px;font-weight:700;background:none;color:var(--ink);outline:none;border-radius:0}
+.start input:focus{border-color:var(--accent)}
+.cta{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:60px;margin-top:20px;border-radius:14px;background:var(--ink);color:#fff;font-size:17px;font-weight:900;padding:0 22px;text-decoration:none}
+.cta span{color:#ff8fb8;font-size:22px}
+.hero-img{margin:36px 0 0;background:var(--soft)}
+.hero-img img{width:100%;aspect-ratio:996/560;object-fit:cover}
+.sec{padding-top:64px}
+.eyb{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+.sec h2{font-size:30px;line-height:1.4;margin-bottom:24px;letter-spacing:-.01em}
+.list{list-style:none;border-top:2px solid var(--ink)}
+.list li{display:grid;grid-template-columns:84px 1fr;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.list img{width:84px;aspect-ratio:4/5;object-fit:contain}
+.list h3{font-size:18px;margin-bottom:4px}.list p{font-size:15px;color:#3b4560;line-height:1.7}
+.steps{list-style:none;border-top:2px solid var(--ink)}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:8px;padding:18px 0;border-bottom:1px solid var(--line)}
+.steps b{font-size:30px;font-weight:900;line-height:1.1;color:var(--accent)}
+.steps h3{font-size:18px;margin-bottom:2px}.steps p{font-size:15px;color:#3b4560}
+
+/* 結果 */
+body.c{--tint:#eaf5ff}
+.share{border:1.5px solid var(--ink);border-radius:99px;padding:7px 18px;font-weight:800;font-size:14px}
+.head{padding-top:12px}
+.who{font-size:14px;font-weight:800;color:var(--sub);border-left:4px solid var(--accent);padding-left:10px}
+.ttl{display:block;overflow:hidden;margin:6px -4px 0;aspect-ratio:2.27/1}
+.ttl img{width:100%;margin-top:-5%}
+.figure{background:var(--tint);margin:4px 0 0;padding:28px 20px 20px;display:flex;justify-content:center}
+.cast{width:min(70vw,290px)}
+.body{padding-top:32px}
+.catch{font-size:28px;line-height:1.5;margin-bottom:20px;letter-spacing:-.01em}
+.intro{font-size:16px;line-height:2;color:#2f3a55;border-top:2px solid var(--ink);padding-top:20px}
+.axes{margin-top:48px}
+.axes-h h2{font-size:26px;margin-bottom:8px}
+.eyb{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent)}
+.row{padding:18px 0;border-top:1px solid var(--line)}.row:first-of-type{border-top:2px solid var(--ink)}
+.rh{display:grid;grid-template-columns:3.6em auto 1fr 28px;align-items:center;gap:10px}
+.an{font-size:13px;font-weight:800;color:var(--sub)}
+.av{display:contents;font-size:17px}
+.av b{font-size:30px;font-weight:900;font-feature-settings:"tnum";line-height:1}
+.help{grid-column:4;grid-row:1}
+.bar{height:6px;background:var(--line);margin:12px 0 6px;display:flex}
+.bar i{background:var(--ink)}.bar.rev{justify-content:flex-end}
+.ends{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--sub)}
+.body .cta{margin-top:36px}
+.sub-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.sub-actions button{border:1.5px solid var(--ink);border-radius:12px;padding:12px 4px;font-size:13px;font-weight:800;line-height:1.3}
+/* v2 */
+.list{counter-reset:k}
+.list li{display:block;position:relative;padding:18px 0 18px 48px;counter-increment:k}
+.list li::before{content:counter(k,decimal-leading-zero);position:absolute;left:0;top:18px;font-size:20px;font-weight:900;color:var(--accent)}
+.cast{width:min(84vw,340px)}
+.figure{padding:24px 16px}
+.catch{font-size:clamp(21px,6.1vw,28px)}
+.hero h1{font-size:clamp(38px,11.6vw,54px);line-height:1.22}
+.hero-img{overflow:hidden}.hero-img img{transform:scale(1.03)}

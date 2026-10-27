@@ -1,0 +1,432 @@
+/* タマ活 v2 デザイン（案B：ワールド一体型）— 既存CSSの最後に読み込み、見た目だけを上書き。
+   採点・設問・孵化動画の処理には触れない。 */
+:root{--ink:#1f2a4d;--sub:#5f6b8e;--line:#e3e8f5;--accent:#e5386f;--accent-d:#c42a5c;--tone:#53a8f0;--tone2:#bfe3ff;--soft:#f2f8ff}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif!important;font-size:16px!important;line-height:1.8;font-weight:500;color:var(--ink);background:#fff!important;overflow-x:hidden;word-break:auto-phrase;line-break:strict;-webkit-font-smoothing:antialiased}
+body *{font-family:inherit}
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+h1,h2,h3{text-wrap:balance;line-height:1.35;font-weight:900;letter-spacing:0}
+p{text-wrap:pretty}
+.nb{display:inline-block}
+
+/* ヘッダー・共通ボタン */
+body .shell{max-width:560px;margin-inline:auto;padding:0 20px}
+body .top.tama-top{display:flex;align-items:center;justify-content:space-between;min-height:0;padding:14px 0 6px;border:0}
+body .top small{display:none}
+body .site-brand-logo,body .brand-logo{height:46px;width:auto;max-width:none}
+#app .cta,#app .line-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:58px;padding:0 24px;border-radius:999px;border:0;background:var(--accent);color:#fff;font-size:17px;font-weight:900;letter-spacing:.02em;box-shadow:none;text-decoration:none}
+#app .cta:active,#app .line-cta:active{background:var(--accent-d);transform:none;box-shadow:none}
+#app .cta:disabled{background:#d9dce8;color:#fff}
+#app .secondary,#app .secondary-cta,#app .back{border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);font-weight:800;font-size:14px;box-shadow:none}
+#app .back{border:0;background:none;color:var(--sub);text-decoration:underline;text-underline-offset:4px;padding:12px 4px}
+
+/* 下部5タブ */
+body .site-bottom-nav{background:#fff;backdrop-filter:none;border-top:1px solid var(--line);padding:6px 4px max(6px,env(safe-area-inset-bottom));gap:0}
+body .site-bottom-nav button{padding:6px 0 4px;font-size:11px;font-weight:700;line-height:1.2;color:var(--sub);background:none;max-width:none}
+body .site-bottom-nav button[aria-current]{color:var(--accent);background:none}
+body .site-bottom-nav button>span{font-size:0;line-height:0}
+body .site-bottom-nav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+body .site-bottom-nav button[aria-current] svg{stroke-width:2.3}
+body .producer-credit{margin:32px -20px 0;padding:24px 20px 28px;border-top:1px solid var(--line);font:700 12px/1.5 "Noto Sans JP",sans-serif;color:var(--sub)}
+body .producer-credit img{width:auto;height:26px}
+
+/* トップ */
+#app .tama-home{background:none;padding:0;margin:0 -20px}
+#app .tama-hero{background:linear-gradient(180deg,#8fd0ff 0%,#c4e7ff 38%,#ffe3ef 76%,#fff 100%);padding:0 20px 24px;margin:0;text-align:center;border:0}
+#app .tama-kicker{display:inline-block;margin:0 0 12px;font-size:13px;font-weight:800;color:#fff;background:var(--accent);border-radius:99px;padding:3px 14px}
+#app .tama-kicker span{display:none}
+#app .tama-visual{margin:0 -20px;padding:0;background:none;border:0;box-shadow:none;border-radius:0}
+#app .tama-visual img{width:100%;height:auto;aspect-ratio:996/560;object-fit:cover;border-radius:0;box-shadow:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%)}
+#app .tama-hero-copy h1{font-size:clamp(32px,9.6vw,44px);margin:0 0 14px;color:var(--ink)}
+#app .tama-hero-copy h1 span{display:block;color:var(--accent);white-space:nowrap}
+#app .tama-hero-copy p{font-size:16px;font-weight:600;line-height:1.85;color:var(--ink);margin:0 0 22px}
+#app .tama-start{text-align:left;background:none;border:0;box-shadow:none;padding:0}
+#app .tama-start label{display:block;font-size:14px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+#app .tama-start-row{display:grid;gap:12px}
+#app .tama-start input,#app .onboarding input,#app .field input{width:100%;height:56px;border:0;border-radius:99px;padding:0 24px;font-size:17px;font-weight:600;background:#fff;color:var(--ink);box-shadow:inset 0 2px 0 #b9d6ee;outline:2px solid transparent}
+#app .tama-start input:focus{outline-color:var(--accent)}
+#app .tama-start-row .cta{margin:0}
+body #nickname-help{font-size:13px;color:var(--sub);text-align:center;margin-top:8px}
+#app .tama-facts{display:flex;justify-content:center;gap:10px;margin:16px 0 0;font-size:14px;font-weight:700;color:var(--sub);background:none;border:0;padding:0}
+#app .tama-facts i{display:none}
+#app .tama-facts b{font-size:20px;color:var(--ink)}
+#app .tama-discover,#app .tama-how{padding:48px 20px 0;background:none;border:0;margin:0}
+#app .tama-section-label{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);margin:0 0 8px}
+#app .tama-discover h2,#app .tama-how h2{font-size:26px;margin:0 0 18px}
+#app .tama-benefits{display:grid;gap:14px;margin:0}
+#app .tama-benefits article{display:block;background:var(--soft);border:0;border-radius:20px;padding:18px 20px;box-shadow:none}
+#app .tama-icon{display:none}
+#app .tama-benefits h3{font-size:18px;margin:0 0 4px}
+#app .tama-benefits p{font-size:15px;line-height:1.75;color:#46507a;margin:0}
+#app .tama-benefits br,#app .tama-how p br{display:none}
+#app .tama-how ol{list-style:none;display:grid;gap:18px;margin:20px 0 0;padding:0}
+#app .tama-how li{display:grid;grid-template-columns:44px 1fr;gap:12px;background:none;border:0;padding:0;box-shadow:none}
+#app .tama-how li>span{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:900}
+#app .tama-how li strong{font-size:18px;font-weight:900;display:block}
+#app .tama-how li p{font-size:15px;color:#46507a;margin:0}
+#app .tama-how>div>p{font-size:16px;font-weight:600}
+#app .tama-footer{display:none}
+body:has(.tama-home) .top.tama-top{background:#8fd0ff;margin:0 -20px;padding:14px 20px 0}
+#app .tama-kicker{margin-top:8px}
+#app .tama-visual{margin:0 -20px;width:calc(100% + 40px);max-width:none}
+#app .tama-visual img{width:100%;max-width:none}
+#app .tama-hero-copy,#app .tama-hero-copy p{max-width:none;width:100%}
+#app .tama-hero-copy p br{display:none}
+#app .tama-hero-copy{padding:0;margin:0}
+
+/* ───── 診断結果：結果名(画像内)→キャラ→説明→4軸 ───── */
+#app .result{margin:0 -20px;padding:0;background:#fff}
+#app .result-toolbar{position:static;background:var(--tone);padding:0 20px;border:0;box-shadow:none;backdrop-filter:none}
+#app .result-toolbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0 0}
+#app .result-toolbar .brand-logo{height:46px}
+#app .result-toolbar-actions button{display:flex;align-items:center;gap:6px;background:#fff;border:0;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:800;color:var(--ink);box-shadow:none}
+#app .result-toolbar-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+#app .result-hero{display:block;background:linear-gradient(180deg,var(--tone) 0%,var(--tone2) 100%);margin:0;padding:6px 16px 56px;text-align:center;position:relative;border:0;border-radius:0;min-height:0}
+#app .result-hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:#fff;border-radius:40px 40px 0 0}
+#app .result-title{display:block;margin:0;padding:0;min-height:0}
+#app .nickname-title{font-size:14px;font-weight:800;color:#fff;margin:0 0 4px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+#app .result .doc-character-art{position:relative;z-index:1;width:min(86vw,360px);max-width:none;margin:0 auto;aspect-ratio:auto}
+#app .result .doc-character-art svg{width:100%;height:auto;overflow:visible}
+#app .result-tone-pink{--tone:#ff8fba;--tone2:#ffd6e6}
+#app .result-tone-blue{--tone:#53a8f0;--tone2:#bfe3ff}
+#app .result-tone-green{--tone:#7ccb5a;--tone2:#d3f2c4}
+#app .result-tone-lilac{--tone:#a58be0;--tone2:#e1d7fa}
+#app .result-tone-yellow{--tone:#f2c640;--tone2:#fbe9a8}
+#app .result-story{padding:20px 20px 0;margin:0;background:none;border:0;box-shadow:none}
+#app .result-story h2{font-size:clamp(21px,6.1vw,26px);line-height:1.5;margin:0 0 16px}
+#app .result-story p{font-size:16px;line-height:1.95;color:#2d3760}
+#app .result-story h3{font-size:16px;margin:24px 0 6px;color:var(--accent)}
+#app .story-action{margin-top:20px;padding:16px 18px;background:var(--soft);border:0;border-radius:18px}
+#app .story-action span{font-size:13px;font-weight:800;color:var(--accent)}
+
+body:has(.result) .top.tama-top,body:has(.result) .producer-credit{margin-top:0}
+body:has(#app .result) .top.tama-top{display:none}
+#app .result-toolbar{background:var(--tone)!important}
+#app .result-hero::after{top:auto!important;bottom:-1px!important;inset-inline:0;height:40px!important;background:#fff!important;border-radius:40px 40px 0 0!important;content:""!important;display:block!important}
+#app .result-hero::before{display:none!important}
+#app .result-story,#app .result-reading-layout,#app .result-caveat,#app .advisor-next,#app .actions{padding-left:20px!important;padding-right:20px!important;margin-left:0!important;margin-right:0!important;max-width:none!important;width:auto!important}
+#app .result-hero{background:linear-gradient(180deg,var(--tone) 0%,var(--tone2) 100%)!important;margin:0!important;padding:6px 16px 56px!important}
+body:has(#app .result) .shell{padding-top:0}
+html{padding-top:0!important;padding-bottom:0!important}
+#app,#app *{word-break:auto-phrase!important;line-break:strict!important;overflow-wrap:break-word}
+#app .result-story h2{text-wrap:balance}
+
+/* ───── 4軸（？から詳細） ───── */
+#app .result-index{display:none!important}
+#app .trait-section{margin:32px 20px 0!important;padding:24px 20px 12px!important;background:var(--soft)!important;border:0!important;border-radius:24px!important;box-shadow:none!important;width:auto!important}
+#app .trait-heading{display:block!important;margin:0 0 6px!important}
+#app .trait-heading .eyebrow{display:none}
+#app .trait-heading h2{font-size:22px!important;margin:0 0 4px!important}
+#app .trait-heading p{font-size:14px!important;color:var(--sub)!important;margin:0!important;line-height:1.7}
+#app .trait-layout{display:block!important}
+#app .trait-rows{display:block!important;margin:0!important}
+#app .trait-row{display:block!important;padding:16px 0!important;border:0!important;border-bottom:1px solid #dbe8f7!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+#app .trait-row:last-child{border-bottom:0!important}
+#app .trait-row-heading{display:flex!important;align-items:center;gap:10px;margin:0!important}
+#app .trait-row-heading>span{font-size:13px;font-weight:800;color:var(--sub);min-width:3.4em}
+#app .trait-row-heading>strong{flex:1;font-size:19px;font-weight:900;line-height:1.3}
+#app .axis-score-flag{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;color:var(--sub);background:#fff;border-radius:99px;padding:0 8px}
+#app .trait-help{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--accent);background:#fff;color:var(--accent);font-size:16px;font-weight:900;line-height:1;padding:0;box-shadow:none}
+#app .trait-track{position:relative;display:block;height:12px;border-radius:99px;background:#dbe6f5;margin:16px 0 8px!important}
+#app .trait-center{position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:#fff;opacity:.9}
+#app .trait-marker{position:absolute;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--trait-color);border:4px solid #fff;box-shadow:0 1px 3px rgba(31,42,77,.3)}
+#app .trait-ends{display:flex!important;justify-content:space-between;font-size:13px;font-weight:700;color:var(--sub)}
+#app .trait-note{font-size:13px!important;color:var(--sub)!important;margin:12px 0 4px!important;line-height:1.7}
+/* 「？」シート */
+dialog.trait-sheet{margin:auto auto 0;width:100%;max-width:560px;border:0;border-radius:24px 24px 0 0;padding:28px 24px calc(28px + env(safe-area-inset-bottom));background:#fff;color:var(--ink);font-size:16px}
+dialog.trait-sheet::backdrop{background:rgba(20,20,40,.45)}
+dialog.trait-sheet h2{font-size:22px;margin:4px 0 12px}
+dialog.trait-sheet .sheet-eyebrow{font-size:13px;font-weight:700;color:var(--sub)}
+dialog.trait-sheet .sheet-hint{margin-top:16px;padding:14px 16px;background:var(--soft);border-radius:16px}
+dialog.trait-sheet .sheet-hint h3{font-size:14px;color:var(--accent);margin:0 0 4px}
+dialog.trait-sheet .sheet-footnote{font-size:12px;color:var(--sub)}
+dialog.trait-sheet .sheet-close{position:absolute;right:16px;top:12px;width:36px;height:36px;border-radius:50%;background:var(--soft);font-size:20px}
+dialog.trait-sheet .sheet-handle{display:none}
+#app .trait-marker{transform:none!important;top:50%!important;bottom:auto!important;margin:-13px 0 0 -13px!important;position:absolute!important}
+#app .trait-row-heading>strong{color:var(--ink)!important}
+#app .trait-row-heading>strong small{font-weight:700}
+
+/* ───── タイプ一覧／タイプ詳細 ───── */
+#app .page-kicker{font-size:12px!important;font-weight:800!important;letter-spacing:.14em!important;color:var(--accent)!important;margin:16px 0 8px!important}
+#app .type-directory{display:flex;flex-direction:column;padding:0}
+#app .type-directory h1,#app .type-info h1.type-info-title~h1{font-size:clamp(30px,8.4vw,36px)!important;margin:0 0 8px!important}
+#app .page-intro{font-size:16px!important;color:var(--sub)!important;margin:0 0 20px!important}
+#app .type-directory-grid{order:1;display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:12px 10px!important;margin:0 -4px!important}
+#app .axis-primer{order:2;margin:40px 0 0!important;padding:24px 20px!important;background:var(--soft)!important;border:0!important;border-radius:24px!important}
+#app .axis-primer h2{font-size:20px!important;margin:0 0 12px!important}
+#app .axis-primer p{display:flex;gap:12px;font-size:15px;margin:6px 0}
+#app .axis-primer small{font-size:13px;color:var(--sub)}
+#app .directory-card{display:block!important;padding:8px 4px 12px!important;background:none!important;border:0!important;border-radius:18px!important;box-shadow:none!important;text-align:center}
+#app .directory-card:active{background:var(--soft)!important}
+#app .directory-card img{width:100%!important;height:auto!important;aspect-ratio:4/5;object-fit:contain!important;display:block;margin:0 auto}
+#app .directory-card span{display:block;font-size:15px;font-weight:900;margin-top:4px;color:var(--ink)}
+#app .directory-card small{display:block;font-size:12px;font-weight:700;color:var(--sub)}
+#app .type-info{padding:0 0 8px}
+#app .type-info-hero{margin:0 -20px 12px!important;padding:8px 0 0!important;background:none!important;border:0!important;box-shadow:none!important}
+#app .type-info-hero .page-kicker{padding:0 20px;margin-top:8px!important}
+#app .type-info-title{margin:0 20px!important}
+#app .type-info .vignette-art{margin:8px 0 0!important;width:100%!important;max-width:none!important}
+#app .type-info .vignette-art img{width:100%;height:auto;aspect-ratio:994/390;object-fit:cover}
+#app .type-info h2{font-size:22px!important;line-height:1.5;margin:24px 0 8px!important}
+#app .type-info p{font-size:16px!important;line-height:1.95!important;color:#2d3760}
+#app .type-info-note{font-size:13px!important;color:var(--sub)!important}
+#app .type-info .cta{margin-top:24px}
+
+/* ───── 案内ページ（面談・LINE・先輩紹介） ───── */
+#app .support-page{padding:0 0 8px}
+#app .support-page h1{font-size:clamp(28px,8vw,34px)!important;margin:12px 0 12px!important}
+#app .support-page h2{font-size:22px!important;margin:0 0 10px!important}
+#app .support-page p{font-size:16px;line-height:1.9}
+#app .support-section{margin-top:40px!important;padding:0!important;background:none!important;border:0!important}
+#app .support-topics article,#app .booking-steps li,#app .topic-options button{background:var(--soft)!important;border:0!important;border-radius:20px!important;box-shadow:none!important;padding:16px 18px!important}
+#app .sample-notice{background:#f4f5f9!important;border:0!important;border-radius:16px!important;font-size:14px!important;color:var(--sub)!important;padding:14px 16px!important}
+#app .service-flags span,#app .tags span{border:0!important;background:var(--soft)!important;color:var(--ink)!important;font-size:13px!important;font-weight:700!important;border-radius:99px!important;padding:3px 12px!important}
+#app .mentor-filters{display:flex;flex-wrap:wrap!important;gap:8px;overflow:visible!important}
+#app .mentor-filters button{border:1.5px solid var(--line);border-radius:99px;padding:6px 16px;font-size:14px;font-weight:800;background:#fff}
+#app .mentor-filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+#app .mentor-card{border:0!important;background:var(--soft)!important;border-radius:22px!important;box-shadow:none!important}
+#app .line-entry,#app .consult-entry,#app .mentor-bottom,#app .profile-booking,#app .profile-invite{background:var(--soft)!important;border:0!important;border-radius:24px!important;box-shadow:none!important;padding:22px 20px!important}
+
+/* ───── 卵選び・設問・連絡先フォーム ───── */
+#app .onboarding,#app .contact-view{padding:8px 0 0}
+#app .onboarding h1,#app .contact-view h1{font-size:clamp(28px,8vw,34px)!important;margin:6px 0 8px!important}
+#app .year-grid{display:grid!important;grid-template-columns:repeat(3,1fr);gap:10px;border:0;padding:0;margin:20px 0!important}
+#app .year-card{border:2px solid var(--line)!important;border-radius:20px!important;background:#fff!important;box-shadow:none!important;padding:12px 4px!important;text-align:center}
+#app .year-card:has(input:checked){border-color:var(--accent)!important;background:#fff4f8!important}
+#app .quiz-question{background:#fff!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
+#app .quiz-question h2{font-size:19px!important;line-height:1.55}
+#app .quiz-sticky{background:#fff!important;box-shadow:none!important;border-bottom:1px solid var(--line)}
+#app .progress{height:10px;border-radius:99px;background:var(--line)}
+#app .progress>div{background:var(--accent)!important;border-radius:99px}
+#app .scale-options .option{box-shadow:none!important}
+#app .field label,#app .gender-field legend{font-size:15px;font-weight:800}
+#app .gender-option span{border:1.5px solid var(--line);border-radius:14px;box-shadow:none}
+#app .prototype-note{background:#f4f5f9!important;border:0!important;border-radius:16px!important;font-size:14px!important;color:var(--sub)!important}
+#app .onboarding,#app .contact-view{border:0!important;background:none!important;box-shadow:none!important;padding:8px 0 0!important;margin:0!important;max-width:none!important;width:auto!important;border-radius:0!important}
+#app .year-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+#app .year-card{min-width:0;padding:12px 2px!important}
+#app .year-card .egg-sprite{width:64%;margin:0 auto}
+#app .year-card .egg-sprite img{width:100%;height:auto}
+#app .year-card strong{font-size:17px;display:block}
+#app .year-card small{font-size:12px!important;color:var(--sub)}
+#app .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent)}
+#app .setup-note{font-size:14px;color:var(--sub)}
+#app .quiz-question-list{border:0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+#app .quiz-instruction{font-size:14px!important;color:var(--sub)!important;line-height:1.7}
+body.is-answering .top.tama-top{padding-bottom:0}
+body.is-answering .site-brand-logo{height:36px}
+
+/* ───── 結果の詳細レポート（強み〜業界） ───── */
+html body .shell{padding-left:20px!important;padding-right:20px!important}
+html,body{overflow-x:clip}
+#app .result{margin-left:-20px!important;margin-right:-20px!important;width:auto!important}
+#app .result-reading-layout{display:block!important}
+#app .result-reading-content{display:block!important;padding:0!important}
+#app .guidance-section{margin:44px 0 0!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important}
+#app .guidance-heading{display:flex!important;align-items:center;gap:12px;font-size:22px!important;line-height:1.4;margin:0 0 14px!important;min-width:0}
+#app .guidance-heading>span{min-width:0}
+#app .guidance-number{flex:none;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid!important;place-items:center;font-size:14px!important;font-weight:900}
+#app .guidance-section p{font-size:16px!important;line-height:1.95!important;color:#2d3760;margin:0 0 12px}
+#app .guidance-row{padding:14px 16px!important;margin:10px 0!important;background:var(--soft)!important;border:0!important;border-radius:18px!important;box-shadow:none!important}
+#app .guidance-row h3,#app .guidance-row dt,#app .guidance-row strong{font-size:14px!important;font-weight:900;color:var(--accent);margin:0 0 4px}
+#app .guidance-row p{margin:0!important}
+#app .result-caveat{font-size:13px!important;line-height:1.8;color:var(--sub)!important;margin-top:40px!important}
+#app .advisor-next{margin:24px 20px 0!important;padding:22px 20px!important;background:var(--soft)!important;border:0!important;border-radius:24px!important;box-shadow:none!important;width:auto!important}
+#app .advisor-next h2{font-size:20px;margin:0 0 6px}
+#app .advisor-next p{font-size:15px;margin:0 0 6px}
+#app .actions{display:grid!important;grid-template-columns:repeat(3,1fr);gap:8px!important;margin-top:16px!important}
+#app .actions .secondary{padding:12px 4px;line-height:1.3}
+#app .result-next-fixed{position:static!important;background:none!important;padding:16px 20px 0!important;box-shadow:none!important;border:0!important}
+/* PC：スマホ幅の中央カラムで表示（PC専用レイアウトは次段階） */
+@media(min-width:768px){html body .shell{max-width:560px!important;margin-left:auto!important;margin-right:auto!important}body{background:#f3f6fb!important}body .shell{background:#fff}}
+
+/* ───── UX部品：カルーセル／パンくず／アコーディオン ───── */
+#app .tama-types{padding:48px 0 0;margin:0}
+#app .tama-types .tama-section-label,#app .tama-types h2{padding:0 20px}
+#app .tama-types h2{font-size:26px;margin:0 0 16px}
+#app .carousel-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 8px;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+#app .carousel-track::-webkit-scrollbar{display:none}
+#app .carousel-slide{flex:0 0 64%;max-width:260px;scroll-snap-align:center;background:var(--soft);border-radius:24px;padding:12px;border:0}
+#app .carousel-slide img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain}
+#app .carousel-dots{display:flex;justify-content:center;gap:5px;margin:8px 0 0;flex-wrap:wrap;padding:0 40px}
+#app .carousel-dots i{width:6px;height:6px;border-radius:50%;background:#cfd8ea}
+#app .carousel-dots i.on{background:var(--accent);width:18px;border-radius:99px}
+#app .carousel-all{display:block;margin:16px 20px 0;width:calc(100% - 40px);padding:14px}
+#app .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:13px;font-weight:700;color:var(--sub);margin:12px 0 4px}
+#app .crumbs button{background:none;border:0;padding:6px 0;color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:3px;font-size:13px}
+#app .crumbs [aria-current]{color:var(--ink)}
+#app .guidance-heading{cursor:pointer}
+#app .guidance-heading::after{content:"＋";margin-left:auto;font-size:22px;font-weight:700;color:var(--accent);flex:none}
+#app .guidance-section.is-open .guidance-heading::after{content:"－"}
+#app .guidance-section:not(.is-open)>*:not(.guidance-heading){display:none!important}
+#app .guidance-section{border-bottom:1px solid var(--line)!important;padding-bottom:14px!important;margin-top:8px!important}
+#app .guidance-heading{padding:12px 0}
+#app .support-faq-list{margin-top:40px}
+#app .support-faq{border:0!important;background:var(--soft)!important;border-radius:18px!important;padding:0!important;margin:10px 0!important}
+#app .support-faq summary{padding:16px 18px;font-weight:800;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px;cursor:pointer}
+#app .support-faq summary::-webkit-details-marker{display:none}
+#app .support-faq summary::after{content:"＋";color:var(--accent);font-weight:700}
+#app .support-faq[open] summary::after{content:"－"}
+#app .support-faq p{padding:0 18px 16px;margin:0;font-size:15px}
+
+/* ═════ 診断結果 v3：16Personalities風の構成＋ポケモンスリープ風のやさしい世界観 ═════
+   曲線・グラデーション帯をやめ、タイプ色の一色パネル→見出し→4軸→詳細 */
+#app .result-tone-pink{--tone:#d6336c;--tint:#fff0f6;--tint2:#ffd9e8}
+#app .result-tone-blue{--tone:#2b7fc4;--tint:#eaf5ff;--tint2:#cfe7fb}
+#app .result-tone-lilac{--tone:#7a5bc2;--tint:#f3eeff;--tint2:#e1d6fa}
+#app .result-tone-yellow{--tone:#b07d00;--tint:#fff8de;--tint2:#fdeaa3}
+#app .result-tone-green{--tone:#3f8f2b;--tint:#eefbe7;--tint2:#d3f1c2}
+#app .result-toolbar{background:#fff!important;border-bottom:1px solid var(--line)!important}
+#app .result-toolbar-actions button{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+#app .result-hero{background:radial-gradient(circle at 18% 22%,#fff 0 3px,transparent 4px),radial-gradient(circle at 82% 16%,#fff 0 4px,transparent 5px),radial-gradient(circle at 90% 62%,#fff 0 3px,transparent 4px),radial-gradient(circle at 10% 70%,#fff 0 4px,transparent 5px),radial-gradient(ellipse 70% 55% at 50% 52%,#fff 0%,var(--tint) 45%,var(--tint2) 100%)!important;padding:20px 16px 28px!important;border-radius:0!important}
+#app .result-hero::after,#app .result-hero::before{display:none!important}
+#app .nickname-title{color:var(--tone)!important;text-shadow:none!important;font-size:14px;font-weight:800;margin:0 0 8px}
+#app .result .doc-character-art{width:min(84vw,340px)}
+#app .result-lead{padding:24px 20px 0;background:#fff}
+#app .result-lead h2{font-size:clamp(21px,6.1vw,26px)!important;line-height:1.5;margin:0;padding-left:14px;border-left:5px solid var(--tone)}
+/* 4軸（16Personalities風：％と塗りバー） */
+#app .trait-section{margin:20px 20px 0!important;background:#fff!important;border:1.5px solid var(--line)!important;padding:20px 18px 8px!important}
+#app .trait-heading h2{font-size:20px!important}
+#app .trait-track{height:14px;background:#e9edf6;overflow:hidden}
+#app .trait-fill{position:absolute;top:0;bottom:0;border-radius:99px;background:var(--trait-color)}
+#app .trait-marker,#app .trait-center{display:none!important}
+#app .trait-row-heading>strong{font-size:18px}
+#app .trait-row-heading>span{color:var(--ink);font-weight:900;font-size:14px}
+#app .trait-ends span:first-child,#app .trait-ends span:last-child{font-size:12.5px}
+#app .result-story{padding-top:28px!important}
+#app .result-story h3{color:var(--tone)}
+#app .story-action{background:var(--tint)}
+#app .story-action span{color:var(--tone)}
+#app .guidance-heading::after{color:var(--tone)}
+#app .guidance-number{background:var(--tone)}
+#app .guidance-row h3,#app .guidance-row dt,#app .guidance-row strong{color:var(--tone)}
+#app .guidance-row{background:var(--tint)!important}
+#app .result-next-fixed{padding:20px 20px 0!important}
+#app .result-next-fixed .cta{background:var(--tone)}
+
+/* ═════ 就活タイプ：4つの軸を先に ═════ */
+#app .type-directory .axis-primer{order:0!important;margin:8px 0 28px!important;padding:0!important;background:none!important}
+#app .type-directory .page-kicker,#app .type-directory h1,#app .type-directory .page-intro{order:-1}
+#app .axis-primer h2{font-size:20px!important;margin:0 0 12px!important}
+#app .axis-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#app .axis-card{background:var(--soft);border-radius:18px;padding:14px 14px 12px;border-top:5px solid var(--c)}
+#app .axis-card strong{display:block;font-size:17px;font-weight:900;margin-bottom:8px}
+#app .axis-sides{display:grid;gap:6px}
+#app .axis-sides em{font-style:normal;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+#app .axis-sides b{width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:900;flex:none}
+#app .axis-primer small{display:block;margin-top:10px;font-size:13px;color:var(--sub);line-height:1.7}
+#app .type-directory-grid{order:2!important}
+
+/* ═════ 先輩紹介：スワイプ ═════ */
+#app .mentor-list{display:flex!important;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:16px -20px 0!important;padding:4px 20px 8px!important;scrollbar-width:none;overscroll-behavior-x:contain}
+#app .mentor-list::-webkit-scrollbar{display:none}
+#app .mentor-card{flex:0 0 78%!important;max-width:300px;scroll-snap-align:center;display:flex!important;flex-direction:column!important;text-align:left;padding:0!important;overflow:hidden}
+#app .mentor-card[hidden]{display:none!important}
+#app .mentor-card .mentor-portrait{display:block;width:100%!important;aspect-ratio:1/1;border-radius:0!important;overflow:hidden}
+#app .mentor-card .mentor-portrait img{width:100%;height:100%;object-fit:cover}
+#app .mentor-card-copy{display:grid;gap:6px;padding:14px 16px 18px}
+#app .mentor-card-copy strong{font-size:20px}
+#app .mentor-more{font-weight:800;color:var(--accent)}
+#app .mentor-dots{margin-top:6px}
+
+/* ═════ 就活面談タブ：BEYOND CAFE（白×黒）デザイン ═════ */
+body.is-beyond{--bc-ink:#111;--bc-sub:#666;--bc-line:#e2e2e2;--bc-bg:#f4f4f4;background:#fff!important;font-family:"Noto Sans JP",sans-serif}
+body.is-beyond .top.tama-top{display:none!important}
+body.is-beyond .site-bottom-nav button[aria-current]{color:#111}
+body.is-beyond .site-bottom-nav{border-top:1px solid #111}
+body.is-beyond .producer-credit{border-top:1px solid var(--bc-line)}
+#app .bc-page{--ink:#111;--sub:#666;--accent:#111;--line:#e2e2e2;margin:0 -20px;padding:0 0 8px;color:#111;background:#fff;letter-spacing:.04em}
+#app .bc-brand{padding:16px 20px;border-bottom:1px solid var(--bc-line);background:#fff}
+#app .bc-brand img{height:30px;width:auto}
+#app .bc-hero{padding:32px 20px 8px}
+#app .bc-chip{display:inline-flex;align-items:baseline;gap:8px;margin:0 0 18px!important;padding:6px 14px;background:linear-gradient(90deg,#ffd3e0,#fff0b8,#c9f2d9,#cfe3ff)}
+#app .bc-chip b{font-size:15px;font-weight:900;letter-spacing:.06em}
+#app .bc-chip span{font-size:11px;font-weight:700}
+#app .bc-hero h1{font-size:clamp(24px,6.8vw,30px)!important;line-height:1.6;font-weight:900;margin:0 0 18px!important;text-align:left;color:#111}
+#app .bc-lead{font-size:15px!important;line-height:2!important;color:#333;margin:0 0 16px!important}
+#app .bc-flags{display:flex;gap:8px;flex-wrap:wrap}
+#app .bc-flags span{border:1.5px solid #111;border-radius:0;padding:3px 12px;font-size:13px;font-weight:800}
+#app .bc-entry{margin:28px 20px 0;padding:26px 20px;background:#111;color:#fff;border-radius:0}
+#app .bc-entry .bc-eyebrow{color:#bbb}
+#app .bc-entry h2{color:#fff;font-size:22px!important;margin:6px 0 10px!important}
+#app .bc-entry p{color:#ddd;font-size:15px;line-height:1.9}
+#app .bc-entry small{display:block;margin-top:12px;font-size:12px;color:#aaa}
+#app .bc-btn{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:56px;padding:0 20px;margin-top:18px;background:#fff;color:#111;border:0;border-radius:0;font-size:16px;font-weight:900;letter-spacing:.04em}
+#app .bc-btn-line{background:#111;color:#fff}
+#app .bc-eyebrow{font-size:12px!important;font-weight:900;letter-spacing:.18em;color:#888;margin:0 0 6px!important}
+#app .bc-sec{padding:44px 20px 0}
+#app .bc-sec h2{font-size:clamp(21px,6vw,26px)!important;line-height:1.55;font-weight:900;margin:0 0 16px!important;color:#111}
+#app .bc-sec p{font-size:15px;line-height:2;color:#333}
+#app .bc-list{display:grid;gap:10px}
+#app .bc-list button{display:block;width:100%;text-align:left;background:#f4f4f4!important;border:0!important;border-radius:0!important;padding:18px!important;box-shadow:none!important}
+#app .bc-list b{display:block;font-size:17px;font-weight:900;color:#111}
+#app .bc-list span{font-size:13px;color:#666;font-weight:600}
+#app .bc-promise{background:#f4f4f4;margin-top:44px;padding-bottom:36px}
+#app .bc-steps{list-style:none;padding:0;margin:0;border-top:1px solid #111}
+#app .bc-steps li{display:grid;grid-template-columns:46px 1fr;gap:6px;padding:18px 0;border-bottom:1px solid var(--bc-line)}
+#app .bc-steps b{font-size:24px;font-weight:900;line-height:1.2}
+#app .bc-steps strong{display:block;font-size:16px;font-weight:900}
+#app .bc-steps span{font-size:14px;color:#666}
+#app .bc-source{padding:28px 20px 0;font-size:12px!important;color:#888!important;line-height:1.8}
+#app .bc-source a{color:#111;font-weight:800}
+#app .result-lead h2{color:var(--ink)!important;opacity:1!important}
+html{scroll-behavior:auto!important}
+#app .result .doc-character-art{width:min(72vw,290px)!important}
+#app .result-hero{padding:14px 16px 20px!important}
+#app .result-lead{padding-top:20px}
+#app .mentor-card .mentor-portrait img{object-position:center 18%}
+
+/* ボタン配置の整理：結果の下部は「相談 → 保存/コピー/やり直し」の順 */
+#app .result{display:flex!important;flex-direction:column}
+#app .result>.result-toolbar{order:0}#app .result>.result-hero{order:1}#app .result>.result-lead{order:2}#app .result>.trait-section{order:3}#app .result>.result-story{order:4}#app .result>.result-reading-layout{order:5}#app .result>.result-caveat{order:6}#app .result>.advisor-next{order:7}#app .result>.result-next-fixed{order:8}#app .result>.actions{order:9;margin-bottom:12px}
+#app .advisor-next small{display:none}
+#app .result-next-fixed{margin-top:-8px}
+#app .trait-help{width:36px;height:36px;font-size:17px}
+#app .actions .secondary{min-height:48px;font-size:13px}
+#app .quiz-question-meta,#app .scale-options+*{font-size:13px}
+#app .quiz-answers .agree,#app .quiz-answers .disagree{font-size:13px!important;font-weight:800}
+#app .quiz-page-nav{background:#fff!important;border-top:1px solid var(--line)!important;box-shadow:none!important;gap:12px}
+#app .quiz-page-nav .back{white-space:nowrap}
+#app .quiz-page-nav .cta:disabled{background:#cfd3df}
+
+/* ホーム：透過のキャラ集合画像を空の背景に直接のせる（貼り付け感をなくす） */
+#app .tama-visual img{-webkit-mask-image:none!important;mask-image:none!important;aspect-ratio:2/1!important;object-fit:contain!important;filter:drop-shadow(0 6px 10px rgba(60,100,160,.18))}
+#app .tama-visual{margin:4px -20px 0!important}
+#app .tama-hero{background:linear-gradient(180deg,#8fd0ff 0%,#bfe3ff 34%,#e9f2ff 60%,#fff 100%)!important}
+#app .tama-section-label,#app .page-kicker,#app .eyebrow{letter-spacing:.06em!important}
+#app .bc-eyebrow{letter-spacing:.08em!important}
+#app .bc-chip b{letter-spacing:.06em}
+
+/* ホーム v2：元のヒーロー画像は白背景なので、乗算合成で白だけを背景になじませる（画像自体は加工しない） */
+#app .tama-hero{background:linear-gradient(180deg,#dcefff 0%,#eaf4ff 40%,#fff0f7 78%,#fff 100%)!important}
+body:has(.tama-home) .top.tama-top{background:#dcefff!important}
+#app .tama-visual img{mix-blend-mode:multiply;filter:none!important;aspect-ratio:996/560!important;object-fit:cover!important;-webkit-mask-image:none!important;mask-image:none!important}
+#app .tama-visual{margin:0 -8px!important;width:calc(100% + 16px)!important;background:none!important}
+#app .tama-kicker{background:var(--accent)}
+#app .tama-visual{isolation:auto!important}
+#app .tama-visual img{clip-path:inset(3px 3px 4px 3px)}
+
+/* 4つの軸（タイプ一覧）v2：飾りを外し、罫線だけの一覧に */
+#app .axis-cards{display:block!important;border-top:2px solid var(--ink)}
+#app .axis-card{display:grid!important;grid-template-columns:4.6em 1fr;align-items:center;gap:12px;background:none!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;padding:14px 2px!important}
+#app .axis-card strong{margin:0!important;font-size:16px!important;font-weight:900;color:var(--ink)}
+#app .axis-sides{display:flex!important;align-items:center;gap:0;font-size:16px}
+#app .axis-sides em{font-size:16px!important;font-weight:700;display:inline!important;gap:0}
+#app .axis-sides em+em::before{content:"／";margin:0 .6em;font-weight:500;color:#b4bccd}
+#app .axis-sides b{display:inline!important;width:auto!important;height:auto!important;background:none!important;color:var(--sub)!important;font-size:12px!important;font-weight:700;margin-right:.4em;border-radius:0!important}
+#app .axis-primer h2{font-size:18px!important;margin-bottom:10px!important}
+#app .axis-primer small{margin-top:12px}
+
+/* ───── 位置ずれの修正 ───── */
+/* 面談の流れ：番号の丸と文字が重なっていた（左の余白を確保） */
+#app .booking-steps li{position:relative!important;padding:16px 16px 16px 64px!important;margin:10px 0!important;min-height:64px}
+#app .booking-steps li::before{left:16px!important;top:16px!important;width:34px!important;height:34px!important;display:grid!important;place-items:center;line-height:1!important;background:#fff!important;color:var(--accent)!important;font-size:15px;font-weight:900;text-align:center}
+#app .booking-steps b{display:block;font-size:16px;font-weight:900;line-height:1.5;margin:0 0 2px}
+/* 「×」ボタン：文字の×はフォントで上下左右にずれるため、線で描いて中央に固定 */
+dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;right:14px!important;width:40px!important;height:40px!important;padding:0!important;display:block!important;font-size:0!important;line-height:0!important;color:transparent!important;border:0!important;border-radius:50%!important;background:var(--soft,#f2f8ff)!important}
+.sheet-close::before,.sheet-close::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:2.5px;margin:-1.25px 0 0 -9px;background:#4a5373;border-radius:2px}
+.sheet-close::before{transform:rotate(45deg)}.sheet-close::after{transform:rotate(-45deg)}
+.type-card-close{display:inline-flex!important;align-items:center;gap:6px;line-height:1!important;min-height:40px!important;padding:0 14px!important}
+/* 丸の中の文字（？・番号）を中央に */
+#app .trait-help,dialog .trait-help{display:inline-grid!important;place-items:center;padding:0!important;line-height:1!important;text-indent:0}
+#app .guidance-number,#app .tama-how li>span,#app .bc-steps b{display:grid!important;place-items:center;line-height:1!important}

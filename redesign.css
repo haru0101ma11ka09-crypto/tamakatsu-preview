@@ -1,0 +1,126 @@
+/* タマ活 / Editorial Pop, 2026-10-16
+   公開版のデータと動作を保ち、表示だけを上書きする。 */
+:root {
+  --bg:#faf8f1; --ink:#242521; --muted:#747369; --line:#e6e3d8;
+  --cream:#fffdf6; --yellow:#f5d95b; --yellow-soft:#fbf0bc;
+  --orange:#d66b38; --orange-dark:#bc5525; --blue:#5277d9;
+}
+body {font-weight:500; background:var(--bg); color:var(--ink)}
+.shell {max-width:1200px; padding:16px 40px 48px}
+.top {min-height:64px; border-bottom:1px solid var(--line); padding:0 0 16px}
+.top .brand-logo {width:154px; background:transparent; border:0; border-radius:0; padding:0; mix-blend-mode:multiply}
+.top small {display:block; font-size:12px; letter-spacing:.035em; color:var(--muted)}
+.eyebrow {padding:0; border-radius:0; background:none; color:var(--ink); font-size:11px; letter-spacing:.1em; font-weight:700}
+.eyebrow::before {content:""; display:inline-block; width:7px; height:7px; margin-right:9px; vertical-align:1px; background:var(--orange); border-radius:50%}
+.cta {min-height:54px; border:1.5px solid var(--ink); border-radius:14px; background:var(--orange); box-shadow:0 3px 0 var(--ink); font-weight:700; transition:transform .16s,background .16s,box-shadow .16s}
+.cta:hover {background:var(--orange-dark); box-shadow:0 4px 0 var(--ink); transform:translateY(-1px)}
+.cta:active {transform:translateY(2px); box-shadow:0 1px 0 var(--ink)}
+.cta:disabled {transform:none; box-shadow:none}
+.secondary,.industry-jump {border-radius:12px; border-width:1px; font-weight:700}
+.home-experience {display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-areas:"eyebrow art" "h1 art" "p art" "form art" "topics topics"; grid-template-rows:auto auto auto auto auto; column-gap:72px; row-gap:0; align-items:start; min-height:0; padding:48px 0 0}
+.home-content,.home-intro {display:contents}
+.home-intro h1 {font-family:'Noto Sans JP','Hiragino Sans',sans-serif; font-weight:900; font-size:clamp(38px,4vw,52px); line-height:1.38; letter-spacing:-.07em; margin:16px 0 18px; overflow-wrap:normal; word-break:normal}
+.home-intro .hl {padding:0 .02em; background:linear-gradient(transparent 76%,var(--yellow) 76%); -webkit-box-decoration-break:clone; box-decoration-break:clone}
+.home-intro p {font-size:14px; font-weight:500; line-height:1.95; color:#69695f; margin:0 0 26px; max-width:490px}
+.home-form {width:100%; max-width:420px; margin:0; padding:0; border:0; box-shadow:none; background:none}
+.home-form label {font-size:12px; letter-spacing:.03em; font-weight:700; margin:0 0 8px}
+.home-form input,.field input {min-height:52px; border:1px solid #d5d3c7; border-radius:12px; background:#fffefa; padding:12px 16px; font-weight:500; transition:border-color .15s}
+.home-form input:hover,.field input:hover {border-color:#9b9d90}
+.home-form input::placeholder {color:#a4a397}
+.home-form .cta {margin-top:12px; width:100%; font-size:14px; letter-spacing:.025em}
+.home-form .subnote {font-size:11px; color:var(--muted); margin:12px 0 0}
+.home-art {position:relative; isolation:isolate; grid-area:art; display:block; width:100%; max-width:none; height:430px; margin:0; padding:0; align-self:center; border:0; background:none; overflow:visible}
+.home-art::before {content:""; position:absolute; inset:auto; top:10px; left:50%; width:80%; height:auto; aspect-ratio:1; border-radius:50%; transform:translateX(-50%); background:#f4ebc9; z-index:-2; pointer-events:none}
+.home-art::after {content:""; position:absolute; left:7%; top:62px; width:88%; aspect-ratio:1; border-radius:50%; border:1px solid #dfd7b9; transform:rotate(-14deg) scaleY(.83); z-index:-1; pointer-events:none}
+.home-egg {position:absolute; width:auto; height:auto; margin:0; transition:transform .35s ease}
+.home-egg .egg-sprite {width:100%; height:auto; aspect-ratio:823/1048}
+.home-egg-red {width:34%; left:1%; top:126px; transform:rotate(-14deg); z-index:1}
+.home-egg-blue {width:47%; left:28%; top:38px; margin:0; transform:rotate(5deg); z-index:3}
+.home-egg-green {width:32%; right:-1%; top:157px; transform:rotate(15deg); z-index:2}
+.home-egg img {filter:drop-shadow(0 14px 12px rgba(65,57,33,.09))}
+.home-egg .egg-fixed-cracked img {filter:drop-shadow(0 14px 15px rgba(65,57,33,.12))}
+.home-art>p {position:absolute; left:0; right:0; bottom:0; margin:0; text-align:center; font-size:12px; font-weight:500; letter-spacing:.04em; color:#77705b}
+.home-topics {grid-area:topics; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; max-width:none; gap:0; list-style:none; margin:44px 0 0; padding:24px 0 0; border-top:1px solid var(--line); counter-reset:topic}
+.home-topics li {display:flex; gap:14px; align-items:center; margin:0; padding:0 22px; font-size:13px; font-weight:500; line-height:1.7; border:0; background:none}
+.home-topics li:first-child {padding-left:0}
+.home-topics li+li {border-left:1px solid var(--line); margin:0; padding-left:22px}
+.home-topics li::before {counter-increment:topic; content:"0" counter(topic); display:inline; width:auto; height:auto; flex:none; border-radius:0; background:none; font-family:Georgia,serif; font-style:italic; font-size:26px; line-height:1; color:#ae9f67}
+/* 選択以降も同じ余白・角丸・配色のルールに揃える。 */
+.onboarding {margin-top:44px; max-width:760px}
+.onboarding h1,.contact-heading h1,.hatch-view h1 {font-family:'Noto Sans JP',sans-serif; font-weight:900; letter-spacing:-.045em; line-height:1.5}
+.year-card {padding:24px 12px 20px; border:1px solid var(--line); border-radius:22px; background:#fffdf7; transition:background .2s,border-color .2s,transform .2s}
+.year-card:hover {transform:translateY(-3px); border-color:#b9ae8a}
+.year-card:has(input:checked) {padding:23px 11px 19px; border:2px solid var(--ink); background:#f8edc4}
+.year-card .egg-sprite {width:min(78%,140px)}
+.year-card strong {font-size:24px; letter-spacing:-.03em}
+.year-card small {font-size:11px; font-weight:500}
+.year-card small::before {width:7px; height:7px}
+.year-card:has(input:checked)::after {content:"✓"; position:absolute; top:12px; right:12px; display:grid; place-items:center; width:22px; height:22px; background:var(--ink); color:white; border-radius:50%; font-size:12px}
+.quiz-question-list {border:1px solid #d7d5c9; border-radius:20px}
+.quiz-sticky {border-bottom:1px solid var(--line)}
+.quiz-page-nav {border-top:1px solid var(--line)}
+.quiz-question:nth-child(4n) {border-bottom:1px solid #d7d5c9}
+.result-hero {border:1px solid #dfdccd; border-radius:26px; background:#faf1d9}
+.result-title .eyebrow,.trait-heading .eyebrow {color:var(--ink)}
+.result-toolbar {border-bottom:1px solid var(--line)}
+.result-toolbar button {border:1px solid #cfccbe; font-size:13px; font-weight:500}
+.result-overview>div,.trait-section {border-color:var(--line)}
+.guidance-section,.section {border-top:1px solid var(--line)}
+.result-next-fixed .cta {background:var(--orange); box-shadow:0 3px 0 var(--ink); border-width:1.5px}
+.advisor-avatar {border:1px solid var(--ink)}
+@media (min-width:1440px) {
+  .shell {padding-top:24px}
+  .home-experience {padding-top:64px; column-gap:88px}
+  .home-art {height:460px}
+}
+@media (max-width:959px) {
+  .shell {max-width:680px; padding:12px 32px 36px}
+  .home-experience {grid-template-columns:minmax(0,1fr); grid-template-areas:"eyebrow" "h1" "art" "p" "form" "topics"; padding-top:32px}
+  .home-intro h1 {font-size:44px; margin:14px 0 0}
+  .home-art {max-width:370px; height:290px; margin:16px auto 22px}
+  .home-art::before {top:0; width:74%; left:50%}
+  .home-art::after {width:72%; left:15%; top:22px}
+  .home-egg-red {width:27%; left:10%; top:86px}
+  .home-egg-blue {width:36%; left:33%; top:20px}
+  .home-egg-green {width:26%; right:4%; top:100px}
+  .home-art>p {bottom:0; font-size:11px}
+  .home-intro p {max-width:none; margin-bottom:22px; font-size:15px}
+  .home-form {max-width:none}
+  .home-topics {margin-top:32px; padding-top:20px}
+  .home-topics li,.home-topics li+li {padding:0 12px; font-size:12px; gap:8px}
+  .home-topics li:first-child {padding-left:0}
+  .home-topics li::before {font-size:21px}
+}
+@media (max-width:599px) {
+  .shell {padding:10px 20px 32px}
+  .top {min-height:48px; padding-bottom:12px}
+  .top .brand-logo {width:128px}
+  .top small {display:none}
+  .home-experience {padding-top:22px}
+  .home-intro h1 {font-size:clamp(29px,8.3vw,38px); letter-spacing:-.065em; line-height:1.42; margin:12px 0 0}
+  .home-art {height:180px; max-width:300px; margin:12px auto 16px}
+  .home-art::before {width:57%; top:0}
+  .home-art::after {width:58%; top:8px; left:22%}
+  .home-egg-red {width:24%; left:12%; top:45px}
+  .home-egg-blue {width:33%; left:34%; top:3px}
+  .home-egg-green {width:23%; right:7%; top:55px}
+  .home-art>p {font-size:10px; bottom:0; letter-spacing:.015em}
+  .home-intro p {font-size:13px; line-height:1.85; margin:0 0 20px}
+  .desktop-break {display:none}
+  .home-form .cta {min-height:52px}
+  .home-topics {margin-top:26px; padding-top:18px; grid-template-columns:1fr; gap:12px}
+  .home-topics li,.home-topics li+li {border:0; padding:0; font-size:12px; gap:13px}
+  .home-topics li::before {font-size:20px}
+  .home-form .subnote {font-size:10px}
+  .onboarding {margin-top:28px}
+  .year-grid {gap:8px}
+  .year-card {padding:18px 6px 15px; border-radius:16px}
+  .year-card:has(input:checked) {padding:17px 5px 14px}
+  .year-card strong {font-size:20px}
+  .year-card small {font-size:10px}
+  .year-card:has(input:checked)::after {top:7px; right:7px; width:17px; height:17px; font-size:10px}
+  .year-card .egg-sprite {width:80%}
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important}
+}
