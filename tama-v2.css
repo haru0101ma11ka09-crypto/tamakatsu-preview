@@ -430,3 +430,7 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 /* 丸の中の文字（？・番号）を中央に */
 #app .trait-help,dialog .trait-help{display:inline-grid!important;place-items:center;padding:0!important;line-height:1!important;text-indent:0}
 #app .guidance-number,#app .tama-how li>span,#app .bc-steps b{display:grid!important;place-items:center;line-height:1!important}
+
+/* トップの「45の質問／16タイプ」行：狭い幅で右端が切れないよう折り返す */
+#app .tama-facts{flex-wrap:wrap;row-gap:4px;column-gap:14px;padding:0 8px}
+#app .tama-facts span{white-space:nowrap}
