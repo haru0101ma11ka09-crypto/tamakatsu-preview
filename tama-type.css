@@ -74,7 +74,7 @@ html body #app .has-title-art .tama-kicker,
 html body #app .has-title-art .tama-hero-copy h1{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 html body #app .has-title-art .tama-hero{padding-top:0!important;padding-left:0!important;padding-right:0!important}
 html body #app .has-title-art .tama-visual.title-art{margin:0!important;width:100%!important;max-width:none!important;padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
-html body #app .has-title-art .tama-visual.title-art img{position:static!important;inset:auto!important;left:auto!important;top:auto!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;aspect-ratio:1100/1320!important;margin:0!important;border-radius:0!important;mix-blend-mode:normal!important;-webkit-mask-image:none!important;mask-image:none!important;filter:none!important;animation:none!important;transform:none!important}
+html body #app .has-title-art .tama-visual.title-art img{position:static!important;inset:auto!important;left:auto!important;top:auto!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;aspect-ratio:1100/1284!important;margin:0!important;border-radius:0!important;mix-blend-mode:normal!important;-webkit-mask-image:none!important;mask-image:none!important;filter:none!important;animation:none!important;transform:none!important}
 html body #app .has-title-art .tama-hero-copy{margin-top:-6px;padding:0 20px}
 html body #app .has-title-art .tama-start,html body #app .has-title-art .tama-facts{margin-left:20px;margin-right:20px}
 html body #app .has-title-art .tama-hero-copy p{text-align:center}
@@ -100,3 +100,14 @@ html body #app .has-title-art .tama-start{margin-top:-40px!important}
 html body #app .has-title-art .tama-start #nickname{min-height:50px!important;height:50px!important;padding-top:0!important;padding-bottom:0!important}
 html body #app .has-title-art .tama-start .cta{min-height:52px!important;margin-top:10px!important}
 html body #app .has-title-art .tama-start>p{margin-top:8px!important}
+
+/* 入力欄を、キャラクターの足もとから離し、入力欄とボタンを小さく */
+html body #app .has-title-art .tama-start{margin-top:-6px!important}
+html body #app .has-title-art .tama-start #nickname{min-height:46px!important;height:46px!important;font-size:15px!important}
+html body #app .has-title-art .tama-start .cta{min-height:46px!important;height:46px!important;margin-top:8px!important;font-size:15px!important;padding:0 20px!important}
+html body #app .has-title-art .tama-start .cta span{font-size:20px!important}
+html body #app .has-title-art .tama-start>p{margin-top:6px!important;font-size:12px!important;line-height:1.5!important}
+html body #app .has-title-art .tama-start .tama-start-row{display:flex!important;flex-direction:column!important;gap:0!important}
+html body #app .has-title-art .tama-start .form-error{min-height:0!important;height:0!important;margin:0!important;padding:0!important;line-height:0!important;font-size:0!important}
+html body #app .has-title-art .tama-start .form-error:not(:empty){height:auto!important;margin:6px 0 0!important;font-size:13px!important;line-height:1.5!important}
+html body #app .has-title-art .tama-start .cta{margin-top:10px!important}
