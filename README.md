@@ -49,3 +49,8 @@ GitHub のページ上だけで編集できます。ソフトのインストー�
 ## 補足
 - 公式LINE・予約・先輩プロフィールは、未接続・仮であることがわかる表記を残す
 - テスト版のURLは検索に載らない設定（noindex）ですが、リポジトリは公開です。社外秘の情報は書かない
+
+## 更新履歴（直したところの共有）
+
+直したときは、`changelog/index.html` に「何を・どこを・どう直したか」と、直す前／直した後のスクショ（`changelog/img/`）を足します。
+公開ページ：https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/changelog/
