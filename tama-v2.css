@@ -443,3 +443,8 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 /* 卒業年度の選択：ボタンを左寄せにせず、カード列と同じ幅で中央に */
 #app .onboarding .cta{display:block;width:100%;max-width:none;margin-left:auto;margin-right:auto}
 #app .onboarding .back{display:block;margin:14px auto 0}
+
+/* 結果画面の下：先輩紹介・面談へ進むボタン */
+#app .advisor-next .next-actions{display:grid;gap:10px;margin-top:16px}
+#app .advisor-next .next-actions button{width:100%;min-height:52px;margin:0}
+#app .result-next-fixed{display:none}
