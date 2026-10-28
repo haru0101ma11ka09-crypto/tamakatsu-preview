@@ -456,3 +456,26 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
   html body{background-image:linear-gradient(180deg,#eef3fb 0%,#fdf2f7 100%);background-attachment:fixed}
 }
 
+
+/* 公式LINEの案内が準備中のボタン：押せないことが分かる見た目に */
+#app .line-cta[disabled]{background:#e9e5f1!important;color:#7a728f!important;box-shadow:none!important;cursor:not-allowed;border:0!important}
+
+/* 結果画面：キャラクターの背景の下端を、白へやわらかくなじませる */
+#app .result-hero{padding-bottom:64px!important}
+#app .result-hero::after{display:block!important;content:""!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;height:64px!important;background:linear-gradient(180deg,rgba(255,255,255,0),#fff)!important;border-radius:0!important}
+
+/* 就活タイプの詳細ページ：項目ごとに見出しと一言を表示 */
+#app .type-info .ti-sec{margin:28px 0 0}
+#app .type-info .ti-sec h2{font-size:19px;line-height:1.5;margin:0 0 8px;padding-left:12px;border-left:4px solid var(--accent,#e63a77)}
+#app .type-info .ti-lead{font-weight:800;color:#2a2140;margin:0 0 6px}
+
+/* トップ：イラストの左右の縁をぼかし、「診断でわかること」の前の余白を詰める */
+#app .tama-visual img{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%),linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%)!important;-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%),linear-gradient(180deg,transparent 0,#000 14%,#000 76%,transparent 100%)!important;mask-composite:intersect}
+#app .tama-discover{margin-top:24px!important;padding-top:36px!important}
+
+/* 小さすぎる文字を、読める大きさ（12px以上）に */
+.site-bottom-nav button,.site-bottom-nav a,.site-bottom-nav span{font-size:12px!important}
+#app .quiz-question-number,#app .quiz-question-state,#app .quiz-step,#app .quiz-meter span,#app .quiz-sticky span,#app .quiz-sticky small{font-size:12px!important}
+#app .axis-score-flag,#app .required,#app .optional,#app .field small,#app .gender-field small{font-size:12px!important}
+#app .quiz-instruction span{display:block;margin-top:4px;font-size:13px!important;line-height:1.7}
+#app .quiz-instruction span{color:#5b5470!important}
