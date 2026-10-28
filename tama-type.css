@@ -66,3 +66,32 @@ html body:not(.is-beyond) #app :is(p,li,dd){text-wrap:balance}
 /* メンター紹介の絵：端をふんわり透明にした一枚絵を、空の背景にそのままなじませる */
 html body #app .mentor-scene{display:block!important;width:calc(100% + 40px)!important;max-width:none!important;margin:0 -20px 4px!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;aspect-ratio:auto!important;height:auto!important;overflow:visible!important}
 html body #app .mentor-scene img{display:block!important;width:100%!important;height:auto!important;max-width:none!important;border-radius:0!important;filter:drop-shadow(0 8px 14px rgba(50,100,180,.18))}
+
+/* トップ：ロゴ・キャッチ・見出しを描き込んだ一枚絵をタイトル画面にする。
+   同じ文字が二重にならないよう、ページ側のロゴ・小見出し・見出しは、画面から外す（読み上げ用には残す） */
+html body:has(.has-title-art) header.top{display:none!important}
+html body #app .has-title-art .tama-kicker,
+html body #app .has-title-art .tama-hero-copy h1{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+html body #app .has-title-art .tama-hero{padding-top:0!important;padding-left:0!important;padding-right:0!important}
+html body #app .has-title-art .tama-visual.title-art{margin:0!important;width:100%!important;max-width:none!important;padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
+html body #app .has-title-art .tama-visual.title-art img{position:static!important;inset:auto!important;left:auto!important;top:auto!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;aspect-ratio:1100/1320!important;margin:0!important;border-radius:0!important;mix-blend-mode:normal!important;-webkit-mask-image:none!important;mask-image:none!important;filter:none!important;animation:none!important;transform:none!important}
+html body #app .has-title-art .tama-hero-copy{margin-top:-6px;padding:0 20px}
+html body #app .has-title-art .tama-start,html body #app .has-title-art .tama-facts{margin-left:20px;margin-right:20px}
+html body #app .has-title-art .tama-hero-copy p{text-align:center}
+@media(min-width:768px){html body #app .has-title-art .tama-visual.title-art{max-width:560px!important;margin:0 auto!important}}
+
+html body #app .has-title-art .tama-visual.title-art{height:auto!important;min-height:0!important;position:relative!important}
+html body #app .has-title-art .tama-visual.title-art{aspect-ratio:auto!important;margin:0 -20px!important;width:calc(100% + 40px)!important;isolation:auto!important}
+html body #app .has-title-art .tama-visual.title-art img{clip-path:none!important;object-fit:cover!important}
+html body #app .has-title-art .tama-hero{margin-left:0!important;margin-right:0!important}
+/* トップ：絵のすぐ下にニックネーム入力とボタンを置き、説明文は、その後ろに回す */
+html body #app .has-title-art .tama-hero{display:flex!important;flex-direction:column!important}
+html body #app .has-title-art .tama-visual.title-art{order:1}
+html body #app .has-title-art .tama-start{order:2;margin-top:-34px!important;position:relative;z-index:2}
+html body #app .has-title-art .tama-hero-copy{order:3;margin-top:20px!important}
+html body #app .has-title-art .tama-facts{order:4}
+html body #app .has-title-art .tama-start{margin-top:-78px!important}
+html body #app .has-title-art .tama-start>label{text-shadow:0 0 8px #fff,0 0 3px #fff}
+html body #app .has-title-art .tama-start .tama-start-row{gap:10px}
+html body #app .has-title-art .tama-start>label{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+html body #app .has-title-art .tama-start{margin-top:-62px!important}
