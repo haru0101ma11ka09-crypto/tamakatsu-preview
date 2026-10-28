@@ -448,3 +448,10 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 #app .advisor-next .next-actions{display:grid;gap:10px;margin-top:16px}
 #app .advisor-next .next-actions button{width:100%;min-height:52px;margin:0}
 #app .result-next-fixed{display:none}
+
+/* PC表示：下のタブ・設問の「次へ」バーを、中央の560px列にそろえる */
+@media(min-width:768px){
+  html body .site-bottom-nav,html body .quiz-page-nav{left:50%!important;right:auto!important;width:560px!important;max-width:560px!important;transform:translateX(-50%)!important;box-sizing:border-box}
+  html body .site-bottom-nav{border-radius:20px 20px 0 0;box-shadow:0 -8px 28px rgba(80,60,120,.10)}
+  html body{background-image:linear-gradient(180deg,#eef3fb 0%,#fdf2f7 100%);background-attachment:fixed}
+}
