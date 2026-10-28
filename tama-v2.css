@@ -479,3 +479,33 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 #app .axis-score-flag,#app .required,#app .optional,#app .field small,#app .gender-field small{font-size:12px!important}
 #app .quiz-instruction span{display:block;margin-top:4px;font-size:13px!important;line-height:1.7}
 #app .quiz-instruction span{color:#5b5470!important}
+
+/* 結果画面：ステッカーではなく「そのタイプの世界の絵」で見せる */
+#app .result-hero{background:linear-gradient(180deg,var(--tone) 0%,var(--tone2) 58%,#fff 100%)!important;padding-bottom:20px!important;overflow:hidden}
+#app .result-hero::after{display:none!important}
+#app .result .result-hero .vignette-art{width:calc(100% + 28px)!important;max-width:none!important;margin:2px -14px 0!important;position:relative;z-index:1;aspect-ratio:auto}
+#app .result .result-hero .vignette-art img{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 14px rgba(40,40,90,.18))}
+#app .result .result-hero .result-title{position:relative;z-index:2}
+/* ふわっと光る粒 */
+#app .world-sparkles{position:absolute;inset:0;z-index:0;pointer-events:none}
+#app .world-sparkles i{position:absolute;font-style:normal;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.9);opacity:.85;animation:wsTwinkle 3.6s ease-in-out infinite}
+#app .world-sparkles i:nth-child(1){left:8%;top:14%;font-size:20px}
+#app .world-sparkles i:nth-child(2){left:86%;top:10%;font-size:16px;animation-delay:.8s}
+#app .world-sparkles i:nth-child(3){left:20%;top:44%;font-size:14px;animation-delay:1.4s}
+#app .world-sparkles i:nth-child(4){left:92%;top:40%;font-size:22px;animation-delay:2s}
+#app .world-sparkles i:nth-child(5){left:6%;top:70%;font-size:15px;animation-delay:2.6s}
+#app .world-sparkles i:nth-child(6){left:78%;top:72%;font-size:13px;animation-delay:1s}
+@keyframes wsTwinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+@media(prefers-reduced-motion:reduce){#app .world-sparkles i{animation:none;opacity:.8}}
+/* 文字入りのタイプカードへの入口 */
+#app .type-card-chip{position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin:10px auto 0;padding:6px 16px 6px 8px;border:1.5px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(255,255,255,.88);color:#3d3560;font:700 13px/1.4 inherit;font-family:inherit;cursor:pointer;box-shadow:0 6px 16px rgba(60,50,110,.12)}
+#app .type-card-chip img{width:40px;height:40px;object-fit:contain;border-radius:10px;background:#fff}
+#app .type-card-chip b{color:var(--accent);font-size:16px}
+
+/* 結果画面：タイトル画像（タイプ名とコード）を見せ、世界の絵を幅いっぱいに */
+#app .result .result-hero .character-name-art{display:block!important;position:static!important;width:auto!important;height:auto!important;clip:auto!important;overflow:visible!important;margin:0 auto!important;padding:0!important}
+#app .result .result-hero .original-result-title{display:block!important;position:static!important;width:min(88vw,340px)!important;height:auto!important;max-width:none!important;margin:4px auto 0!important}
+#app .result .result-hero .vignette-art img{width:100%!important;max-width:none!important;height:auto!important;object-fit:contain!important}
+#app .result .result-hero .nickname-title{color:#fff!important;font-weight:700!important;text-shadow:0 1px 8px rgba(30,60,120,.45)}
+/* 空の色をやわらかく（そのタイプの色を白でうすめる） */
+#app .result-hero{background:linear-gradient(180deg,color-mix(in srgb,var(--tone) 52%,#fff) 0%,color-mix(in srgb,var(--tone2) 85%,#fff) 62%,#fff 100%)!important}
