@@ -37,3 +37,28 @@ html body #app .mentor-voice{display:block;padding:12px 14px;border-radius:14px;
 html body #app .mentor-card .mentor-more{display:block;margin-top:12px!important;color:#c0225a!important;font-weight:800;font-size:14px!important}
 html body #app .mentor-profile .mentor-facts{max-width:420px;margin:10px auto 0!important;text-align:left}
 html body #app .mentor-profile .mentor-profile-head{text-align:center}
+
+/* ===== 文字の基準を1つに（大見出し30／中見出し22／小見出し18／本文15／注意13／ラベル12） =====
+   以前は、文字のスタイルが89種類（大きさ14種・太さ4種）あった。 */
+html body:not(.is-beyond) #app{letter-spacing:.03em}
+html body:not(.is-beyond) #app :is(h1):not(.character-name-art):not(.type-info-title){font-size:30px!important;font-weight:900!important;line-height:1.4!important;letter-spacing:.01em!important}
+html body:not(.is-beyond) #app :is(h2):not(.quiz-question h2):not(.tama-hero h2){font-size:22px!important;font-weight:800!important;line-height:1.5!important;letter-spacing:.01em!important}
+html body:not(.is-beyond) #app :is(h3){font-size:18px!important;font-weight:800!important;line-height:1.5!important;letter-spacing:.01em!important}
+html body:not(.is-beyond) #app .quiz-question h2{font-size:19px!important;font-weight:800!important;line-height:1.6!important;letter-spacing:.02em!important}
+/* 本文（class がついている段落や箇条書きも含む） */
+html body:not(.is-beyond) #app :is(p,li,dd,summary){font-size:15px;line-height:1.85;letter-spacing:.04em;font-weight:500}
+html body:not(.is-beyond) #app summary{font-weight:800}
+/* 注意書き・補足 */
+html body:not(.is-beyond) #app :is(.sample-notice,.link-status,.subnote,.setup-note,.trait-note,.type-info-note,.sheet-footnote,.result-caveat,.support-note,.service-source p,.tama-facts,.mentor-message,small){font-size:13px!important;line-height:1.7!important;letter-spacing:.03em!important;font-weight:500!important}
+/* ラベル・タグ・小見出し（ピンク） */
+html body:not(.is-beyond) #app :is(.page-kicker,.tama-section-label,.eyebrow,.sample-label,.quiz-question-number,.quiz-axis,.quiz-question-state,.required,.optional,.axis-score-flag){font-size:12px!important;font-weight:800!important;letter-spacing:.04em!important;line-height:1.4!important}
+/* ボタン */
+html body:not(.is-beyond) #app :is(.cta,.line-cta,.secondary,.resume-result,.type-card-chip,.bc-btn){font-size:16px!important;font-weight:800!important;letter-spacing:.04em!important;line-height:1.4!important}
+/* 太字の強調は、800にそろえる（900は大見出しだけ） */
+html body:not(.is-beyond) #app :is(strong,b,dt,legend){font-weight:800}
+/* 下のタブ */
+html body .site-bottom-nav button{font-size:12px!important;font-weight:700!important;letter-spacing:.02em!important}
+
+/* 大見出しの「キーワード」だけ色をつける（参考LPの、青い大きなキーワードにならう） */
+html body #app .hl{color:#e5386f!important;background:none!important;box-shadow:none!important;padding:0!important;border:0!important;text-decoration:none!important}
+html body:not(.is-beyond) #app :is(p,li,dd){text-wrap:balance}
