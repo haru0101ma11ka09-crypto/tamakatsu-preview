@@ -1,0 +1,65 @@
+/* タマ活 空の世界（カービィ・たまごっち風）：ページ全体を空の背景でつなげ、カードを浮かせる。
+   就活面談タブ（body.is-beyond）は、BEYOND CAFE の白黒デザインのまま。 */
+html body:not(.is-beyond){background:linear-gradient(180deg,#7cc7ff 0%,#b9e3ff 32%,#e4f4ff 62%,#fff 100%) fixed!important}
+.shell,#app{background:transparent!important}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80px 28px at 14% 12%,rgba(255,255,255,.95),rgba(255,255,255,0)),radial-gradient(ellipse 110px 34px at 84% 20%,rgba(255,255,255,.95),rgba(255,255,255,0)),radial-gradient(ellipse 90px 28px at 72% 50%,rgba(255,255,255,.8),rgba(255,255,255,0)),radial-gradient(ellipse 100px 30px at 16% 64%,rgba(255,255,255,.8),rgba(255,255,255,0))}
+#app,.shell{position:relative;z-index:1}
+html body #app .tama-hero{background:transparent!important}
+html body #app .tama-visual img{animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+html body #app .cta,html body #app .line-cta:not([disabled]){background:#ff4f8b!important;color:#fff!important;border:3px solid #fff!important;border-radius:999px!important;box-shadow:0 6px 0 #c42a63,0 12px 20px rgba(60,100,180,.25)!important;font-weight:900!important}
+html body #app .secondary,html body #app .resume-result,html body #app .type-card-chip{background:rgba(255,255,255,.9)!important;color:#2d5d9e!important;border:2px solid #fff!important;border-radius:999px!important;box-shadow:0 4px 0 rgba(60,110,190,.25)!important;font-weight:800!important}
+html body #app .quiz-question,html body #app .tama-benefits article,html body #app .trait-section,html body #app .guidance-section,html body #app .result-story,html body #app .advisor-next{background:rgba(255,255,255,.78)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.95)!important;border-radius:26px!important;box-shadow:0 8px 22px rgba(60,110,190,.14)!important}
+html body #app .quiz-question{padding:18px 16px!important;margin:12px 0!important}
+html body #app h1,html body #app h2,html body #app h3{color:#1f3b6e!important}
+html body .site-bottom-nav{background:rgba(255,255,255,.85)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:2px solid #fff!important}
+html body #app .result-hero{background:transparent!important}
+html body #app .result-hero::after{display:none!important}
+html body .quiz-sticky{background:rgba(185,227,255,.85)!important}
+
+html body:not(.is-beyond):has(.result),html body:not(.is-beyond):has(.tama-home),html body:not(.is-beyond):has(.quiz){background:linear-gradient(180deg,#7cc7ff 0%,#b9e3ff 32%,#e4f4ff 62%,#fff 100%) fixed!important}
+html body .tama-top,html body .result-toolbar,html body .top,html body #app .result-toolbar{background:transparent!important;box-shadow:none!important;border:0!important}
+html body #app .result,html body #app .result-reading-layout,html body #app .result-reading-content{background:transparent!important}
+html body #app .result-toolbar .result-toolbar-inner{background:transparent!important}
+html body #app .tama-visual img{mix-blend-mode:multiply}
+
+/* ===== C2：線・帯・色のにごりを消す ===== */
+/* 上の帯を消し、ロゴだけを空に浮かせる */
+html body header.top.tama-top,html body header.top{background:transparent!important;border:0!important;box-shadow:none!important}
+html body .site-brand-logo{filter:drop-shadow(0 0 6px rgba(255,255,255,.95)) drop-shadow(0 2px 0 rgba(255,255,255,.9))}
+/* トップのイラスト：色を混ぜず、角丸の「雲のカード」に入れる（四角い縁の線は切り落とす） */
+html body #app .tama-visual{margin:6px 0 0!important;width:100%!important;padding:6px!important;background:rgba(255,255,255,.92)!important;border-radius:32px!important;box-shadow:0 10px 28px rgba(60,110,190,.22),0 0 0 3px #fff!important;overflow:hidden}
+html body #app .tama-visual img{mix-blend-mode:normal!important;-webkit-mask-image:none!important;mask-image:none!important;border-radius:26px!important;transform:scale(1.025);animation:none!important;display:block}
+html body #app .tama-hero{padding-left:16px!important;padding-right:16px!important}
+/* 雲はうすく、文字の後ろには置かない */
+body::before{opacity:.6}
+/* 設問画面の上の枠：角丸のすりガラスにして、卵を雲のバッジに */
+html body .quiz-sticky{background:rgba(255,255,255,.74)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:2px solid #fff!important;border-radius:26px!important;box-shadow:0 8px 22px rgba(60,110,190,.16)!important;margin:6px 0 12px!important;padding:12px 16px!important}
+html body .quiz-sticky .quiz-egg,html body .quiz-sticky .egg-sprite{filter:drop-shadow(0 4px 6px rgba(60,110,190,.25))}
+html body .quiz-sticky .progress{background:#d6ebff!important;height:10px!important;border-radius:99px!important}
+html body .quiz-sticky .progress>div{background:linear-gradient(90deg,#ff8ab3,#ff4f8b)!important;border-radius:99px!important}
+html body .quiz-sticky span,html body .quiz-sticky small{color:#4d6a96!important}
+html body .quiz-sticky strong{color:#1f3b6e!important}
+/* 下のタブ：線をやめて、浮かせる */
+html body .site-bottom-nav,html body .quiz-page-nav{border-top:0!important;border-radius:24px 24px 0 0!important;box-shadow:0 -8px 24px rgba(60,110,190,.16)!important;background:rgba(255,255,255,.88)!important}
+/* 結果画面：白い帯と縦線をやめ、カードを空に浮かせる */
+html body #app .result-hero{padding-bottom:6px!important}
+html body #app .result-story{margin:14px 14px 0!important;padding:20px 18px!important;border-radius:28px!important;background:rgba(255,255,255,.84)!important;border:2px solid #fff!important;box-shadow:0 10px 26px rgba(60,110,190,.16)!important}
+html body #app .result-story h2{border-left:0!important;padding-left:0!important;margin:0 0 10px!important}
+html body #app .result-lead{background:transparent!important}
+html body #app .result-lead h2{border-left:0!important;padding-left:0!important}
+html body #app .trait-section,html body #app .guidance-section{margin:14px 14px 0!important}
+html body #app .result-toolbar .result-toolbar-inner,html body #app .result-toolbar{background:transparent!important;border:0!important}
+html body #app .result-toolbar button,html body #app .result-toolbar .secondary{background:rgba(255,255,255,.9)!important;border:2px solid #fff!important;box-shadow:0 3px 0 rgba(60,110,190,.2)!important}
+html body:not(.z1):not(.z2):not(.z3) header.top.tama-top,html body:not(.z1):not(.z2):not(.z3) .tama-top{background:transparent!important;border:0!important;box-shadow:none!important}
+html body:not(.z1):not(.z2):not(.z3) .shell>header{background:transparent!important}
+/* ===== C3：白い背景を透過した画像を、空にそのままなじませる ===== */
+html body #app .tama-visual{background:none!important;box-shadow:none!important;border-radius:0!important;padding:0!important;overflow:visible!important;margin:0 -8px 0!important;width:calc(100% + 16px)!important}
+html body #app .tama-visual img{border-radius:0!important;transform:none!important;filter:drop-shadow(0 10px 18px rgba(50,100,180,.28)) drop-shadow(0 0 10px rgba(255,255,255,.55))}
+html body #app .tama-hero{padding-left:20px!important;padding-right:20px!important}
+
+/* 就活面談タブ：空の世界を適用しない */
+html body.is-beyond{background:#fff!important}
+html body.is-beyond::before{display:none!important}
+html body.is-beyond .site-brand-logo{filter:none}
+@media(prefers-reduced-motion:reduce){html body #app .tama-visual img{animation:none!important}}
