@@ -358,7 +358,7 @@ function showResult(){
                 </div>
         ${character(index,code,false)}
       </div>
-      <section class="result-story" aria-labelledby="story-title"><h2 id="story-title">${esc(sourceProfile.catchCopy)}</h2><p>${esc(sourceProfile.intro)}</p><h3>あなたの強み</h3><p>${esc(sourceProfile.highlights.strength)}</p><h3>GDでの役割</h3><p>${esc(sourceProfile.highlights.gdRole)}</p><p>${labels[0]}の進め方を好み、${labels[1]}を感じる環境で、${labels[2]}を生かしながら${labels[3]}を大切にする傾向があります。</p><div class="story-action"><span>今日の小さな一歩</span><p>${esc(profile.actions[0])}</p></div></section>
+      <section class="result-story" aria-labelledby="story-title"><h2 id="story-title">${esc(sourceProfile.catchCopy)}</h2><p>${esc(sourceProfile.intro)}</p><h3>あなたの強み</h3><p>${esc(sourceProfile.highlights.strength)}</p><h3>GDでの役割</h3><p>${esc(sourceProfile.highlights.gdRole)}</p><p>${esc(sourceProfile.highlights.summary)}</p><div class="story-action"><span>今日の小さな一歩</span><p>${esc(profile.actions[0])}</p></div></section>
       <div class="result-reading-layout"><nav class="result-index" aria-label="診断結果の目次"><p>診断レポート</p><div class="result-index-list"><button type="button" data-result-section="result-traits">4つの傾向</button>${guidance.map((section,i)=>`<button type="button" data-result-section="${section.id}"><span>${String(i+1).padStart(2,'0')}</span>${sectionNames[i]}</button>`).join('')}</div></nav><div class="result-reading-content">
       <section class="trait-section" id="result-traits" aria-labelledby="trait-title">
         <div class="trait-heading"><div><span class="eyebrow">診断の傾向</span><h2 id="trait-title" tabindex="-1">あなたの4つの傾向</h2></div><p>「？」から、それぞれの特徴と企業選びのヒントを確認できます。</p></div>
@@ -376,7 +376,7 @@ function showResult(){
       </section>
       ${renderResultGuidance(index,selected)}
       </div></div>
-      <p class="subnote result-caveat">この結果は自己理解のためのヒントです。適性や就職先を決めつけるものではありません。${hasClose?'僅差の軸があります。両方の特徴を参考にしてください。':''}${hasTie?'50％の軸は決め手の設問（行動Q4・環境Q14・関係Q18・価値観Q44）で仮判定しています。その設問も中間の場合は左側で仮判定しています。':''}</p>
+      <p class="subnote result-caveat">この結果は自己理解のためのヒントです。適性や就職先を決めつけるものではありません。${hasClose?'僅差の軸があります。両方の特徴を参考にしてください。':''}${hasTie?'50％の軸は決め手の設問（行動Q11・環境Q16・関係Q25・価値観Q21）で仮判定しています。その設問も中間の場合は左側で仮判定しています。':''}</p>
       <div class="advisor-next"><h2>次は、あなたの話を聞かせて。</h2><p>診断で見つけた自分らしさを、就活を終えた先輩学生と一緒に深めよう。</p><small>「次へ」で面談相手の一覧へ進みます</small></div>
       <div class="actions"><button class="secondary" id="copy">結果をコピー</button><button type="button" class="secondary" id="result-download">診断結果を保存</button><button class="secondary" id="restart">もう一度診断する</button></div>
       <div class="result-next-fixed"><button type="button" class="cta" id="next-advisors" aria-label="就活面談の案内へ進む">就活について相談する</button></div>
