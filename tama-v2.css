@@ -455,3 +455,7 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
   html body .site-bottom-nav{border-radius:20px 20px 0 0;box-shadow:0 -8px 28px rgba(80,60,120,.10)}
   html body{background-image:linear-gradient(180deg,#eef3fb 0%,#fdf2f7 100%);background-attachment:fixed}
 }
+
+/* トップ：テスト版の更新履歴へのリンク */
+#app .tama-changelog{display:block;width:fit-content;margin:10px auto 0;padding:8px 16px;border:1.5px solid #cdbfe6;border-radius:999px;background:#fff;color:#6a4fa3;font-size:13px;font-weight:700;text-decoration:none}
+#app .tama-changelog:active{transform:scale(.98)}
