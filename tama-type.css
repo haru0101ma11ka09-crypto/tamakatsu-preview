@@ -1,0 +1,39 @@
+/* 文字づかい：参考LP（マイキャリ）にならい、本文は黒に近い一色・字間ひろめ・行間1.85に統一。
+   就活面談タブ（body.is-beyond）は、BEYOND CAFE の白黒デザインのまま。 */
+:root{--ink:#1c2233;--sub:#555b6b}
+
+/* 文節で改行（iPhoneのSafariなど。phrase-wrap.js が <wbr> を入れる） */
+html.phrase-wrap body #app *{word-break:keep-all!important;overflow-wrap:anywhere!important;line-break:strict!important}
+/* 見出しの最後の行に、1〜2文字だけ残らないようにする */
+html body #app :is(h1,h2,h3){text-wrap:balance;letter-spacing:.01em!important}
+
+/* 本文の色を、似た紺色の数種類から、黒に近い1色＋グレー1色に */
+html body:not(.is-beyond) #app :is(p,li,dd,dt,summary,td,th,label,small):not(.tama-kicker):not(.page-kicker):not(.tama-section-label):not(.bc-eyebrow):not(.sheet-eyebrow):not(.nickname-title):not(.sample-label):not(.eyebrow):not(.story-action *):not(.advisor-next *){color:#222!important}
+html body:not(.is-beyond) #app :is(.page-intro,.advisor-intro,.subnote,.setup-note,.trait-note,.type-info-note,.link-status,.sheet-footnote,.sample-notice,.tama-facts,.quiz-instruction,.quiz-instruction span,.mentor-message,.support-note,small){color:#555b6b!important}
+/* 小さい見出し（ピンク）は、読める濃さに */
+html body:not(.is-beyond) #app :is(.page-kicker,.tama-section-label,.eyebrow,.sheet-eyebrow){color:#c0225a!important}
+
+/* 字間・行間・大きさ（スマホ） */
+@media(max-width:767px){
+  html body #app :is(p,li,dd):not([class]),html body #app :is(.page-intro,.advisor-intro,.result-story p,.support-section p,.mentor-topic-list li,.type-info p){font-size:15px!important;line-height:1.85!important;letter-spacing:.04em!important}
+}
+@media(min-width:768px){
+  html body #app :is(p,li,dd):not([class]),html body #app :is(.page-intro,.advisor-intro,.result-story p,.support-section p,.mentor-topic-list li,.type-info p){font-size:16px!important;line-height:1.85!important;letter-spacing:.04em!important}
+}
+
+/* ===== メンター紹介：参考LPのアドバイザー紹介にならい、大きな写真・名前・ラベル・ひとこと ===== */
+html body #app .mentor-list{gap:14px!important}
+html body #app .mentor-card{display:block!important;width:min(84vw,330px)!important;flex:0 0 min(84vw,330px)!important;padding:0!important;overflow:hidden!important;text-align:left!important;background:rgba(255,255,255,.88)!important;border:2px solid #fff!important;border-radius:24px!important;box-shadow:0 10px 24px rgba(60,110,190,.16)!important}
+html body #app .mentor-card .mentor-portrait{display:block!important;width:100%!important;aspect-ratio:4/3!important;margin:0!important;border-radius:0!important;overflow:hidden!important;background:#e9f4ff}
+html body #app .mentor-card .mentor-portrait img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:50% 20%!important;border-radius:0!important}
+html body #app .mentor-card-copy{display:block!important;padding:16px 16px 18px!important}
+html body #app .mentor-card strong,html body #app .mentor-profile h1{display:block;margin:6px 0 2px!important;font-size:26px!important;line-height:1.3!important;color:#1f3b6e!important;font-weight:900!important;letter-spacing:.02em!important}
+html body #app .mentor-card .mentor-message{display:block;margin:0 0 10px!important;font-size:14px!important;line-height:1.6!important;font-weight:700!important}
+html body #app .mentor-facts{display:grid!important;gap:8px!important;margin:0 0 12px!important}
+html body #app .mentor-facts>span{display:grid!important;grid-template-columns:7.2em 1fr;align-items:center;gap:8px;font-size:13px!important;line-height:1.5!important;color:#222!important;letter-spacing:.03em}
+html body #app .mentor-facts b{display:inline-block;padding:3px 10px;border-radius:99px;background:#eaf5ff;color:#c0225a;font-size:12px!important;font-weight:800;text-align:center;letter-spacing:.02em}
+html body #app .mentor-voice-label{display:block;margin:0 0 6px;color:#c0225a;font-size:13px!important;font-weight:800}
+html body #app .mentor-voice{display:block;padding:12px 14px;border-radius:14px;background:#f4f9ff;color:#222!important;font-size:14px!important;line-height:1.8!important;letter-spacing:.04em}
+html body #app .mentor-card .mentor-more{display:block;margin-top:12px!important;color:#c0225a!important;font-weight:800;font-size:14px!important}
+html body #app .mentor-profile .mentor-facts{max-width:420px;margin:10px auto 0!important;text-align:left}
+html body #app .mentor-profile .mentor-profile-head{text-align:center}
