@@ -16,10 +16,7 @@ dt{font-weight:700;color:var(--violet);font-size:14px}dd{margin:0;font-size:15px
 table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 14px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(128,100,175,.12);font-size:13px}.note{font-size:14px;color:var(--sub);margin:8px 0 0}.ok{font-weight:800;color:#2a8a5c}.back{display:inline-block;margin-top:8px;color:var(--violet);font-weight:700}
 </style></head><body><main>
 <h1>タマ活 更新履歴</h1><p class="lead">何を・どこを・どう直したかを、直す前と直した後の画面つきでまとめています。新しい更新ほど上です。</p>
-<section class="entry"><p class="date">2026-10-28</p><h2>テスト版の画面から、更新履歴へ行けるように</h2><p class="intro">更新履歴のページが、テスト版の画面の中から開けませんでした。入口を足しました。</p>
-<article class="item"><h3>トップ画面に「テスト版の更新履歴を見る」リンクを追加</h3>
-<dl><div><dt>どこを</dt><dd>トップ画面（「45の質問・16の就活タイプ・約5分で完了」の下）</dd></div><div><dt>どう直した</dt><dd>タップすると、この更新履歴ページが開きます。下のタブ（5つ）は、決まりなので増やしていません。公開するときは、このリンクを外します。</dd></div><div><dt>きっかけの声</dt><dd>「更新履歴が、タマ活の中に入っていない」</dd></div></dl>
-<div class="ba"><figure><figcaption class="b">直す前</figcaption><img src="img/2026-10-28-cl-before.png" alt="直す前" loading="lazy"></figure><figure><figcaption class="a">直した後</figcaption><img src="img/2026-10-28-cl-after.png" alt="直した後" loading="lazy"></figure></div></article></section><section class="entry"><p class="date">2026-10-28</p><h2>診断結果の偏りの検証（設問v3）</h2><p class="intro">新しい設問45問（v3）で、特定のタイプに偏らないかを、計算で確かめました。<span class="ok">結論：設問の作りに、大きな偏りはありませんでした。</span></p>
+<section class="entry"><p class="date">2026-10-28</p><h2>診断結果の偏りの検証（設問v3）</h2><p class="intro">新しい設問45問（v3）で、特定のタイプに偏らないかを、計算で確かめました。<span class="ok">結論：設問の作りに、大きな偏りはありませんでした。</span></p>
 <article class="item"><h3>やったこと</h3>
 <dl><div><dt>方法</dt><dd>実際の採点ロジック（逆向きの設問の反転、軸ごとの％、50％のときの決め手の設問）をそのまま使い、回答をコンピューターで作って、5つの条件で各20万人分、診断しました。</dd></div><div><dt>見たこと</dt><dd>16タイプの出方、出ないタイプがないか、同点になる軸の数、50％前後になる軸の数。</dd></div></dl>
 <table><tr><th>条件</th><th>16タイプの出方</th><th>最大÷最小</th></tr>
