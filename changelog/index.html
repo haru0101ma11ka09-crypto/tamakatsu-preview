@@ -13,10 +13,23 @@ h3{font-size:18px;line-height:1.5;margin:0 0 10px}dl{margin:0 0 14px}dl div{disp
 dt{font-weight:700;color:var(--violet);font-size:14px}dd{margin:0;font-size:15px}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}figure{margin:0}figcaption{font-weight:800;font-size:14px;text-align:center;margin-bottom:6px}
 .b{color:var(--sub)}.a{color:var(--pink)}img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
-.back{display:inline-block;margin-top:8px;color:var(--violet);font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 14px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(128,100,175,.12);font-size:13px}.note{font-size:14px;color:var(--sub);margin:8px 0 0}.ok{font-weight:800;color:#2a8a5c}.back{display:inline-block;margin-top:8px;color:var(--violet);font-weight:700}
 </style></head><body><main>
 <h1>タマ活 更新履歴</h1><p class="lead">何を・どこを・どう直したかを、直す前と直した後の画面つきでまとめています。新しい更新ほど上です。</p>
-<section class="entry"><p class="date">2026-10-28</p><h2>公開前の仕上げ：PC表示とシェア画像</h2><p class="intro">公開前チェックのうち、画面だけで直せる2点を直しました。</p><article class="item"><h3>PC表示で、下のタブを中央の列にそろえる</h3>
+<section class="entry"><p class="date">2026-10-28</p><h2>診断結果の偏りの検証（設問v3）</h2><p class="intro">新しい設問45問（v3）で、特定のタイプに偏らないかを、計算で確かめました。<span class="ok">結論：設問の作りに、大きな偏りはありませんでした。</span></p>
+<article class="item"><h3>やったこと</h3>
+<dl><div><dt>方法</dt><dd>実際の採点ロジック（逆向きの設問の反転、軸ごとの％、50％のときの決め手の設問）をそのまま使い、回答をコンピューターで作って、5つの条件で各20万人分、診断しました。</dd></div><div><dt>見たこと</dt><dd>16タイプの出方、出ないタイプがないか、同点になる軸の数、50％前後になる軸の数。</dd></div></dl>
+<table><tr><th>条件</th><th>16タイプの出方</th><th>最大÷最小</th></tr>
+<tr><td>完全ランダム（1〜5を同じ確率で）</td><td>最多 6.8％、最少 5.8％（理想は6.25％）</td><td>1.2倍</td></tr>
+<tr><td>本人の傾向あり（現実に近い想定）</td><td>最多 6.5％、最少 5.9％</td><td>1.1倍</td></tr>
+<tr><td>「あてはまる」と答えやすい人（弱め）</td><td>ASTG・ACTGがやや多く、DCIPがやや少ない</td><td>1.3倍</td></tr>
+<tr><td>「あてはまる」と答えやすい人（強め）</td><td>ASTG 7.9％、ASTP 7.5％が多く、DCIP 4.9％が少ない</td><td>1.6倍</td></tr>
+<tr><td>挑戦・協働・自己実現が同時に高い人が多い集団</td><td>ACTG 11.6％、ASIP 11.0％が多く、DSIG 4.0％が少ない</td><td>2.9倍（集団の偏りによる）</td></tr></table>
+<p class="note">どの条件でも、出ないタイプは0でした。</p></article>
+<article class="item"><h3>わかったこと</h3>
+<dl><div><dt>設問の偏り</dt><dd>各軸で、左側（A・C・T・G）が選ばれる割合は、50〜51％。均等でした。</dd></div><div><dt>同点・半々</dt><dd>1人あたり、同点の軸は0.12個（約8人に1人が、どこかの軸で同点）。45〜55％の軸は0.6個。「％が半々で説明と合わない」という声は、この数字のためです。％の横に「やや〜寄り」を足して対応しました。</dd></div><div><dt>わずかな傾き</dt><dd>設問数が、行動A6・D5、環境S6・C5、関係T6・I5と、片方が1問多い軸があります。何でも「あてはまる」と答える人は、A・T・Sに少し寄ります。極端な結果にはならないので、直していません。</dd></div><div><dt>アンケートとの関係</dt><dd>テスト回答15人のうち、ACTGは6人（40％）でした。計算上は、設問の偏りが主な原因ではなさそうです。回答者が、運営の知り合いの学生中心だったことが、影響した可能性があります。古い設問でも、ほぼ同じ計算結果でした。</dd></div><div><dt>当てはまり度</dt><dd>「結果のタイプが自分に当てはまる」（4か5）は、15人中14人でした。</dd></div></dl></article>
+<article class="item"><h3>この検証でわからないこと</h3>
+<p class="note" style="margin:0">計算で見ているのは、設問の「作り（向きと数）」だけです。設問の言い方による答えやすさや、答えを誘導していないかは、見られません。新しい設問のまま、15〜30人に答えてもらうテストで、実際の偏りを確かめる必要があります。</p></article></section><section class="entry"><p class="date">2026-10-28</p><h2>公開前の仕上げ：PC表示とシェア画像</h2><p class="intro">公開前チェックのうち、画面だけで直せる2点を直しました。</p><article class="item"><h3>PC表示で、下のタブを中央の列にそろえる</h3>
 <dl><div><dt>どこを</dt><dd>パソコンで開いたときの、画面下の5つのタブ（診断・就活タイプ・就活面談・公式LINE・先輩紹介）</dd></div><div><dt>どう直した</dt><dd>これまでは、タブが画面いっぱいに広がり、中央の細い画面と離れていました。画面と同じ幅（560px）にそろえ、上の角を丸くしました。</dd></div><div><dt>きっかけの声</dt><dd>公開前チェック「PC表示を整える」</dd></div></dl>
 <div class="ba"><figure><figcaption class="b">直す前</figcaption><img src="img/2026-10-28-pc-home-before.png" alt="PC表示で、下のタブを中央の列にそろえる 直す前" loading="lazy"></figure><figure><figcaption class="a">直した後</figcaption><img src="img/2026-10-28-pc-home-after.png" alt="PC表示で、下のタブを中央の列にそろえる 直した後" loading="lazy"></figure></div></article><article class="item"><h3>PC表示で、設問の「次の4問」バーもそろえる</h3>
 <dl><div><dt>どこを</dt><dd>パソコンで開いたときの、設問画面の下のバー</dd></div><div><dt>どう直した</dt><dd>これまでは、画面より広い幅で表示されていました。中央の列と同じ幅にそろえました。</dd></div><div><dt>きっかけの声</dt><dd>公開前チェック「PC表示を整える」</dd></div></dl>
