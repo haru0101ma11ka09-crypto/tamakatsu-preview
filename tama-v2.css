@@ -434,3 +434,8 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 /* トップの「45の質問／16タイプ」行：狭い幅で右端が切れないよう折り返す */
 #app .tama-facts{flex-wrap:wrap;row-gap:4px;column-gap:14px;padding:0 8px}
 #app .tama-facts span{white-space:nowrap}
+
+/* 前回の結果を見る（トップ） */
+#app .resume-result{display:block;width:100%;margin-top:12px;min-height:48px;padding:10px 18px;border:2px solid var(--result-accent,#8064af);border-radius:999px;background:#fff;color:#5a3f8a;font:800 15px/1.4 inherit;font-family:inherit;cursor:pointer}
+#app .resume-result:active{transform:scale(.98)}
+.hatch-skip.is-ready{background:#fff!important;color:#4a2f7a!important;border:2px solid #8064af!important;font-size:14px!important;font-weight:800!important}
