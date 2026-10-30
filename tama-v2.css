@@ -509,3 +509,9 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 #app .result .result-hero .nickname-title{color:#fff!important;font-weight:700!important;text-shadow:0 1px 8px rgba(30,60,120,.45)}
 /* 空の色をやわらかく（そのタイプの色を白でうすめる） */
 #app .result-hero{background:linear-gradient(180deg,color-mix(in srgb,var(--tone) 52%,#fff) 0%,color-mix(in srgb,var(--tone2) 85%,#fff) 62%,#fff 100%)!important}
+/* 電話でのご案内への同意チェック（入力画面） */
+#app .consent-field{margin:4px 0 22px}
+#app .consent-option{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:14px;font-weight:700;line-height:1.6;cursor:pointer}
+#app .consent-option input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:#e5386f}
+#app .consent-option:has(input:checked){border-color:#e5386f;background:#fff5f8}
+#app .consent-option:has(input[aria-invalid="true"]){border-color:#aa2b2b}
