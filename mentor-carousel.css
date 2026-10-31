@@ -133,3 +133,4 @@
 .mc-star-row label span{color:#d8dbe3}
 .mc-star-row label:hover span,.mc-star-row label:hover~label span,.mc-star-row input:checked~label span{color:#f5b301}
 .mc-career li span,.mc-topics li span{color:#fff}
+.mc-mine{font-size:11px;font-weight:800;color:#fff;background:#3f9c6d;border-radius:999px;padding:2px 8px}
