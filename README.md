@@ -3,7 +3,7 @@
 公開ページ：https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/
 
 > このページは、実際にみんなが診断する本番ページとして使っています（tamakatsu.pages.dev は現在使っていません）。
-> 電話番号フォームは、同意にチェックして「次へ」を押すと、架電管理用のGoogleスプレッドシートに送信されます。送信先は`site-config.js`の`webhookUrl`で設定し、空のあいだは何も送信しません。公式LINE・予約はまだ未接続です。メンター紹介の写真は実際のメンター4名で、お名前・プロフィールは準備中（特徴と紹介文は仮）です。
+> 電話番号フォームは、同意にチェックして「次へ」を押すと、架電管理用のGoogleスプレッドシートに送信されます。送信先は`site-config.js`の`webhookUrl`で設定し、空のあいだは何も送信しません。公式LINE・予約はまだ未接続です。メンター紹介は実際のメンター4名（RYOUGA・AYAKA・HARUTO・RIONA）で、業種・大学・自己紹介は準備中（特徴と紹介文は仮）です。メンターへのレビューは、送信先（`reviewWebhookUrl`）が空のあいだは送信されません。届いたレビューは、確認してから `mentors-data.js` に足すとページに出ます。
 > 同意文言（電話をかける目的の説明）はまだ「仮」です（先輩が正式な文言を作成中）。正式な文言が決まったら、`index.html`の文言と`CONSENT_VERSION`を更新してください。
 
 ## 2人での編集の流れ（かんたん版）
@@ -30,7 +30,8 @@ GitHub のページ上だけで編集できます。ソフトのインストー�
 | 45問の設問、16タイプの結果文章 | `diagnosis-data.js`（**採点・文言は勝手に変えない。相談してから**） |
 | 結果の詳細レポートの文章 | `result-guidance.js`（同上） |
 | 公式LINEのURL、架電管理シートへの送信先URL（決まったら入れる） | `site-config.js` |
-| メンター紹介（お名前・番号・特徴・プロフィール・紹介文） | `mentors-data.js`（写真は `assets/mentors/`） |
+| メンター紹介（お名前・番号・特徴・業種・相談にのれること・プロフィール・掲載するレビュー） | `mentors-data.js`（写真は `assets/mentors/`） |
+| メンターへのレビューの送信先URL（決まったら入れる） | `site-config.js` の `reviewWebhookUrl` |
 | 画像・動画 | `assets/` フォルダ |
 | 結果画面の確認用ページ | `result-preview.html?type=ACTP`（`ACTP` を他のタイプに変えて確認） |
 
