@@ -39,27 +39,6 @@
 .mc-dots i{width:9px;height:9px;border-radius:50%;border:2px solid var(--mc-ink);background:#fff}
 .mc-dots i.on{background:var(--mc-ink)}
 
-/* 詳しく見るページ */
-.mc-detail-head{display:grid;gap:8px;margin:18px 0 8px}
-.mc-detail-head .mc-photo{max-width:340px;width:100%;margin:0 auto}
-.mc-detail-head .mc-body{padding:12px 0 0}
-.mc-detail-head h1{font-size:24px!important}
-.mc-profile{margin:0;display:grid;border-top:1px solid #e3e8f5}
-.mc-profile div{display:grid;grid-template-columns:7.5em 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #e3e8f5}
-.mc-profile dt{font-weight:800;color:var(--mc-accent);font-size:14px}
-.mc-profile dd{margin:0;font-size:15px;color:var(--mc-ink)}
-.mc-pager{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:22px 0}
-.mc-pager button{border:2px solid var(--mc-line);background:#fff;color:var(--mc-ink);border-radius:999px;padding:10px 14px;font-weight:800;font-size:14px;cursor:pointer;min-height:44px}
-.mc-pager button:first-child{justify-self:start}
-.mc-pager button:last-child{justify-self:end}
-
-@media (min-width:760px){
-  .mc-carousel{margin:0 0 8px}
-  .mc-track{padding:18px 4px 8px;scroll-padding:0 4px}
-  .mc-slide{flex-basis:300px}
-  .mc-detail-head{grid-template-columns:300px 1fr;align-items:start;gap:28px}
-  .mc-detail-head .mc-body{padding-top:20px}
-}
 
 /* ページ全体の段落設定（.support-page p / li の !important）より優先させる */
 #app .mc-catch{font-size:15px!important;line-height:1.25!important;font-weight:900!important;letter-spacing:.1em!important;word-break:keep-all!important;line-break:auto!important}
@@ -69,68 +48,104 @@
 #app .mc-tags li{font-size:13px!important;line-height:1.5!important;font-weight:700!important;letter-spacing:.02em!important}
 #app .mc-profile dd{font-size:15px!important;line-height:1.7!important}
 
-/* 詳しく見るページ：業種・相談にのれること・プロフィール・レビュー */
-.mc-box{background:#fff;border:1px solid #e3e8f5;border-radius:18px;margin:16px 0;overflow:hidden}
-.mc-box>h2,.mc-box-head h2{margin:0!important;font-size:17px!important;line-height:1.5!important;color:var(--mc-ink)}
-.mc-box>h2,.mc-box-head{background:#f6f8fc;padding:14px 18px;border-bottom:1px solid #e3e8f5}
-.mc-box-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.mc-box>:not(h2):not(.mc-box-head){margin-left:18px;margin-right:18px}
-.mc-career,.mc-topics{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:16px 18px}
-#app .mc-career li,#app .mc-topics li{font-size:14px!important;line-height:1.4!important;font-weight:800!important;letter-spacing:.03em!important;color:#fff;border-radius:8px;padding:8px 12px}
-.mc-career li.is-industry{background:#e07a8a}
-.mc-career li.is-status{background:#6f95cf}
-.mc-career li.is-school{background:#c9a227}
-.mc-topics li{background:#3f9c6d}
-.mc-bio{padding:16px 0 4px}
-#app .mc-bio p{font-size:15px!important;line-height:1.9!important;margin:0 0 14px;color:var(--mc-ink)}
-.mc-rec-title{font-size:15px!important;margin:4px 18px 8px!important;color:var(--mc-accent)}
-.mc-rec{margin:0 18px 18px!important;padding-left:1.2em}
-#app .mc-rec li{font-size:15px!important;line-height:1.75!important;margin:4px 0}
-.mc-write{border:0;background:#f2b85a;color:#fff;font-weight:800;font-size:14px;border-radius:10px;padding:10px 14px;cursor:pointer;min-height:42px;white-space:nowrap}
-.mc-write:focus-visible{outline:3px solid #4992da;outline-offset:2px}
-.mc-stars{display:inline-flex;gap:1px;font-size:20px;line-height:1;vertical-align:middle}
+@media (min-width:760px){
+  .mc-carousel{margin:0 0 8px}
+  .mc-track{padding:18px 4px 8px;scroll-padding:0 4px}
+  .mc-slide{flex-basis:300px}
+}
+
+/* ===== 詳しく見るページ ===== */
+.mc-detail{--mc-bg:#fff;--mc-pink:#e5386f;--mc-pink-soft:#fdecf2;--mc-blue:#2f6fc0;--mc-blue-soft:#e9f2fd;--mc-green:#23845a;--mc-green-soft:#e6f5ed;--mc-yellow-soft:#fff7e0}
+/* 写真と名前 */
+.mc-hero{display:grid;gap:18px;background:#fff;border:2px solid var(--mc-line);border-radius:28px;padding:16px 16px 22px;margin:14px 0 14px;box-shadow:0 6px 0 var(--mc-line)}
+.mc-hero .mc-photo{max-width:300px;width:100%;margin:0 auto}
+.mc-hero-body{display:grid;gap:8px;text-align:center;justify-items:center}
+.mc-hero-body h1{margin:0!important;font-size:30px!important;line-height:1.25!important;letter-spacing:.06em;color:var(--mc-ink)}
+.mc-hero .mc-tags{justify-content:center}
+/* ページ内リンク */
+.mc-jump{display:flex;gap:8px;overflow-x:auto;margin:0 -20px 6px;padding:4px 20px 10px;scrollbar-width:none}
+.mc-jump::-webkit-scrollbar{display:none}
+.mc-jump a{flex:0 0 auto;text-decoration:none;font-weight:800;font-size:14px;color:var(--mc-ink);background:#fff;border:1.5px solid #cfd6e6;border-radius:999px;padding:9px 14px;white-space:nowrap}
+.mc-jump a:focus-visible{outline:3px solid #4992da;outline-offset:2px}
+/* 各項目 */
+.mc-sec{background:#fff;border-radius:22px;padding:20px 20px 22px;margin:12px 0;box-shadow:0 1px 0 #e3e8f5,0 8px 24px rgba(31,42,77,.06);scroll-margin-top:16px}
+.mc-sec h2{display:flex;align-items:center;gap:10px;margin:0 0 14px!important;font-size:19px!important;line-height:1.4!important;color:var(--mc-ink);outline:none}
+.mc-sec-mark{width:6px;height:22px;border-radius:4px;background:var(--mc-pink);flex:0 0 auto}
+/* 業種・職種 / 相談にのれること */
+.mc-career,.mc-topics{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0}
+#app .mc-career li,#app .mc-topics li{font-size:15px!important;line-height:1.4!important;font-weight:800!important;letter-spacing:.03em!important;border-radius:999px;padding:9px 15px;margin:0}
+.mc-career li.is-industry{background:var(--mc-pink-soft)}.mc-career li.is-industry span{color:#c42a5c}
+.mc-career li.is-job{background:var(--mc-blue-soft)}.mc-career li.is-job span{color:var(--mc-blue)}
+.mc-career li.is-status{background:var(--mc-green-soft)}.mc-career li.is-status span{color:var(--mc-green)}
+.mc-topics li{background:#f3f5fa}.mc-topics li span{color:var(--mc-ink)}
+/* プロフィール */
+#app .mc-detail .mc-bio p{font-size:16px!important;line-height:1.95!important;letter-spacing:.03em!important;font-weight:500!important;margin:0 0 16px!important}
+#app .mc-detail .mc-bio p:last-child{margin-bottom:0!important}
+/* こんな人におすすめ */
+.mc-rec{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+#app .mc-detail .mc-rec li{display:flex;gap:10px;align-items:flex-start;background:var(--mc-yellow-soft);border-radius:14px;padding:12px 14px;font-size:15px!important;line-height:1.7!important;margin:0}
+.mc-check{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:#f2b85a;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:900;margin-top:2px}
+/* 相談の進め方 */
+#app .mc-detail .mc-style{font-size:16px!important;line-height:1.9!important;margin:0!important;padding:14px 16px;border-left:4px solid var(--mc-blue);background:var(--mc-blue-soft);border-radius:0 14px 14px 0}
+/* レビュー */
+.mc-summary{display:flex;align-items:center;gap:14px;background:#fff8e6;border-radius:18px;padding:14px 18px;margin:0 0 6px}
+.mc-summary .mc-avg{font-size:40px;line-height:1;font-weight:900;color:#f5a300}
+.mc-summary div{display:grid;gap:4px}
+.mc-summary .mc-stars{font-size:22px}
+.mc-summary span:not(.mc-stars){font-size:13px;font-weight:700;color:var(--mc-sub)}
+.mc-summary.is-sample{background:#f4f5f9}.mc-summary.is-sample .mc-avg{color:#9aa3b5}
+.mc-stars{display:inline-flex;gap:1px;font-size:18px;line-height:1;vertical-align:middle}
 .mc-stars i{font-style:normal;color:#d8dbe3}.mc-stars i.on{color:#f5b301}
-.mc-rating{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:16px 0;margin:0!important;border-bottom:1px solid #e3e8f5}
-.mc-rating span{font-weight:800;font-size:14px;color:var(--mc-ink)}
-.mc-rating b,.mc-rating-mini b{font-size:24px;color:#f5a300;font-weight:900}
-.mc-rating small{color:var(--mc-sub);font-size:13px}
-.mc-rating-mini{display:flex;align-items:center;gap:6px;margin:6px 0 0!important}
-.mc-rating-mini b{font-size:18px}.mc-rating-mini span{font-size:13px;color:var(--mc-sub)}
-.mc-review-list{list-style:none;padding:0;margin:0}
-.mc-review-list>li{padding:16px 0;border-bottom:1px solid #e3e8f5}
-.mc-review-list>li:last-child{border-bottom:0}
-.mc-review-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.mc-review-meta .mc-stars{font-size:16px}
+.is-sample .mc-stars i.on,.mc-summary.is-sample .mc-stars i.on{color:#c3c9d6}
+#app .mc-detail .mc-sample-note{font-size:13px!important;line-height:1.7!important;margin:0 0 10px!important;color:var(--mc-sub)}
+.mc-review-list{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}
+#app .mc-detail .mc-review-list>li{background:#f8f9fc;border-radius:16px;padding:14px 16px;margin:0;font-size:15px!important}
+.mc-review-list>li.is-mine{background:var(--mc-green-soft)}
+.mc-review-list>li.is-sample{background:#fafbfd;border:1.5px dashed #d5dbe8}
+.mc-review-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-bottom:6px}
 .mc-review-meta b{font-size:14px;color:var(--mc-ink)}
 .mc-review-meta time{font-size:12px;color:var(--mc-sub)}
-#app .mc-review-list p,#app .mc-empty{font-size:15px!important;line-height:1.8!important;margin:0}
-.mc-empty{padding:16px 0;color:var(--mc-sub)}
-.mc-review-form{display:grid;gap:14px;padding:16px 0 18px;border-top:1px dashed #e3e8f5}
+#app .mc-detail .mc-review-list p{font-size:15px!important;line-height:1.8!important;margin:0!important}
+.mc-badge-sample{font-size:11px;font-weight:800;color:#5f6b8e;background:#e8ebf2;border-radius:999px;padding:2px 9px}
+.mc-mine{font-size:11px;font-weight:800;color:#fff;background:var(--mc-green);border-radius:999px;padding:2px 9px}
+#app .mc-detail .mc-empty{font-size:15px!important;line-height:1.8!important;margin:0!important;color:var(--mc-sub)}
+.mc-write{display:block;width:100%;margin-top:14px;border:2px solid var(--mc-ink);background:#fff;color:var(--mc-ink);font-weight:800;font-size:15px;border-radius:999px;padding:12px 16px;cursor:pointer;min-height:48px}
+.mc-write:hover{background:#f3f5fa}
+.mc-write:focus-visible{outline:3px solid #4992da;outline-offset:2px}
+.mc-thanks{margin:12px 0 0!important;padding:14px 16px;background:var(--mc-green-soft);border-radius:12px;font-weight:700;color:#1d6b48;outline:none}
+/* レビューのフォーム */
+.mc-review-form{display:grid;gap:16px;margin-top:16px;padding-top:16px;border-top:1px dashed #d5dbe8}
 .mc-review-form .field{display:grid;gap:6px}
-.mc-review-form label{font-weight:800;font-size:14px;color:var(--mc-ink)}
-.mc-review-form input[type=text],.mc-review-form input:not([type]),.mc-review-form textarea{width:100%;box-sizing:border-box;border:1.5px solid #cfd6e6;border-radius:12px;padding:12px;font:inherit;font-size:16px;background:#fff}
-.mc-review-form textarea{resize:vertical;min-height:120px}
-.mc-review-form .cta{width:100%}
+.mc-review-form label{font-weight:800;font-size:14px}
 .mc-star-input{border:0;padding:0;margin:0;min-width:0}
 .mc-star-input legend{padding:0;font-weight:800;font-size:14px;color:var(--mc-ink);margin-bottom:6px}
 .mc-star-row{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:2px}
 .mc-star-input input{position:absolute;opacity:0;width:1px;height:1px}
-.mc-star-input label{font-size:34px!important;line-height:1;color:#d8dbe3;cursor:pointer;padding:2px}
-.mc-star-input label:hover,.mc-star-input label:hover~label,.mc-star-input input:checked~label{color:#f5b301}
-.mc-star-input input:focus-visible+label{outline:3px solid #4992da;border-radius:6px}
-#app .mc-form-note{font-size:13px!important;line-height:1.7!important;color:var(--mc-sub);margin:0}
-.mc-thanks{margin:0 0 16px!important;padding:14px 16px;background:#edf8f1;border-radius:12px;font-weight:700;color:#256b47}
-
-/* 共通の入力欄・段落の設定より優先させる */
-#app .mc-reviews .mc-empty,#app .mc-reviews .mc-rating,#app .mc-reviews .mc-review-list,#app .mc-reviews .mc-review-form,#app .mc-reviews .mc-thanks{margin-left:18px!important;margin-right:18px!important}
-#app .mc-reviews .mc-thanks{margin-top:16px!important}
-#app .mc-star-input label{color:#d8dbe3!important;font-size:34px!important;line-height:1!important}
-#app .mc-star-row label:hover,#app .mc-star-row label:hover~label,#app .mc-star-row input:checked~label{color:#f5b301!important}
-#app .mc-review-form input#mc-review-name,#app .mc-review-form textarea{display:block;width:100%!important;height:auto!important;min-height:48px;box-sizing:border-box;border:1.5px solid #cfd6e6!important;border-radius:12px!important;padding:12px!important;font-size:16px!important;line-height:1.6!important;background:#fff!important;box-shadow:none!important;margin:0!important}
-#app .mc-review-form textarea{min-height:120px}
-#app .mc-review-form input#mc-review-name:focus,#app .mc-review-form textarea:focus{outline:3px solid #4992da;outline-offset:1px;border-color:#4992da!important}
-/* 文字色は内側の span に（ページ全体の「文字を黒に」の設定を避けるため） */
+#app .mc-star-input label{font-size:36px!important;line-height:1!important;cursor:pointer;padding:2px}
 .mc-star-row label span{color:#d8dbe3}
 .mc-star-row label:hover span,.mc-star-row label:hover~label span,.mc-star-row input:checked~label span{color:#f5b301}
-.mc-career li span,.mc-topics li span{color:#fff}
-.mc-mine{font-size:11px;font-weight:800;color:#fff;background:#3f9c6d;border-radius:999px;padding:2px 8px}
+.mc-star-input input:focus-visible+label{outline:3px solid #4992da;border-radius:6px}
+#app .mc-review-form input#mc-review-name,#app .mc-review-form textarea{display:block;width:100%!important;height:auto!important;min-height:48px;box-sizing:border-box;border:1.5px solid #cfd6e6!important;border-radius:12px!important;padding:12px!important;font-size:16px!important;line-height:1.6!important;background:#fff!important;box-shadow:none!important;margin:0!important;font-family:inherit}
+#app .mc-review-form textarea{min-height:120px;resize:vertical}
+#app .mc-review-form input#mc-review-name:focus,#app .mc-review-form textarea:focus{outline:3px solid #4992da;outline-offset:1px;border-color:#4992da!important}
+#app .mc-form-note{font-size:13px!important;line-height:1.7!important;color:var(--mc-sub);margin:0!important}
+.mc-review-form .cta{width:100%}
+/* 前後のメンター */
+.mc-pager{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:22px 0}
+.mc-pager button{border:2px solid var(--mc-line);background:#fff;color:var(--mc-ink);border-radius:999px;padding:10px 14px;font-weight:800;font-size:14px;cursor:pointer;min-height:44px}
+.mc-pager button:first-child{justify-self:start}
+.mc-pager button:last-child{justify-self:end}
+.mc-pager button:focus-visible{outline:3px solid #4992da;outline-offset:2px}
+
+@media (min-width:760px){
+  .mc-hero{grid-template-columns:210px 1fr;align-items:center;gap:24px;padding:20px 24px 20px 20px}
+  .mc-hero .mc-photo{max-width:none}
+  .mc-hero-body{text-align:left;justify-items:start}
+  .mc-hero .mc-tags{justify-content:flex-start}
+  .mc-jump{margin:0 0 6px;padding:4px 0 10px}
+}
+@media (prefers-reduced-motion:reduce){.mc-slide{transition:none}}
+.mc-hero-body .mc-tags,.mc-hero-body .mc-rating-mini{justify-self:stretch}
+@media (min-width:760px){.mc-hero-body .mc-tags{justify-content:flex-start}}
+@media (max-width:759px){.mc-hero-body .mc-tags,.mc-hero-body .mc-rating-mini{justify-content:center}}
+@media (min-width:760px){#app .mc-hero .mc-catch{font-size:13px!important;padding:12px 6px;letter-spacing:.06em!important}}
