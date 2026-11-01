@@ -53,17 +53,10 @@
   html body #app .type-directory-grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:20px!important}
   html body #app .type-info{max-width:760px;margin-left:auto;margin-right:auto}
   html body #app .support-page .support-hero,html body #app .support-page .line-entry{max-width:none}
-  html body #app .mentor-directory>h1,html body #app .mentor-directory>.advisor-intro,html body #app .mentor-directory>.sample-notice,html body #app .mentor-directory>.mentor-filters{max-width:760px}
-  html body #app .mentor-list{display:grid!important;grid-template-columns:repeat(3,1fr);gap:24px;overflow:visible!important;padding:0!important;scroll-snap-type:none!important}
-  html body #app .mentor-list>*{flex:none!important;width:auto!important;max-width:none!important}
-  html body #app .mentor-dots{display:none!important}
 
   /* 名前入力のあとの画面・設問：中央の読みやすい幅 */
   html body #app .onboarding,html body #app .quiz-page,html body #app .quiz{max-width:720px;margin-left:auto;margin-right:auto}
 
-  html body #app .mentor-list{margin-left:0!important;margin-right:0!important}
-  html body #app .mentor-card{width:auto!important;flex:none!important}
-  html body #app .mentor-card .mentor-portrait{height:260px!important;aspect-ratio:auto!important}
   /* 大きな一枚絵は、本文と同じ読みやすい幅にそろえる */
   html body #app .support-page .support-character-scene{max-width:860px;margin-left:0;margin-right:auto}
 }
