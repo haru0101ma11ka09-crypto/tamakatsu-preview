@@ -216,9 +216,9 @@ a.tama-wordmark:focus-visible{outline:3px solid #4992da;outline-offset:4px}
 /* ===== メンターと話すメリット ===== */
 .mm{margin:36px 0 8px;--mm-ink:#1f2a4d}
 /* 流れる文字の帯 */
-.mm-band{margin:0 -20px 28px;background:var(--mm-ink);color:#fff;overflow:hidden;transform:rotate(-2deg);padding:10px 0;border-top:2px solid #fff;border-bottom:2px solid #fff}
+.mm-band{margin:0 -20px 28px;background:var(--mm-ink);color:#fff;overflow:hidden;padding:10px 0;border-top:2px solid #fff;border-bottom:2px solid #fff}
 .mm-band-track{display:flex;width:max-content;animation:mm-marquee 22s linear infinite}
-.mm-band-track span{white-space:nowrap;font-weight:900;font-size:15px;letter-spacing:.12em;padding-right:0}
+.mm-band-track span{white-space:nowrap;font-weight:900;font-size:15px;letter-spacing:.12em;padding-right:.6em}
 @keyframes mm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* 数字 */
 .mm-stats{display:grid;justify-items:center;gap:14px;margin:0 0 30px}
