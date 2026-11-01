@@ -262,3 +262,29 @@ a.tama-wordmark:focus-visible{outline:3px solid #4992da;outline-offset:4px}
   .mm-cta{grid-template-columns:1fr 1fr;align-items:center}
 }
 @media (prefers-reduced-motion:reduce){.mm-band-track{animation:none}.mm-anim .mm-reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== 就活面談ページ：メンター紹介への入口（赤いカード） ===== */
+.bc-senpai{padding-top:96px!important}
+.mentor-entry{position:relative;display:grid;justify-items:start;gap:4px;width:100%;text-align:left;background:#d62f27;color:#fff;border:0;border-radius:20px;padding:30px 22px 26px;cursor:pointer;font-family:inherit;box-shadow:0 8px 0 #9e1d17,0 16px 30px rgba(214,47,39,.28);transition:transform .15s ease,box-shadow .15s ease;-webkit-tap-highlight-color:transparent}
+.mentor-entry:hover{transform:translateY(-3px);box-shadow:0 11px 0 #9e1d17,0 20px 34px rgba(214,47,39,.32)}
+.mentor-entry:active{transform:translateY(6px);box-shadow:0 2px 0 #9e1d17,0 6px 14px rgba(214,47,39,.25)}
+.mentor-entry:focus-visible{outline:4px solid #4992da;outline-offset:4px}
+.me-en{font-size:clamp(52px,16vw,76px);line-height:.95;font-weight:900;letter-spacing:.02em;color:#fff;font-family:"Noto Sans JP",sans-serif}
+#app .me-ja{font-size:20px!important;line-height:1.4!important;font-weight:900!important;color:#fff!important;letter-spacing:.06em!important}
+#app .me-sub{margin-top:18px;max-width:calc(100% - 64px);font-size:14px!important;line-height:1.7!important;font-weight:800!important;color:#fff!important}
+.me-arrow{position:absolute;right:20px;bottom:22px;width:52px;height:52px;border-radius:8px;background:#fff;display:grid;place-items:center;animation:me-nudge 1.6s ease-in-out infinite}
+.me-arrow svg{width:28px;height:28px;fill:none;stroke:#d62f27;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+@keyframes me-nudge{0%,60%,100%{transform:translateX(0)}30%{transform:translateX(5px)}}
+/* ワレタマのキャラクター：カードの上で、ぴょこぴょこ歩く */
+.me-charas{position:absolute;right:10px;top:-84px;display:flex;align-items:flex-end;pointer-events:none}
+.me-charas img{width:82px;height:auto!important;margin-left:-14px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.18));transform-origin:50% 100%;animation:me-walk .7s ease-in-out infinite alternate;animation-delay:calc(var(--k) * -.23s)}
+.me-charas img:nth-child(2){width:92px}
+@keyframes me-walk{0%{transform:translateY(0) rotate(-6deg)}100%{transform:translateY(-10px) rotate(6deg)}}
+.me-lines{position:absolute;right:-6px;top:-6px;width:26px;height:26px;background:
+ linear-gradient(#d62f27,#d62f27) 0 60%/10px 3px no-repeat,
+ linear-gradient(#d62f27,#d62f27) 60% 0/3px 10px no-repeat,
+ linear-gradient(45deg,transparent 45%,#d62f27 45% 55%,transparent 55%) 100% 30%/12px 12px no-repeat;animation:me-blink 1.4s ease-in-out infinite}
+@keyframes me-blink{0%,100%{opacity:1}50%{opacity:.25}}
+@media (min-width:760px){.me-charas{right:20px;top:-92px}.me-charas img{width:92px}.me-charas img:nth-child(2){width:102px}.bc-senpai{padding-top:110px!important}}
+@media (prefers-reduced-motion:reduce){.mentor-entry,.me-arrow,.me-charas img,.me-lines{animation:none;transition:none}.mentor-entry:hover,.mentor-entry:active{transform:none}}
+@media (min-width:760px){.me-en{font-size:64px}.me-charas{top:-104px}.bc-senpai{padding-top:120px!important}}
