@@ -303,3 +303,6 @@ a.tama-wordmark:focus-visible{outline:3px solid #4992da;outline-offset:4px}
 .mc-banner-sub span{color:#fff}
 .mc-balloons{top:auto;bottom:6px;width:54px}
 @media (min-width:760px){.mc-balloons{width:84px;bottom:14px}.mc-balloons.left{left:18px}.mc-balloons.right{right:18px}}
+/* 赤いカードの上のキャラクターは外した（上の余白も元に戻す） */
+.bc-senpai{padding-top:44px!important}
+@media (min-width:760px){.bc-senpai{padding-top:44px!important}}
