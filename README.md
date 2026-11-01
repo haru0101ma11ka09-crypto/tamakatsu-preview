@@ -30,7 +30,7 @@ GitHub のページ上だけで編集できます。ソフトのインストー�
 | 45問の設問、16タイプの結果文章 | `diagnosis-data.js`（**採点・文言は勝手に変えない。相談してから**） |
 | 結果の詳細レポートの文章 | `result-guidance.js`（同上） |
 | 公式LINEのURL、架電管理シートへの送信先URL（決まったら入れる） | `site-config.js` |
-| メンター紹介（お名前・番号・特徴・業種・職種・相談にのれること・プロフィール・サンプルレビュー） | `mentors-data.js`（写真は `assets/mentors/`） |
+| メンター紹介（お名前・診断タイプ・特徴・業種・職種・相談にのれること・プロフィール・サンプルレビュー） | `mentors-data.js`（写真は `assets/mentors/`） |
 | メンターへのレビューの送信先URL（決まったら入れる） | `site-config.js` の `reviewWebhookUrl`（作り方は `apps-script/reviews.gs` の先頭） |
 | 画像・動画 | `assets/` フォルダ |
 | 結果画面の確認用ページ | `result-preview.html?type=ACTP`（`ACTP` を他のタイプに変えて確認） |

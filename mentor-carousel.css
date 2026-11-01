@@ -183,3 +183,25 @@
 #app .mc-banner-line.l2{font-size:clamp(40px,12vw,70px)}
 .mc-banner-title .mc-banner-line span{font-family:inherit}
 #app .mc-banner-title{font-weight:900!important;font-synthesis:none}
+
+/* 診断タイプのキャラクター（写真の右上にシールのように） */
+.mc-chara{position:absolute;top:-16px;right:-12px;width:92px;transform:rotate(8deg);filter:drop-shadow(0 3px 0 rgba(31,42,77,.35));z-index:2;pointer-events:none}
+.mc-chara img{display:block;width:100%;height:auto!important;aspect-ratio:4/5;object-fit:contain;background:none!important;border-radius:0!important}
+.mc-slide.is-current .mc-chara{animation:mc-pop .5s ease}
+@keyframes mc-pop{0%{transform:rotate(8deg) scale(.85)}60%{transform:rotate(4deg) scale(1.06)}100%{transform:rotate(8deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.mc-slide.is-current .mc-chara{animation:none}}
+.mc-hero .mc-chara{width:104px}
+/* 「診断タイプ ○○」のラベル */
+.mc-type{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0!important}
+.mc-type span{font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--mc-ink);border-radius:999px;padding:3px 9px}
+.mc-type b{font-size:14px;font-weight:900;color:var(--mc-accent)}
+.mc-hero-body .mc-type{justify-content:center}
+@media (min-width:760px){.mc-hero-body .mc-type{justify-content:flex-start}}
+/* 詳しく見る：診断タイプの項目 */
+.mc-typebox{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.mc-typebox img{width:100%;height:auto!important;aspect-ratio:4/5;object-fit:contain;transform:rotate(-4deg);filter:drop-shadow(0 3px 0 rgba(31,42,77,.25))}
+#app .mc-detail .mc-type-name{font-size:20px!important;line-height:1.4!important;font-weight:900!important;margin:0!important}
+#app .mc-detail .mc-type-code{font-size:13px!important;line-height:1.4!important;font-weight:800!important;letter-spacing:.12em!important;margin:2px 0 0!important}
+#app .mc-detail .mc-type-note{font-size:14px!important;line-height:1.7!important;margin:6px 0 0!important}
+.mc-type-link{margin-top:10px;border:2px solid var(--mc-ink);background:#fff;color:var(--mc-ink);font-weight:800;font-size:14px;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:42px}
+.mc-type-link:focus-visible{outline:3px solid #4992da;outline-offset:2px}
