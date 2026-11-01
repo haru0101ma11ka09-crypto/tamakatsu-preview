@@ -31,6 +31,7 @@ GitHub のページ上だけで編集できます。ソフトのインストー�
 | 結果の詳細レポートの文章 | `result-guidance.js`（同上） |
 | 公式LINEのURL、架電管理シートへの送信先URL（決まったら入れる） | `site-config.js` |
 | メンター紹介（お名前・診断タイプ・特徴・業種・職種・相談にのれること・プロフィール・サンプルレビュー） | `mentors-data.js`（写真は `assets/mentors/`） |
+| メンター紹介の「メンターと話すメリット」と、支援学生数などの数字（確認できた正しい数字だけ） | `mentors-data.js` の `MENTOR_PAGE` |
 | メンターへのレビューの送信先URL（決まったら入れる） | `site-config.js` の `reviewWebhookUrl`（作り方は `apps-script/reviews.gs` の先頭） |
 | 画像・動画 | `assets/` フォルダ |
 | 結果画面の確認用ページ | `result-preview.html?type=ACTP`（`ACTP` を他のタイプに変えて確認） |
