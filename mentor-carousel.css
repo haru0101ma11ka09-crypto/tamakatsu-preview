@@ -205,3 +205,10 @@
 #app .mc-detail .mc-type-note{font-size:14px!important;line-height:1.7!important;margin:6px 0 0!important}
 .mc-type-link{margin-top:10px;border:2px solid var(--mc-ink);background:#fff;color:var(--mc-ink);font-weight:800;font-size:14px;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:42px}
 .mc-type-link:focus-visible{outline:3px solid #4992da;outline-offset:2px}
+
+/* 上のロゴ：押すとトップへ */
+a.tama-wordmark{text-decoration:none;border-radius:14px;transition:transform .15s ease}
+a.tama-wordmark:hover{transform:scale(1.03)}
+a.tama-wordmark:active{transform:scale(.97)}
+a.tama-wordmark:focus-visible{outline:3px solid #4992da;outline-offset:4px}
+@media (prefers-reduced-motion:reduce){a.tama-wordmark{transition:none}a.tama-wordmark:hover,a.tama-wordmark:active{transform:none}}
