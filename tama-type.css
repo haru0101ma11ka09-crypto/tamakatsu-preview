@@ -134,3 +134,18 @@ html body input,html body textarea,html body select{font-size:16px!important}
 html body #app .bc-entry .bc-eyebrow,html body #app .bc-entry h2{color:#fff!important}
 /* カードを開いたとき、閉じるボタンに四角い青枠が出ないように */
 html body .type-card-dialog .type-card-close:focus{outline:none!important}
+
+/* 入力中（キーボードが開いている間）は、下のタブバーを隠す。キーボードの上に浮いて内容に重なるため */
+html body:has(input:focus,textarea:focus,select:focus) .site-bottom-nav{display:none!important}
+/* 文字のまとまり：見出しや短い説明は行の長さをそろえ、1〜2文字だけ次の行に残るのを防ぐ。ボタンの文字は折り返さない */
+html body #app h1,html body #app h2,html body #app h3{text-wrap:balance}
+html body #app p,html body #app li,html body #app dd{text-wrap:pretty}
+/* 結果画面のアコーディオン見出し：「あなたの弱み・苦手なこと」が2文字だけ次の行に落ちないよう、少しだけ小さく */
+html body #app .guidance-heading,html body #app .guidance-heading span{font-size:19px!important;letter-spacing:.01em!important}
+/* 結果画面の下の3つのボタン：文字を折り返さず1行に（狭い画面では均等な2行に）収める */
+html body #app .actions .secondary{font-size:12.5px!important;white-space:nowrap;letter-spacing:0!important;padding-left:2px!important;padding-right:2px!important}
+/* 就活面談の黒いブロック：「あなたらしさを、一緒に深める。」が「深める。」だけ次の行に落ちないよう、1行に（狭い画面では均等な2行に）収める */
+html body #app .bc-entry h2{font-size:20px!important;letter-spacing:0!important;text-wrap:balance}
+/* 「診断でわかること」のカード：余白を少し詰め、「こと。」だけ次の行に落ちないように */
+html body #app .tama-benefits article{padding-left:16px!important;padding-right:16px!important}
+html body #app .tama-benefits p{letter-spacing:0!important}
