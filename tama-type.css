@@ -103,7 +103,7 @@ html body #app .has-title-art .tama-start>p{margin-top:8px!important}
 
 /* 入力欄を、キャラクターの足もとから離し、入力欄とボタンを小さく */
 html body #app .has-title-art .tama-start{margin-top:-6px!important}
-html body #app .has-title-art .tama-start #nickname{min-height:46px!important;height:46px!important;font-size:15px!important}
+html body #app .has-title-art .tama-start #nickname{min-height:46px!important;height:46px!important;font-size:16px!important}
 html body #app .has-title-art .tama-start .cta{min-height:46px!important;height:46px!important;margin-top:8px!important;font-size:15px!important;padding:0 20px!important}
 html body #app .has-title-art .tama-start .cta span{font-size:20px!important}
 html body #app .has-title-art .tama-start>p{margin-top:6px!important;font-size:12px!important;line-height:1.5!important}
@@ -124,3 +124,6 @@ html body .type-card-window .rare-badge{position:absolute;left:50%;bottom:-14px;
 html body .type-card-dialog .rare-note{margin:22px 0 18px;text-align:center;font-size:14px;font-weight:800;color:#a85a00}
 html body .type-card-dialog{padding-bottom:30px}
 @media(prefers-reduced-motion:reduce){html body .type-card-window.type-card-art.is-rare::after{animation:none;opacity:0}}
+
+/* iPhoneのSafariは16px未満の入力欄をタップすると画面を拡大して戻らない。入力欄は16px以上にする */
+html body input,html body textarea,html body select{font-size:16px!important}
