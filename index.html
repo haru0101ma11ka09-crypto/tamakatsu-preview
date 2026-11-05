@@ -57,8 +57,8 @@ Object.entries(finalTypeCards).forEach(([code,card])=>{
   const i=axes.reduce((index,axis,n)=>index*2+axis.letters.indexOf(code[n]),0);
   characters[i]=[card.name,card.name];
 });
-/* 診断カードは、通常版とレア版の2種類。結果を表示するたびに、くじ引きで決める（レアは約5人に1人） */
-const CARD_RARE_RATE=0.2;
+/* 診断カードは、通常版とレア版の2種類。結果を表示するたびに、くじ引きで決める（レアは約5人に2人） */
+const CARD_RARE_RATE=0.4;
 let currentCardRare=false;
 let rareRoll=null,sharedView=false;
 function drawCardRare(){if(rareRoll===null)rareRoll=Math.random()<CARD_RARE_RATE;currentCardRare=rareRoll;return currentCardRare}
@@ -70,7 +70,7 @@ function openTypeCard(code){
   const card=finalTypeCards[code];if(!card)return;
   const trigger=document.activeElement,dialog=document.createElement('dialog');
   dialog.className='type-card-dialog';dialog.setAttribute('aria-label',`${code} ${card.name}の診断カード`);
-  dialog.innerHTML=`<button type="button" class="type-card-close" autofocus aria-label="拡大したカードを閉じる">閉じる ×</button>${currentCardRare?'<p class="rare-note" role="status">✨ レアカードが出ました！出会える人は、5人に1人です。</p>':''}${typeCardMarkup(code)}`;
+  dialog.innerHTML=`<button type="button" class="type-card-close" autofocus aria-label="拡大したカードを閉じる">閉じる ×</button>${currentCardRare?'<p class="rare-note" role="status">✨ レアカードが出ました！出会える人は、5人に2人です。</p>':''}${typeCardMarkup(code)}`;
   dialog.querySelector('.type-card-close').onclick=()=>dialog.close();
   const zoomButton=dialog.querySelector('.type-card-zoom');if(zoomButton)zoomButton.onclick=e=>{const enlarged=dialog.classList.toggle('is-zoomed');e.currentTarget.setAttribute('aria-pressed',String(enlarged));e.currentTarget.textContent=enlarged?'全体を表示 −':'文字を拡大 ＋'};
   dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
