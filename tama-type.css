@@ -169,3 +169,15 @@ html body #app .guidance-heading:focus,html body #app .trait-heading h2:focus{ou
 html body #app .guidance-section:has(>.guidance-heading:focus-visible){outline:3px solid #2867a8;outline-offset:3px;border-radius:26px}
 /* 公式LINEの枠のボタンは、リンクでも、文字を上下の真ん中にそろえる */
 html body #app .line-gate .cta{display:flex!important;align-items:center;justify-content:center;min-height:58px}
+
+/* 結果の引き継ぎコード */
+html body #app .handoff{margin:16px 14px 0;padding:22px 18px;border-radius:24px;background:rgba(255,255,255,.8);border:1px solid #fff;text-align:center;box-shadow:0 8px 24px rgba(20,40,75,.08)}
+html body #app .handoff h2{font-size:18px;line-height:1.4;margin:0 0 8px;color:#14284b}
+html body #app .handoff p{font-size:14px;line-height:1.7;margin:0 0 14px;color:#3d4f73}
+html body #app .handoff-code{display:block;font:700 17px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:#14284b;background:#f1f6ff;border-radius:14px;padding:12px 10px;margin:0 0 14px;user-select:all;-webkit-user-select:all;word-break:keep-all}
+html body #app .handoff .secondary{width:100%}
+html body #app .login-view .field{margin:0 0 16px}
+html body #app .login-view .field label{display:block;font-weight:700;margin:0 0 6px}
+html body #app .login-view .field input{width:100%;box-sizing:border-box;min-height:52px;padding:0 14px;font-size:16px;border-radius:14px;border:2px solid #cfe0f5;background:#fff}
+html body #app .result>.handoff{order:9}
+html body #app .login-view form{margin-top:20px}
