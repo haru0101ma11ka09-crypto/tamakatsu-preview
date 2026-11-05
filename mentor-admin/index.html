@@ -1,4 +1,20 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>ワレタマ｜管理画面入口</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7f1;color:#23392f;font:14px/1.9 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}main{max-width:500px;margin:9vh auto;padding:24px}.brand{font-weight:800;font-size:24px;letter-spacing:2px}.eyebrow{margin-top:40px;font-size:11px;letter-spacing:2px;color:#75856c}.card{background:#fff;border:1px solid #dfe6d8;border-radius:18px;padding:30px;margin-top:20px}h1{font-size:25px;line-height:1.5;margin:12px 0}p{font-size:13px;color:#6c7964}.status{display:inline-block;font-size:11px;background:#fff0d5;color:#856327;border-radius:6px;padding:4px 10px}button{font:inherit;width:100%;padding:12px;border:1px solid #dce3d6;background:#eff2eb;color:#829078;border-radius:9px;margin:12px 0;cursor:not-allowed}a{color:#254d3c;text-underline-offset:4px}.back{display:inline-block;margin-top:24px;font-size:12px}small{display:block;font-size:11px;color:#839078;margin-top:18px}.notice{background:#f6f8f2;padding:14px;border-radius:8px}a:focus-visible{outline:3px solid #89a674;outline-offset:4px}@media(max-width:540px){main{margin:4vh auto;padding:22px}.card{padding:23px}}
-</style></head><body><main><div class="brand">ワレタマ</div><p class="eyebrow">MENTOR WORKSPACE</p><section class="card"><span class="status">本番サーバー接続待ち</span><h1>管理画面の入口</h1><p>このURLはメンター・運営関係者向けの固定入口です。</p><button type="button" disabled>Googleログインは準備中です</button><p class="notice">会社ドメインに限らず、管理者が利用を許可したGoogleアカウントだけが利用できる予定です。</p><p>現在は入口ページのみ公開しています。管理機能や学生情報は表示されません。サーバーとGoogle認証の接続後、この入口から管理画面へ進めるようになります。</p></section><a class="back" href="../">← ワレタマへ戻る</a><small>Produced by BEYOND CAFE</small></main></body></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer"><title>タマ活｜メンター管理デモ</title>
+  <link rel="stylesheet" href="./style.css?v=5">
+  <script src="./seed.js?v=5" defer></script>
+  <script src="./demo-api.js?v=5" defer></script>
+  <script src="./students.js?v=5" defer></script>
+  <script src="./app.js?v=5" defer></script>
+</head>
+<body>
+  <div id="app"><div class="loading">管理画面を読み込んでいます…</div></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="account-dialog" aria-labelledby="account-title"></dialog>
+</body>
+</html>
