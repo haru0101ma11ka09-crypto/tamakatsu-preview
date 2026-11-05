@@ -181,3 +181,10 @@ html body #app .login-view .field label{display:block;font-weight:700;margin:0 0
 html body #app .login-view .field input{width:100%;box-sizing:border-box;min-height:52px;padding:0 14px;font-size:16px;border-radius:14px;border:2px solid #cfe0f5;background:#fff}
 html body #app .result>.handoff{order:9}
 html body #app .login-view form{margin-top:20px}
+
+/* 診断結果の続きを開く「合言葉」入力 */
+html body #app .line-gate .line-unlock-form{margin:16px 0 4px;text-align:left}
+html body #app .line-gate .line-unlock-form label{display:block;font-size:14px;font-weight:700;color:#14284b;margin:0 0 6px}
+html body #app .line-gate .line-unlock-form input{width:100%;box-sizing:border-box;min-height:50px;padding:0 14px;font-size:16px;border-radius:14px;border:2px solid #cfe0f5;background:#fff;margin:0 0 10px}
+html body #app .line-gate .line-unlock-form .secondary{width:100%;min-height:50px}
+html body #app .line-gate .line-unlock-form .field-error{margin:8px 0 0;font-size:13px;color:#c0392b}
