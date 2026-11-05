@@ -40,6 +40,28 @@
   if(!user())error('ログインが必要です。',401);
   if(path==='/api/me')return response({...user(),mentorId:user().mentor_id,csrf:'public-demo-not-authentication'});
   if(path==='/api/logout'){sessionStorage.removeItem(SESSION);return response({ok:true})}
+  if(!Array.isArray(data.students))data.students=[['sample-student-1','mentor-01','サンプル学生 A','new'],['sample-student-2','mentor-01','サンプル学生 B','scheduled'],['sample-student-3','mentor-02','サンプル学生 C','supporting']].map(([id,mentorId,name,status])=>({id,mentorId,name,status,email:'',phone:'',university:'サンプル大学',graduation:'2027',diagnosis:'ACTG',selectedAt:'2026-11-05',nextActionAt:'',notes:'【確認用サンプル】実在する学生の情報ではありません。',version:1,updatedAt:0,events:[]}));
+  function studentAllowed(mid){permit(mid,true)}
+  function studentValues(input){
+   const out={};for(const [key,max] of Object.entries({name:80,email:254,phone:40,university:120,graduation:4,diagnosis:4,selectedAt:10,nextActionAt:10,notes:5000})){const value=input[key]??'';if(typeof value!=='string'||value.trim().length>max)error('入力内容の文字数を確認してください。');out[key]=value.trim()}
+   out.email=out.email.toLowerCase();if(!out.name)error('学生名を入力してください。');if(out.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(out.email))error('メールアドレスを確認してください。');if(out.graduation&&!/^20\d{2}$/.test(out.graduation))error('卒業年は西暦4桁で入力してください。');if(out.diagnosis&&!/^[AD][CS][TI][GP]$/.test(out.diagnosis))error('診断タイプを確認してください。');
+   for(const k of ['selectedAt','nextActionAt'])if(out[k]&&(!/^\d{4}-\d{2}-\d{2}$/.test(out[k])||!Number.isFinite(Date.parse(out[k]))||new Date(out[k]).toISOString().slice(0,10)!==out[k]))error('日付を確認してください。');
+   out.status=input.status||'new';if(!['new','contacted','scheduled','interviewed','supporting','completed','closed'].includes(out.status))error('進捗を確認してください。');return out;
+  }
+  if(path==='/api/students'&&method==='GET')return response({students:data.students.filter(s=>user().role==='admin'||data.mentors.find(m=>m.id===s.mentorId)?.ownerEmail===user().email).map(({events,...s})=>s)});
+  if(path==='/api/students'&&method==='POST'){
+   const mid=body.mentorId;if(!data.mentors.some(m=>m.id===mid))error('担当メンターを選択してください。');studentAllowed(mid);const value=studentValues(body);
+   if(value.email&&data.students.some(s=>s.mentorId===mid&&s.email===value.email))error('このメールアドレスの学生は登録済みです。',409);
+   const id='student-'+crypto.randomUUID(),at=Math.floor(Date.now()/1000);data.students.unshift({...value,id,mentorId:mid,version:1,updatedAt:at,events:[{...value,actor:user().email,at}]});audit('student.create',id);save();return response({ok:true,id},201);
+  }
+  const student=path.match(/^\/api\/students\/([a-zA-Z0-9-]+)$/);
+  if(student){
+   const s=data.students.find(s=>s.id===student[1]);if(!s)error('学生が見つかりません。',404);studentAllowed(s.mentorId);
+   if(method==='GET'){const {events,...value}=s;return response({student:value,events:s.events||[]})}
+   if(method!=='PUT')error('対応していない操作です。',405);if(body.version!==s.version)error('ほかの画面で更新されています。再読み込みしてください。',409);if(body.mentorId&&body.mentorId!==s.mentorId)error('担当メンターはこの画面から変更できません。');const value=studentValues(body);
+   if(value.email&&data.students.some(other=>other.id!==s.id&&other.mentorId===s.mentorId&&other.email===value.email))error('同じメールアドレスの学生が登録されています。',409);
+   Object.assign(s,value);s.version++;s.updatedAt=Math.floor(Date.now()/1000);(s.events??=[]).unshift({...value,actor:user().email,at:s.updatedAt});audit('student.update',s.id);save();return response({ok:true});
+  }
   if(path==='/api/mentors'&&method==='GET')return response({mentors:data.mentors.map(m=>{const value=clone(m);value.canEdit=m.ownerEmail===user().email;if(user().role!=='admin'&&!value.canEdit)delete value.ownerEmail;return value})});
   const emailValid=value=>typeof value==='string'&&value.length<=254&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   function invite(email){const a=data.accounts.find(a=>a.email===email);if(a&&!a.active)error('利用停止中のアカウントです。先に有効にしてください。');if(!a)data.accounts.push({email,role:'mentor',mentor_id:null,active:1})}
