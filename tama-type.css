@@ -158,3 +158,6 @@ html body #app .line-gate p{font-size:15px;line-height:1.7;margin:0 0 14px;color
 html body #app .line-gate .line-gate-eyebrow{font-size:13px;font-weight:800;color:#d6336c;margin:0}
 html body #app .line-gate .cta{display:block;width:100%;box-sizing:border-box;text-align:center;text-decoration:none}
 html body #app .line-gate small{display:block;margin-top:12px;font-size:13px;color:#5b6b8c}
+
+/* 就活面談ページの公式LINEボタンをリンクにしたときの見た目 */
+#app a.bc-btn{text-decoration:none;box-sizing:border-box}
