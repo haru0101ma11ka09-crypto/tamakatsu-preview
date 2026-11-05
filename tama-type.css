@@ -161,3 +161,11 @@ html body #app .line-gate small{display:block;margin-top:12px;font-size:13px;col
 
 /* 就活面談ページの公式LINEボタンをリンクにしたときの見た目 */
 #app a.bc-btn{text-decoration:none;box-sizing:border-box}
+
+/* 開閉する見出し：閉じたカードの上下の余白をそろえる。クリックしたとき見出しだけに四角い線が出るのをやめ、キーボード操作のときだけ、カード全体に線を出す */
+html body #app .guidance-section:not(.is-open){padding-bottom:0!important}
+html body #app .guidance-section:not(.is-open)>.guidance-heading{margin-bottom:0!important}
+html body #app .guidance-heading:focus,html body #app .trait-heading h2:focus{outline:none!important}
+html body #app .guidance-section:has(>.guidance-heading:focus-visible){outline:3px solid #2867a8;outline-offset:3px;border-radius:26px}
+/* 公式LINEの枠のボタンは、リンクでも、文字を上下の真ん中にそろえる */
+html body #app .line-gate .cta{display:flex!important;align-items:center;justify-content:center;min-height:58px}
