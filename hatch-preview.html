@@ -319,7 +319,7 @@ function showQuizPage(page){
 }
 
 const traitCopy=axes.map(a=>a.letters.map((letter,i)=>({title:a.labels[i]+'タイプ',body:importedDiagnosis.traits[letter].text,hint:importedDiagnosis.traits[letter].hint})));
-function lineGateOn(){try{if(localStorage.getItem('tamakatsu:line-unlocked')==='1')return false;}catch(e){}return !!(window.TAMAKATSU_CONFIG?.officialLineUrl)||new URLSearchParams(location.search).get('gate')==='1';}
+function lineGateOn(){try{if(localStorage.getItem('tamakatsu:line-unlocked')==='1')return false;}catch(e){}return true;}
 function lineGateHtml(){const url=window.TAMAKATSU_CONFIG?.officialLineUrl||'';return `<div class="line-gate" id="line-gate"><p class="line-gate-eyebrow">続きは、公式LINEで</p><h2>公式LINEを追加して、診断結果の続きを見よう</h2><p>弱み・立ち回り・おすすめの行動など、続きの内容は、公式LINEを追加すると見られます。</p>${url?`<a class="cta" id="line-unlock" href="${esc(url)}" target="_blank" rel="noopener noreferrer">公式LINEを追加して続きを見る</a>`:`<button type="button" class="cta" id="line-unlock">公式LINEを追加して続きを見る</button>`}<small>追加したあと、この画面に戻ると、すべて見られます。</small></div>`;}
 function unlockResultGate(){try{localStorage.setItem('tamakatsu:line-unlocked','1');}catch(e){}document.getElementById('line-gate')?.remove();document.querySelectorAll('.result-guidance .is-locked').forEach(el=>{el.classList.remove('is-locked');el.removeAttribute('inert');el.removeAttribute('aria-hidden');});document.querySelector('.result-guidance')?.classList.remove('has-gate');}
 function renderResultGuidance(index, selected){
