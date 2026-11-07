@@ -1,0 +1,76 @@
+/* メンター一覧（グリッド）・固定の相談ボタン・診断結果の続きの案内
+   ※ 案の検証用。mentor-carousel.css のあとに読み込む */
+:root{--mg-pink:#d8277b;--mg-pink-soft:#fff0f7;--mg-ink:#172e4c;--mg-sub:#5b6b7e;--mg-line:#e3e8ef;--mg-blue:#2867a8}
+
+/* ---- 絞り込み・列の切り替え ---- */
+.mg{margin:18px 0 8px}
+.mg-filter{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.mg-filter::-webkit-scrollbar{display:none}
+.mg-filter button{flex:none;border:1px solid var(--mg-line);background:#fff;border-radius:999px;font:inherit;font-weight:700;font-size:14px;color:var(--mg-ink);padding:9px 16px;min-height:40px;cursor:pointer}
+.mg-filter button.on{background:var(--mg-ink);border-color:var(--mg-ink);color:#fff}
+.mg-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 12px}
+.mg-count{margin:0;font-size:12.5px;color:var(--mg-sub)}
+.mg-view{display:flex;background:#fff;border:1px solid var(--mg-line);border-radius:10px;overflow:hidden;flex:none}
+.mg-view button{border:0;background:none;font:inherit;font-weight:700;font-size:12.5px;color:var(--mg-sub);padding:8px 13px;min-height:36px;cursor:pointer}
+.mg-view button.on{background:var(--mg-ink);color:#fff}
+
+/* ---- カード ---- */
+.mg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+.mg-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 8px}
+@media(min-width:900px){.mg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.mg-grid.c3{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.mg-card{display:flex;flex-direction:column;min-width:0}
+.mg-open{display:block;width:100%;text-align:left;border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+.mg-pic{position:relative;display:block;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#eaf4ff}
+.mg-pic>img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.mg-chara{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 2px 8px #0003;padding:3px;display:block}
+.mg-chara{overflow:hidden}
+.mg-chara img{width:100%;height:100%;object-fit:cover;object-position:50% 14%;border-radius:50%;display:block}
+.mg-grade{position:absolute;left:8px;bottom:8px;font-size:11px;font-weight:800;color:#fff;border-radius:999px;padding:3px 9px;background:var(--mg-pink)}
+.mg-grade.g28{background:var(--mg-blue)}
+.mg-ribbon{position:absolute;left:0;top:10px;background:var(--mg-pink);color:#fff;font-size:10px;font-weight:800;padding:3px 9px 3px 8px;border-radius:0 999px 999px 0}
+.mg-name{display:block;font-size:15px;font-weight:800;margin-top:8px;color:var(--mg-ink);overflow-wrap:anywhere}
+.mg-catch{display:block;font-size:12px;line-height:1.5;color:var(--mg-sub);margin-top:2px}
+.mg-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.mg-tags i{font-style:normal;font-size:10.5px;font-weight:700;background:var(--mg-pink-soft);color:#a8265a;border-radius:6px;padding:2px 6px}
+.mg-ask{display:block;text-align:center;margin-top:8px;border:1.5px solid var(--mg-pink);background:#fff;color:var(--mg-pink);border-radius:999px;font:inherit;font-weight:800;font-size:13px;padding:8px 0;min-height:40px;text-decoration:none;cursor:pointer}
+.mg-grid.c3 .mg-catch,.mg-grid.c3 .mg-tags,.mg-grid.c3 .mg-ask{display:none}
+.mg-grid.c3 .mg-name{font-size:12px;margin-top:6px}
+.mg-grid.c3 .mg-pic{border-radius:12px}
+.mg-grid.c3 .mg-chara{width:26px;height:26px;top:5px;right:5px;padding:2px}
+.mg-grid.c3 .mg-grade{font-size:9.5px;padding:2px 6px;left:5px;bottom:5px}
+.mg-grid.c3 .mg-ribbon{font-size:9px;padding:2px 7px 2px 6px}
+
+/* ---- 画面の下に固定する相談ボタン ---- */
+.fixed-cta{position:fixed;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;justify-content:center;padding:0 16px;pointer-events:none}
+.fixed-cta .cta{display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;width:min(100%,420px);min-height:54px;font-size:16px;font-weight:800;line-height:1.25;padding:10px 18px}
+.fixed-cta .cta small{display:block;font-size:11px;font-weight:500;opacity:.92;margin-top:2px}
+.mc-page,.mc-detail{padding-bottom:150px}
+
+/* ---- 下のタブは3つ ---- */
+.site-bottom-nav{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+
+/* ---- 診断結果：続きは公式LINEで ---- */
+.gate-steps{list-style:none;display:flex;justify-content:center;align-items:center;gap:6px;margin:0 0 12px;padding:0;font-size:11.5px;color:var(--mg-sub)}
+.gate-steps li{display:flex;flex-direction:column;align-items:center;gap:2px;width:64px;position:relative}
+.gate-steps li span{font-size:22px;filter:grayscale(1);opacity:.45}
+.gate-steps li.done span,.gate-steps li.now span{filter:none;opacity:1}
+.gate-steps li.now{color:var(--mg-pink);font-weight:800}
+.gate-steps li+li::before{content:"";position:absolute;left:-18px;top:14px;width:20px;height:2px;background:var(--mg-line)}
+.gate-steps li.done+li::before,.gate-steps li.now::before{background:var(--mg-pink)}
+.gate-gets{list-style:none;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 14px;padding:0}
+.gate-gets li{font-size:12px;font-weight:800;background:var(--mg-pink-soft);color:#a8265a;border-radius:999px;padding:4px 11px}
+/* 診断結果の画面でも、下に固定の相談ボタンを出す（続きを開く前は「続きを見る」、開いたあとは「無料で面談を申し込む」） */
+#app .result .result-next-fixed{display:flex!important;position:fixed!important;inset:auto 0 calc(66px + env(safe-area-inset-bottom,0px)) 0!important;z-index:45;justify-content:center;padding:0 16px!important;margin:0!important;order:0;pointer-events:none}
+#app .result .result-next-fixed .cta{pointer-events:auto;width:min(100%,420px);max-width:420px;min-height:54px;font-size:16px;font-weight:800;padding:10px 18px;display:flex;align-items:center;justify-content:center}
+#app .result{padding-bottom:150px}
+
+/* ---- 診断結果：あなたと同じタイプの先輩 ---- */
+.same-mentor{margin:16px 0 8px}
+.same-mentor-tag{display:inline-block;margin:0 0 8px!important;background:var(--mg-pink);color:#fff!important;font-size:12px!important;font-weight:800;line-height:1.6!important;border-radius:999px;padding:2px 12px}
+.same-mentor-card{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;background:#fff;border:2px solid var(--mg-pink);border-radius:20px;padding:10px;box-shadow:0 8px 20px #d8277b24;cursor:pointer}
+.same-mentor-card img{width:84px;height:106px;border-radius:14px;object-fit:cover;object-position:center 22%;flex:none}
+.same-mentor-card>span{display:flex;flex-direction:column;gap:3px;min-width:0}
+.same-mentor-card b{font-size:17px;color:var(--mg-ink)}
+.same-mentor-card b em{font-style:normal;font-size:12px;font-weight:600;color:var(--mg-sub);margin-left:6px}
+.same-mentor-card span span{font-size:13px;color:var(--mg-sub);line-height:1.5}
+.same-mentor-card i{font-style:normal;font-size:12.5px;font-weight:800;color:var(--mg-pink)}

@@ -4,6 +4,7 @@
 
   ・no        … 番号（ページには出していません。データの整理用）
   ・type      … 診断タイプ（4文字。例：ACTG）。写真の右上のキャラクターと「診断タイプ」に出ます。いまは仮です
+  ・grade     … 卒業年度（'27' / '28'）。メンター一覧の「27卒／28卒」の絞り込みと、診断で選んだ卒業年度と同じ人を先頭に並べるのに使います
   ・photo     … 写真（assets/mentors/ の中）
   ・name      … お名前
   ・catch     … 写真の左にたてに出る、ひとこと（14文字くらいまで）
@@ -22,7 +23,7 @@
 */
 window.MENTORS = [
   {
-    id: 'mentor-01', no: '01', type: 'ACTG', photo: 'assets/mentors/mentor-01.webp',
+    id: 'mentor-01', no: '01', type: 'ACTG', grade: '27', photo: 'assets/mentors/mentor-01.webp',
     name: 'RYOUGA',
     catch: 'コツコツが、いちばん強い。',
     theme: '続ける力を、就活の強みにしたい人へ',
@@ -39,7 +40,7 @@ window.MENTORS = [
     reviews: []
   },
   {
-    id: 'mentor-02', no: '02', type: 'ACTP', photo: 'assets/mentors/mentor-02.webp',
+    id: 'mentor-02', no: '02', type: 'ACTP', grade: '27', photo: 'assets/mentors/mentor-02.webp',
     name: 'AYAKA',
     catch: '好きから、軸は見つかる。',
     theme: '自分に合う会社の選び方を知りたい人へ',
@@ -56,7 +57,7 @@ window.MENTORS = [
     reviews: []
   },
   {
-    id: 'mentor-03', no: '03', type: 'ACIP', photo: 'assets/mentors/mentor-03.webp',
+    id: 'mentor-03', no: '03', type: 'ACIP', grade: '27', photo: 'assets/mentors/mentor-03.webp',
     name: 'HARUTO',
     catch: '仲間と熱くなれる場所へ。',
     theme: 'チームで頑張った経験を伝えたい人へ',
@@ -73,7 +74,7 @@ window.MENTORS = [
     reviews: []
   },
   {
-    id: 'mentor-04', no: '04', type: 'DSTP', photo: 'assets/mentors/mentor-04.webp',
+    id: 'mentor-04', no: '04', type: 'DSTP', grade: '27', photo: 'assets/mentors/mentor-04.webp',
     name: 'RIONA',
     catch: '自分のペースで、大丈夫。',
     theme: '就活の不安を、まず話してみたい人へ',
