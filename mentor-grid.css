@@ -186,3 +186,15 @@ html body #app#app .same-mentor-tag{color:#fff!important}
 .mg-grid.c2,.mg-grid.c3{align-items:stretch}
 .mg-grid.c2 .mg-open,.mg-grid.c3 .mg-open{flex:1 1 auto}
 
+/* ---- 2列でも、診断タイプのピルとキャラクターの絵を出す（写真の右にキャラクター、名前などは下）---- */
+.mg-grid.c2 .tp-pill{display:inline-flex;max-width:100%;font-size:10px;padding:3px 9px 3px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg-grid.c2 .tp-pill svg{width:13px;height:13px}
+.mg-grid.c2 .mg-row{display:grid;grid-template-columns:64px minmax(0,1fr);grid-template-areas:"av art" "info info";align-items:center;gap:6px 8px;min-height:0;text-align:center;overflow:hidden;border-radius:14px}
+.mg-grid.c2 .mg-row::before{display:block;inset:0 0 auto 28%;height:92px}
+.mg-grid.c2 .mg-avatar{grid-area:av;width:64px;height:64px;border-width:3px;justify-self:start;margin-left:2px}
+.mg-grid.c2 .mg-art{display:block;position:static;grid-area:art;width:100%;height:88px;z-index:1}
+.mg-grid.c2 .mg-art img{width:100%;height:100%;object-fit:contain;object-position:center center;transform:none}
+.mg-grid.c2 .mg-info{grid-area:info}
+/* 2列：診断タイプのピルは、長い名前なら折り返して、全部読めるようにする */
+.mg-grid.c2 .tp-pill{white-space:normal;overflow:visible;text-overflow:clip;border-radius:14px;line-height:1.25;font-size:10.5px;align-items:center}
+
