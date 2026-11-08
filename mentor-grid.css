@@ -189,4 +189,6 @@ html body #app#app .mg-empty{color:#5a6b92!important}
 .mh-m.l{left:6px}
 .mh-m.r{right:6px}
 .mh-title{position:relative}
+/* 広い画面でも、下の固定ボタンを横いっぱいに広げない */
+html body #app .fixed-cta .cta{width:min(100%,440px);max-width:440px}
 
