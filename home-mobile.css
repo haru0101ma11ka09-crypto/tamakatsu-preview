@@ -92,3 +92,8 @@ html body #app .tama-home .tama-how strong{margin:0!important}
 html body #app .tama-home .tama-benefits article{padding:26px 22px 26px!important}
 html body #app .tama-home .tama-types .carousel{margin-top:24px!important}
 html body #app .tama-home .tama-types .carousel-all{margin-top:20px!important}
+
+/* Safari対策：縦に並べたカードの中では「高さ100%」が効かないことがあるので、画像の大きさをpxで直接指定する
+   （枠 150×170、内側の余白 10px → 画像 130×150）。枠の外は確実に切り取る */
+html body #app .tama-home .tama-benefits .tama-icon{flex:0 0 auto!important;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);position:relative}
+html body #app .tama-home .tama-benefits .tama-icon img{width:130px!important;height:150px!important;max-width:none!important;max-height:none!important;filter:none!important}
