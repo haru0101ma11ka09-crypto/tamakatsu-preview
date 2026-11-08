@@ -97,3 +97,15 @@ html body #app .tama-home .tama-types .carousel-all{margin-top:20px!important}
    （枠 150×170、内側の余白 10px → 画像 130×150）。枠の外は確実に切り取る */
 html body #app .tama-home .tama-benefits .tama-icon{flex:0 0 auto!important;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);position:relative}
 html body #app .tama-home .tama-benefits .tama-icon img{width:130px!important;height:150px!important;max-width:none!important;max-height:none!important;filter:none!important}
+
+/* ===== 診断の流れ：STEP 01〜03 を、POINT と同じカードに。色つきのイラストつき ===== */
+html body #app .tama-home .tama-how ol{counter-reset:hs;gap:16px!important}
+html body #app .tama-home .tama-how ol::before{content:none!important}
+html body #app .tama-home .tama-how li{counter-increment:hs;display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:0!important;padding:26px 22px 22px!important;border-radius:24px!important;border:1px solid #F3E3EA!important}
+html body #app .tama-home .tama-how li::before{content:"STEP 0" counter(hs);display:block;width:100%;font-size:15px;line-height:1;font-weight:900;letter-spacing:.08em;color:var(--hm-pink);text-align:center;background:linear-gradient(var(--hm-pink-line),var(--hm-pink-line)) left center/calc(50% - 60px) 1.5px no-repeat,linear-gradient(var(--hm-pink-line),var(--hm-pink-line)) right center/calc(50% - 60px) 1.5px no-repeat;margin:0 0 16px}
+html body #app .tama-home .tama-how li>span{display:none!important}
+html body #app .tama-home .tama-how li>div{display:grid;gap:10px;justify-items:center}
+html body #app .tama-home .tama-how strong{font-size:20px!important;line-height:1.5!important}
+html body #app .tama-home .tama-how li p{font-size:15px!important;line-height:1.85!important;max-width:20em}
+html body #app .tama-home .hm-step-art{margin:18px 0 0;width:100%;max-width:300px}
+html body #app .tama-home .hm-step-art svg{display:block;width:100%;height:auto}
