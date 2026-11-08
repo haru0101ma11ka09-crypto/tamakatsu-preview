@@ -141,4 +141,48 @@ html body #app#app .same-mentor-tag{color:#fff!important}
 .mg-rate small{flex-basis:100%;margin-top:1px}
 .mg-meta{white-space:nowrap;font-size:12px}
 .mg-apply{padding:10px 16px}
+/* キャラクターの絵を、右端で切らずに全部見せる */
+.mg-art{right:10px;top:8px;bottom:8px;width:40%}
+.mg-art img{transform:none;object-position:center center}
+
+/* ---- 列の切り替え（1列＝詳しいカード、2列・3列＝コンパクトなカード）---- */
+.mg-view{display:flex;flex:none;background:#ffffff14;border:1px solid #ffffff2e;border-radius:12px;overflow:hidden}
+.mg-view button{border:0;background:none;color:#cfd6ea;font:inherit;font-weight:800;font-size:13px;padding:8px 14px;min-height:38px;cursor:pointer}
+.mg-view button.on{background:#fff;color:#14203f}
+.mg-grid.c2{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mg-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+/* 共通：写真を上に、中央ぞろえ。絵・診断タイプのピル・得意なことは出さない */
+.mg-grid.c2 .mg-card,.mg-grid.c3 .mg-card{gap:6px;position:relative}
+.mg-grid.c2 .tp-pill,.mg-grid.c3 .tp-pill,.mg-grid.c2 .mg-art,.mg-grid.c3 .mg-art,.mg-grid.c2 .mg-chips,.mg-grid.c3 .mg-chips,.mg-grid.c2 .mg-row::before,.mg-grid.c3 .mg-row::before{display:none}
+.mg-grid.c2 .mg-row,.mg-grid.c3 .mg-row{flex-direction:column;min-height:0;gap:6px;text-align:center;overflow:visible}
+.mg-grid.c2 .mg-info,.mg-grid.c3 .mg-info{align-items:center}
+.mg-grid.c2 .mg-name,.mg-grid.c3 .mg-name{justify-content:center}
+.mg-grid.c2 .mg-rate,.mg-grid.c3 .mg-rate{justify-content:center}
+/* 2列 */
+.mg-grid.c2 .mg-card{padding:10px;border-radius:18px}
+.mg-grid.c2 .mg-pills .mp-tags i{padding:5px 8px;font-size:10px}
+.mg-grid.c2 .mg-avatar{width:72px;height:72px;border-width:3px}
+.mg-grid.c2 .mg-name{font-size:16px}
+.mg-grid.c2 .mg-grade{font-size:12px}
+.mg-grid.c2 .mg-card .mp-plan{min-height:54px;padding:8px}
+.mg-grid.c2 .mg-card .mp-plan b{font-size:12.5px}
+.mg-grid.c2 .mg-meta{display:none}
+.mg-grid.c2 .mg-foot{justify-content:center}
+.mg-grid.c2 .mg-apply{width:100%;justify-content:center;font-size:12.5px;padding:9px 6px}
+/* 3列：写真・名前・学年・星だけ。しおりは右上 */
+.mg-grid.c3 .mg-card{padding:8px 6px 10px;border-radius:14px;border-width:1.5px}
+.mg-grid.c3 .mg-head{position:absolute;top:4px;right:2px;z-index:2}
+.mg-grid.c3 .mg-pills,.mg-grid.c3 .mp-plan,.mg-grid.c3 .mg-foot,.mg-grid.c3 .mg-rate small{display:none}
+.mg-grid.c3 .mg-bm{width:28px;height:28px}
+.mg-grid.c3 .mg-bm svg{width:18px;height:18px}
+.mg-grid.c3 .mg-open{padding-top:10px}
+.mg-grid.c3 .mg-avatar{width:60px;height:60px;border-width:2px;box-shadow:0 0 0 2px #ff4d97}
+.mg-grid.c3 .mg-name{font-size:13px}
+.mg-grid.c3 .mg-same{display:none}
+.mg-grid.c3 .mg-grade{font-size:11px}
+.mg-grid.c3 .mg-rate strong{font-size:12px}
+.mg-grid.c3 .mg-stars{font-size:10px;letter-spacing:0}
+/* カードの高さをそろえ、ボタンを下にそろえる */
+.mg-grid.c2,.mg-grid.c3{align-items:stretch}
+.mg-grid.c2 .mg-open,.mg-grid.c3 .mg-open{flex:1 1 auto}
 
