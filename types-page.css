@@ -42,3 +42,31 @@ html body #app .type-directory .td-grid-title{order:1;margin:44px 0 16px!importa
 html body #app .type-directory .type-directory-grid{order:2}
 
 @media (max-width:359px){html body #app .type-directory .td-side{font-size:13px;padding-right:8px}}
+
+/* ===== 4つのたまごが、スロットのように回って、タイプが決まり、キャラクターが誕生するアニメーション ===== */
+html body #app .type-directory .td-stage{position:relative;margin:22px 0 20px}
+html body #app .type-directory .td-stage .td-code{margin:0}
+html body #app .type-directory .td-egg{transition:transform .25s ease}
+html body #app .type-directory .td-stage.is-spin .td-egg:not(.is-set){animation:td-shake .22s ease-in-out infinite alternate}
+html body #app .type-directory .td-stage.is-spin .td-egg:not(.is-set) b{opacity:.85}
+html body #app .type-directory .td-egg.is-set{animation:td-pop .4s cubic-bezier(.3,1.6,.5,1)}
+html body #app .type-directory .td-stage.is-spin .td-egg b{font-size:28px}
+@keyframes td-shake{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+@keyframes td-pop{0%{transform:scale(.8)}100%{transform:scale(1)}}
+/* キャラクター誕生 */
+html body #app .type-directory .td-born{position:absolute;inset:-10px -6px;display:grid;grid-template-columns:42% 1fr;align-items:center;gap:10px;padding:8px 12px;background:radial-gradient(circle at 25% 50%,#FFF6CC 0 30%,#fff 62%);border-radius:20px;opacity:0;transform:scale(.9);pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.3,1.5,.5,1)}
+html body #app .type-directory .td-stage.is-born .td-born{opacity:1;transform:none}
+html body #app .type-directory .td-born img{width:100%;height:auto;max-height:150px;object-fit:contain}
+html body #app .type-directory .td-stage.is-born .td-born img{animation:td-hatch .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes td-hatch{0%{transform:translateY(30px) scale(.5) rotate(-10deg)}100%{transform:none}}
+html body #app .type-directory .td-born p{margin:0!important;display:grid;gap:2px;text-align:left}
+html body #app .type-directory .td-born-code{font-size:14px;font-weight:900;letter-spacing:.12em;color:#EC5D8B}
+html body #app .type-directory .td-born-name{font-size:19px;line-height:1.35;font-weight:900;color:var(--td-ink)}
+html body #app .type-directory .td-born em{font-style:normal;font-size:15px;font-weight:900;color:var(--td-ink)}
+html body #app .type-directory .td-replay{display:block;margin:-4px auto 18px;border:0;background:none;color:var(--td-sub);font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+html body #app .type-directory .td-replay[hidden]{display:none}
+html body #app .type-directory .td-replay:focus-visible{outline:3px solid #4992da;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html body #app .type-directory .td-egg{animation:none!important}}
+html body #app .type-directory .td-stage{min-height:168px;display:grid;align-items:center}
+html body #app .type-directory .td-born{inset:0}
+html body #app .type-directory .td-born img{max-height:156px}
