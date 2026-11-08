@@ -59,3 +59,23 @@ html body #app .tama-home .carousel-all{border:2px solid var(--hm-ink)!important
   html body #app .tama-home .carousel-all{max-width:420px;margin-left:auto!important;margin-right:auto!important}
 }
 html body #app .tama-home .hm-head h2,html body #app .tama-home .hm-head .hm-label{padding:0!important;text-indent:0!important}
+
+/* ===== 45の質問・16の就活タイプ・約5分：たまご型の、かわいいバッジに ===== */
+html body #app .tama-home .tama-facts{background:none!important;box-shadow:none!important;padding:8px 0 0!important;gap:10px!important;margin:30px 20px 0!important}
+html body #app .tama-home .tama-facts span{position:relative;aspect-ratio:5/6;border-radius:50% 50% 46% 46% / 58% 58% 42% 42%!important;border:2px solid var(--hm-ink)!important;box-shadow:0 5px 0 var(--hm-ink)!important;grid-template-rows:auto auto!important;align-content:center!important;gap:4px!important;padding-top:6px!important;animation:hm-egg 3.2s ease-in-out infinite}
+html body #app .tama-home .tama-facts span+i+span{border-left:2px solid var(--hm-ink)!important}
+html body #app .tama-home .tama-facts span:nth-of-type(1){background:#FFE3EC!important;transform:rotate(-4deg)}
+html body #app .tama-home .tama-facts span:nth-of-type(2){background:#DDF1FF!important;animation-delay:-1.1s}
+html body #app .tama-home .tama-facts span:nth-of-type(3){background:#FFF3C4!important;transform:rotate(4deg);animation-delay:-2.2s}
+html body #app .tama-home .tama-facts b{font-size:32px!important;color:var(--hm-ink)!important}
+html body #app .tama-home .tama-facts span:nth-of-type(1) b{color:#E0457A!important}
+html body #app .tama-home .tama-facts span:nth-of-type(2) b{color:#2F7FCC!important}
+html body #app .tama-home .tama-facts span:nth-of-type(3) b{color:#D9831A!important;font-size:24px!important}
+html body #app .tama-home .tama-facts span{font-size:12px!important;color:var(--hm-ink)!important}
+/* キラッと光る小さな星 */
+html body #app .tama-home .tama-facts span::after{content:"✦";position:absolute;top:-6px;right:2px;font-size:16px;line-height:1;color:#FFC83D;-webkit-text-stroke:1px var(--hm-ink)}
+html body #app .tama-home .tama-facts span:nth-of-type(2)::after{right:auto;left:0;top:-2px;color:var(--hm-pink)}
+html body #app .tama-home .tama-facts span:nth-of-type(3)::after{color:#7CC8F2}
+@keyframes hm-egg{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@media (prefers-reduced-motion:reduce){html body #app .tama-home .tama-facts span{animation:none}}
+@media (min-width:760px){html body #app .tama-home .tama-facts{max-width:420px}}
