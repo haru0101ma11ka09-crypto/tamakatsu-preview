@@ -2,33 +2,54 @@
    ※ 案の検証用。mentor-carousel.css のあとに読み込む */
 :root{--mg-pink:#d8277b;--mg-pink-soft:#fff0f7;--mg-ink:#172e4c;--mg-sub:#5b6b7e;--mg-line:#e3e8ef;--mg-blue:#2867a8}
 
-/* ---- 絞り込み・列の切り替え ---- */
-.mg{margin:18px 0 8px}
+/* ---- メンター一覧（暗い色のカード：業界・職種・学校の3タグ＋面談プラン）---- */
+.mg{margin:18px 0 8px;padding:16px 12px 18px;border-radius:26px;color:#fff;background:radial-gradient(120% 80% at 50% 0%,#26335f 0,#131c38 60%,#0d1428 100%);box-shadow:0 18px 40px #0d142855}
 .mg-filter{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
 .mg-filter::-webkit-scrollbar{display:none}
-.mg-filter button{flex:none;border:1px solid var(--mg-line);background:#fff;border-radius:999px;font:inherit;font-weight:700;font-size:14px;color:var(--mg-ink);padding:9px 16px;min-height:40px;cursor:pointer}
-.mg-filter button.on{background:var(--mg-ink);border-color:var(--mg-ink);color:#fff}
+.mg-filter button{flex:none;border:1px solid #ffffff2e;background:#ffffff14;border-radius:999px;font:inherit;font-weight:700;font-size:14px;color:#e8ecf8;padding:9px 16px;min-height:40px;cursor:pointer}
+.mg-filter button.on{background:#fff;border-color:#fff;color:#14203f}
 .mg-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 12px}
-.mg-count{margin:0;font-size:12.5px;color:var(--mg-sub)}
-/* ---- カード（マッチャー風：3つのタグ＋面談プラン）---- */
-.mg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;align-items:start}
-@media(min-width:900px){.mg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.mg-card{min-width:0;background:#fff;border:1px solid var(--mg-line);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px #172e4c14}
+.mg .mg-count{margin:0;font-size:12.5px;color:#aab4d0!important}
+.mg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;align-items:start}
+.mg-card{min-width:0;display:flex;flex-direction:column;gap:8px;padding:10px;background:#ffffff0f;border:1px solid #ffffff26;border-radius:18px;box-shadow:inset 0 1px 0 #ffffff14}
+.mg-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mg-head .mp-tags{width:auto;min-width:0;gap:6px;flex-wrap:nowrap}
+.mg-head .mp-tags i{flex:0 1 auto;border-radius:8px;padding:6px 9px;font-size:11px}
+.mg-head .mp-tags .uni{flex:0 0 auto}
+.mg-bm{flex:none;display:grid;place-items:center;width:34px;height:34px;border:0;background:none;color:#cfd6ea;cursor:pointer}
+.mg-bm svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.mg-bm.on{color:#f5c542}
+.mg-bm.on svg{fill:#f5c542}
 .mg-open{display:block;width:100%;text-align:left;border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+.mg-row{display:flex;gap:12px;align-items:center}
+.mg-avatar{flex:none;width:64px;height:64px;border-radius:50%;border:2px solid #fff;overflow:hidden;background:#33406a;display:block}
+.mg-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.mg-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mg-name{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:17px;font-weight:800;color:#fff;letter-spacing:.02em;overflow-wrap:anywhere}
+.mg-same{font-style:normal;font-size:10px;font-weight:800;background:var(--mg-pink);color:#fff;border-radius:999px;padding:2px 8px}
+.mg-sub{font-size:12px;color:#b9c2dc}
+.mg-rate{display:flex;align-items:center;gap:5px;font-size:12px}
+.mg-stars{letter-spacing:1px;font-size:13px;background:linear-gradient(90deg,#f5c542 var(--p),#56648b var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mg-rate strong{color:#f5c542;font-size:15px}
+.mg-rate small{color:#9aa6c6;font-size:11px}
+.mg-card .mp-plan{margin-top:8px;border-radius:12px;min-height:66px;padding:10px 14px;justify-content:center}
+.mg-card .mp-plan small,.mg-card .mp-plan em{display:none}
+.mg-card .mp-plan b{font-size:15px;-webkit-line-clamp:2}
+.mg-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px}
+.mg-chips i{font-style:normal;font-size:11px;font-weight:700;color:#e8ecf8;border:1px solid #f4a6c3aa;border-radius:999px;padding:4px 10px}
+.mg-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.mg-meta{display:flex;align-items:center;gap:6px;font-size:12px;color:#cfd6ea}
+.mg-meta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.mg-apply{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;background:linear-gradient(90deg,#ffe0ec,#ffb9d4);color:#a8185f;font:inherit;font-weight:800;font-size:13.5px;padding:9px 16px;min-height:40px;text-decoration:none;cursor:pointer;white-space:nowrap}
+
+/* ---- 業界・職種・学校の3タグ ---- */
 .mp-tags{display:flex;width:100%}
 .mp-tags i{flex:1 1 0;min-width:0;font-style:normal;font-size:10.5px;font-weight:800;line-height:1;text-align:center;padding:9px 3px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mp-tags .ind{background:#e0627f}
-.mp-tags .job{background:#4a8fd6}
-.mp-tags .uni{background:#d9a21e}
-.mg-who{display:block;text-align:center;padding:14px 8px 12px;position:relative}
-.mg-avatar{display:block;position:relative;width:84px;height:84px;margin:0 auto 8px;border-radius:50%;border:3px solid #cfe0f5;background:#eaf4ff}
-.mg-avatar>img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 25%;display:block}
-.mg-chara{position:absolute;right:-6px;bottom:-4px;width:30px;height:30px;border-radius:50%;background:#fff;box-shadow:0 2px 6px #0003;padding:2px;overflow:hidden}
-.mg-chara img{width:100%;height:100%;object-fit:cover;object-position:50% 14%;border-radius:50%;display:block}
-.mg-same{position:absolute;left:8px;top:10px;background:var(--mg-pink);color:#fff;font-size:10px;font-weight:800;border-radius:999px;padding:3px 8px}
-.mg-name{display:block;font-size:16px;font-weight:800;color:var(--mg-ink);overflow-wrap:anywhere}
-.mg-sub{display:block;font-size:11.5px;color:var(--mg-sub);margin-top:1px}
-.mg-catch{display:block;font-size:12px;line-height:1.5;color:var(--mg-ink);margin-top:5px}
+.mp-tags .ind{background:#d94a7a}
+.mp-tags .job{background:#3f7fc6}
+.mp-tags .uni{background:#b7861f}
+
+/* ---- 面談プランのカード（一覧・詳細で共通）---- */
 .mp-plan{display:flex;flex-direction:column;justify-content:flex-end;gap:3px;min-height:132px;padding:12px;color:#fff;background-size:cover;background-position:center}
 .mp-plan small{font-size:10.5px;opacity:.9}
 .mp-plan b{font-size:14px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -37,7 +58,6 @@
 .mp-plan.t1{background-image:linear-gradient(135deg,#4a8fd6,#7ad0c4)}
 .mp-plan.t2{background-image:linear-gradient(135deg,#8064af,#e0627f)}
 .mp-plan.t3{background-image:linear-gradient(135deg,#d9a21e,#f08a5d)}
-.mg-more{display:block;text-align:center;font-size:12.5px;font-weight:800;color:var(--mg-pink);padding:10px 6px}
 
 /* ---- メンター詳細の面談プラン ---- */
 .mp-list{display:grid;gap:14px}
@@ -49,8 +69,8 @@
 
 /* ---- 画面の下に固定する相談ボタン ---- */
 .fixed-cta{position:fixed;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;justify-content:center;padding:0 16px;pointer-events:none}
-.fixed-cta .cta{display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;width:min(100%,420px);min-height:54px;font-size:16px;font-weight:800;line-height:1.25;padding:10px 18px}
-.fixed-cta .cta small{display:block;font-size:11px;font-weight:500;opacity:.92;margin-top:2px}
+.fixed-cta .cta{display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:auto;width:min(100%,420px);min-height:56px;font-size:16px;font-weight:800;line-height:1.25;padding:10px 20px;background:linear-gradient(90deg,#e8457f,#f26ba3);border:1px solid #ffffff66;box-shadow:0 10px 28px #e8457f66}
+.fixed-cta .cta svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .mc-page,.mc-detail{padding-bottom:150px}
 
 /* ---- 下のタブは3つ ---- */
@@ -81,3 +101,12 @@
 .same-mentor-card b em{font-style:normal;font-size:12px;font-weight:600;color:var(--mg-sub);margin-left:6px}
 .same-mentor-card span span{font-size:13px;color:var(--mg-sub);line-height:1.5}
 .same-mentor-card i{font-style:normal;font-size:12.5px;font-weight:800;color:var(--mg-pink)}
+
+/* ---- tama-type.css が p・li・small などの文字色を、かなり強い指定で #222 に固定しているため、色が必要な箇所だけ #app を重ねて上書き ---- */
+html body #app#app .mg .mg-count{color:#aab4d0!important}
+html body #app#app .mg-rate small{color:#9aa6c6!important}
+html body #app#app .mp-plan small{color:#fff!important}
+html body #app#app .gate-steps li{color:#5b6b7e!important}
+html body #app#app .gate-steps li.now{color:#d8277b!important}
+html body #app#app .gate-gets li{color:#a8265a!important}
+html body #app#app .same-mentor-tag{color:#fff!important}
