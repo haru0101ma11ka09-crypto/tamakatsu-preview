@@ -59,3 +59,36 @@ html body #app .tama-home .tama-how li p{font-size:14px!important;line-height:1.
   html body #app .tama-home .tama-benefits,html body #app .tama-home .tama-how ol{max-width:560px;margin-left:auto!important;margin-right:auto!important}
   html body #app .tama-home .carousel-all{max-width:420px;margin-left:auto!important;margin-right:auto!important}
 }
+
+/* ===== 2026-11-08 修正：余白をそろえる・イラストを枠に収める（「POINT 01」の形） ===== */
+/* 数字の箱：数字の段の高さをそろえて、下の文字の位置を一直線に */
+html body #app .tama-home .tama-facts span{grid-template-rows:40px auto!important;align-content:center!important;gap:8px!important}
+html body #app .tama-home .tama-facts b{align-self:end!important;display:block}
+html body #app .tama-home .tama-facts span:nth-of-type(3) b{font-size:30px!important}
+
+/* セクションの間の余白を、すべて同じに */
+html body #app .tama-home .tama-discover,html body #app .tama-home .tama-how{padding-top:56px!important;padding-bottom:0!important;margin-top:0!important}
+html body #app .tama-home .tama-types{margin-top:56px!important;padding:48px 0 36px!important}
+html body #app .tama-home .tama-section-label{margin-bottom:12px!important}
+html body #app .tama-home .tama-discover h2,html body #app .tama-home .tama-types h2,html body #app .tama-home .tama-how h2{margin:0!important}
+
+/* 診断でわかること：POINT 01 → 見出し → 説明 → イラスト を、中央そろえで1枚のカードに */
+html body #app .tama-home .tama-benefits{gap:16px!important;margin-top:28px!important}
+html body #app .tama-home .tama-benefits article{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;padding:28px 22px 26px!important;grid-template-columns:none!important;overflow:visible}
+html body #app .tama-home .tama-benefits article::after{content:none!important}
+html body #app .tama-home .tama-benefits article::before{content:"POINT 0" counter(hm);display:block;width:100%;font-size:15px;line-height:1;font-weight:900;letter-spacing:.08em;color:var(--hm-pink);text-align:center;background:linear-gradient(var(--hm-pink-line),var(--hm-pink-line)) left center/calc(50% - 64px) 1.5px no-repeat,linear-gradient(var(--hm-pink-line),var(--hm-pink-line)) right center/calc(50% - 64px) 1.5px no-repeat;margin:0 0 16px}
+html body #app .tama-home .tama-benefits h3{order:1;margin:0 0 10px!important;font-size:20px!important;line-height:1.5!important;align-self:auto!important}
+html body #app .tama-home .tama-benefits p{order:2;margin:0!important;font-size:15px!important;line-height:1.85!important;align-self:auto!important;max-width:20em}
+html body #app .tama-home .tama-benefits .tama-icon{order:3;display:block!important;grid-row:auto!important;width:150px!important;height:170px!important;margin:20px auto 0!important;padding:10px!important;border-radius:28px!important;background:var(--hm-pink-soft)!important;overflow:hidden!important;box-sizing:border-box!important}
+html body #app .tama-home .tama-benefits .tama-icon img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;transform:none!important;margin:0!important}
+
+/* 診断の流れ：カードの中の上下の余白をそろえる */
+html body #app .tama-home .tama-how>div>p:last-child{margin:14px 0 0!important}
+html body #app .tama-home .tama-how ol{margin-top:28px!important;gap:16px}
+html body #app .tama-home .tama-how li{padding:20px 18px 20px 16px!important;align-items:center!important}
+html body #app .tama-home .tama-how li>div{display:grid;gap:6px}
+html body #app .tama-home .tama-how li p{margin:0!important}
+html body #app .tama-home .tama-how strong{margin:0!important}
+html body #app .tama-home .tama-benefits article{padding:26px 22px 26px!important}
+html body #app .tama-home .tama-types .carousel{margin-top:24px!important}
+html body #app .tama-home .tama-types .carousel-all{margin-top:20px!important}
