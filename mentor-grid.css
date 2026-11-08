@@ -192,3 +192,19 @@ html body #app#app .mg-empty{color:#5a6b92!important}
 /* 広い画面でも、下の固定ボタンを横いっぱいに広げない */
 html body #app .fixed-cta .cta{width:min(100%,440px);max-width:440px}
 
+/* ---- 下のタブ：「就活面談」を目立たせる（浮かせたピンクのボタン＋「ここをタップ！」の吹き出し）---- */
+html body .site-bottom-nav button.is-cta{position:relative;color:#fff!important;background:linear-gradient(135deg,#ff4f8b,#ff7ab0)!important;border-radius:18px;transform:translateY(-9px);box-shadow:0 0 0 3px #fff,0 8px 16px rgba(255,79,139,.5);animation:cta-pulse 2s ease-in-out infinite}
+html body .site-bottom-nav button.is-cta svg{stroke:#fff}
+.nav-free{position:absolute;top:-9px;right:-3px;font-style:normal;font-size:10px;font-weight:900;line-height:1.2;color:#5a3d00;background:#ffd23f;border-radius:999px;padding:2px 7px;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.nav-bubble{position:absolute;right:-6px;bottom:calc(100% + 16px);font-style:normal;font-weight:900;font-size:13px;line-height:1.3;white-space:nowrap;text-align:center;color:#d8277b;background:#fff;border:2.5px solid #ff4f8b;border-radius:16px;padding:7px 13px;box-shadow:0 8px 18px rgba(60,80,140,.28);animation:nav-bounce 1.5s ease-in-out infinite;pointer-events:none}
+.nav-bubble small{display:block;font-size:10.5px;font-weight:800;color:#6b3a58}
+.nav-bubble::after{content:"";position:absolute;right:30px;top:100%;width:12px;height:12px;background:#fff;border-right:2.5px solid #ff4f8b;border-bottom:2.5px solid #ff4f8b;transform:translateY(-7px) rotate(45deg)}
+.site-bottom-nav.on-consult .nav-bubble,.site-bottom-nav.no-bubble .nav-bubble{display:none}
+@keyframes nav-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 3px #fff,0 8px 16px rgba(255,79,139,.5),0 0 0 3px rgba(255,79,139,0)}50%{box-shadow:0 0 0 3px #fff,0 8px 16px rgba(255,79,139,.5),0 0 0 11px rgba(255,79,139,.18)}}
+@media (prefers-reduced-motion:reduce){.nav-bubble,html body .site-bottom-nav button.is-cta{animation:none}}
+html body #app#app .nav-bubble small{color:#6b3a58!important}
+/* 吹き出しが画面の右端からはみ出さないように */
+.nav-bubble{right:0}
+.nav-bubble::after{right:34px}
+
