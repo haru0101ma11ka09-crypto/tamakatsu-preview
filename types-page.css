@@ -1,0 +1,44 @@
+/* 就活タイプのページ（一覧）：見出しと「タイプは、4文字でできている」
+   トップと同じ形（● 英字ラベル → 大きな見出し → 説明、左そろえ）。色はワレタマの4色 */
+html body #app .type-directory{--td-ink:#17245F;--td-sub:#4A5370;--td-pink:#EC5D8B}
+
+/* 見出し */
+html body #app .type-directory .td-head{order:0;margin:8px 0 0;text-align:left}
+html body #app .type-directory .td-label{display:flex!important;align-items:center;gap:8px;margin:0 0 10px!important;font-size:14px!important;line-height:1.2!important;font-weight:900!important;letter-spacing:.06em!important;color:var(--td-ink)!important;font-family:"Noto Sans JP",sans-serif!important}
+html body #app .type-directory .td-label::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--td-pink);border:2px solid var(--td-ink);box-sizing:border-box;flex:0 0 auto}
+html body #app .type-directory .td-head h1{margin:0!important;font-size:30px!important;line-height:1.4!important;font-weight:900!important;color:var(--td-ink)!important;font-family:"Noto Sans JP",sans-serif!important}
+html body #app .type-directory .td-head h1 .hl{color:var(--td-pink)!important}
+html body #app .type-directory .td-lead{margin:12px 0 0!important;font-size:15px!important;line-height:1.85!important;font-weight:500!important;color:var(--td-sub)!important;letter-spacing:.03em!important}
+
+/* タイプは、4文字でできている */
+html body #app .type-directory .td-axes{order:0;margin:36px 0 0;padding:26px 20px 24px;background:#fff;border:2px solid var(--td-ink);border-radius:24px;box-shadow:0 6px 0 var(--td-ink)}
+html body #app .type-directory .td-axes h2{margin:0!important;font-size:22px!important;line-height:1.45!important;font-weight:900!important;color:var(--td-ink)!important;font-family:"Noto Sans JP",sans-serif!important}
+
+/* 4つのたまご（1文字ずつ） */
+html body #app .type-directory .td-code{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0 20px}
+html body #app .type-directory .td-egg{display:grid;justify-items:center;align-content:center;gap:4px;aspect-ratio:5/6;background:var(--bg);border:2px solid var(--td-ink);border-radius:50% 50% 46% 46% / 58% 58% 42% 42%;box-shadow:0 4px 0 var(--td-ink)}
+html body #app .type-directory .td-egg b{font-size:22px;line-height:1;font-weight:900;color:var(--c);font-family:"Noto Sans JP",sans-serif;letter-spacing:.02em}
+html body #app .type-directory .td-egg b i{font-style:normal;font-size:14px;color:#9AA3B8;margin:0 1px}
+html body #app .type-directory .td-egg small{font-size:12px!important;font-weight:800!important;color:var(--td-ink)!important;line-height:1.2!important}
+
+/* 4つの軸 */
+html body #app .type-directory .td-axis-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+html body #app .type-directory .td-axis{margin:0;padding:12px 14px;border-radius:16px;background:var(--bg)}
+html body #app .type-directory .td-axis-name{display:flex!important;align-items:center;gap:8px;margin:0 0 8px!important;font-size:16px!important;line-height:1.3!important;font-weight:900!important;color:var(--td-ink)!important}
+html body #app .type-directory .td-axis-name span{font-size:11px;font-weight:800;color:#fff;background:var(--c);border-radius:999px;padding:3px 9px;letter-spacing:.04em}
+html body #app .type-directory .td-sides{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px}
+html body #app .type-directory .td-side{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:6px 12px 6px 6px;font-size:15px;font-weight:800;color:var(--td-ink);min-width:0;white-space:nowrap}
+html body #app .type-directory .td-side b{flex:0 0 auto;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-size:14px;font-weight:900;font-family:"Noto Sans JP",sans-serif}
+html body #app .type-directory .td-or{font-size:11px;font-weight:900;color:#8A93A8;letter-spacing:.06em}
+
+/* たとえば・注意書き */
+html body #app .type-directory .td-example{margin:18px 0 0!important;padding:12px 14px!important;border:1.5px dashed #F2B6CA;border-radius:14px;font-size:14px!important;line-height:1.75!important;color:var(--td-ink)!important;font-weight:600!important}
+html body #app .type-directory .td-example span{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--td-pink);border-radius:999px;padding:2px 9px;margin-right:6px}
+html body #app .type-directory .td-example b{font-weight:900;color:var(--td-pink);letter-spacing:.06em;margin-right:4px}
+html body #app .type-directory .td-note{margin:12px 0 0!important;font-size:13px!important;line-height:1.75!important;color:var(--td-sub)!important}
+
+/* 一覧の見出し */
+html body #app .type-directory .td-grid-title{order:1;margin:44px 0 16px!important;font-size:22px!important;line-height:1.45!important;font-weight:900!important;color:var(--td-ink)!important;font-family:"Noto Sans JP",sans-serif!important}
+html body #app .type-directory .type-directory-grid{order:2}
+
+@media (max-width:359px){html body #app .type-directory .td-side{font-size:13px;padding-right:8px}}
