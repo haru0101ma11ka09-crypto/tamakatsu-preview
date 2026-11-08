@@ -89,6 +89,235 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）面接で緊張しないための準備のしかたを、具体的に教えてもらえました。' }
     ],
     reviews: []
+  },
+  {
+    id: 'mentor-05', no: '05', type: 'DCTG', grade: '27', photo: 'assets/mentors/mentor-05.jpg',
+    name: 'TAKERU',
+    catch: '笑顔で、まず話してみよう。',
+    theme: '緊張しやすい人も、気軽に話したい人へ',
+    features: ['面接練習', '自己PR', 'コミュニケーション'],
+    career: [{ label: 'IT・通信', kind: 'industry' }, { label: '営業職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
+    topics: ['面接対策', '自己PR', 'グループディスカッション', 'オンライン面談'],
+    bio: 'はじめまして！27卒のTAKERUです💪\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\n面接で緊張しやすい人も、まずは気軽に話してみてください。',
+    recommend: ['面接で緊張してしまう', '自己PRをうまく話せない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況をざっくばらんに聞かせてください。そこから、面接で話すことを一緒に整理します。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、緊張がほぐれました。' },
+      { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）自己PRの伝え方が、具体的になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-06', no: '06', type: 'ASIP', grade: '27', photo: 'assets/mentors/mentor-06.jpg',
+    name: 'AKIKO',
+    catch: '好きなことは、強みになる。',
+    theme: '好きなことから、仕事を考えたい人へ',
+    features: ['自己分析', '業界研究', '企業選び'],
+    career: [{ label: 'サービス', kind: 'industry' }, { label: '企画職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
+    topics: ['自己分析', '業界研究', '企業選び', 'オンライン面談'],
+    bio: 'はじめまして！27卒のAKIKOです🌷\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\n「好き」から、自分に合う仕事を一緒に考えます。',
+    recommend: ['やりたいことが見つからない', '業界をしぼれない', '自分の「好き」を仕事につなげたい'],
+    style: '好きなことや、気になっていることを、たくさん聞かせてください。そこから、仕事選びの軸を見つけます。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）好きなことから軸が見つかって、気持ちが楽になりました。' },
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）業界の選び方が、よく分かりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-07', no: '07', type: 'DSIG', grade: '28', photo: 'assets/mentors/mentor-07.jpg',
+    name: 'OTIBA',
+    catch: '早めに動いて、ゆっくり選ぶ。',
+    theme: 'インターンや早期選考を考え始めた人へ',
+    features: ['インターン', '早期選考', 'ES'],
+    career: [{ label: '28卒', kind: 'status' }],
+    topics: ['インターン', '早期選考', 'ES添削', 'スケジュール管理'],
+    bio: 'はじめまして！28卒のOTIBAです🌙\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\nインターンや早期選考の準備を、一緒に進めましょう。',
+    recommend: ['インターンの選び方が分からない', '早期選考の準備を始めたい', '何から始めればいいか分からない'],
+    style: '今の状況と、これからの予定を教えてください。やることを、順番に整理します。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）インターンの選び方が、具体的になりました。' },
+      { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）スケジュールの立て方が参考になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-08', no: '08', type: 'ASTG', grade: '28', photo: 'assets/mentors/mentor-08.jpg',
+    name: 'MAX',
+    catch: '仲間と一緒に、挑戦しよう。',
+    theme: 'サークルやバイトの経験を話したい人へ',
+    features: ['ガクチカ', 'サークル', 'チームワーク'],
+    career: [{ label: '28卒', kind: 'status' }],
+    topics: ['ガクチカ整理', 'サークル・バイトの経験', '自己分析', 'オンライン面談'],
+    bio: 'はじめまして！28卒のMAXです🔥\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\n仲間と挑戦した経験を、強みとして話せるように整理します。',
+    recommend: ['ガクチカに自信がない', 'サークルやバイトの経験を話したい', 'チームでの役割を言葉にしたい'],
+    style: '今まで力を入れてきたことを、気軽に話してください。強みになる部分を、一緒に探します。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）ガクチカの話が、まとまりました。' },
+      { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）チームでの役割を言葉にできました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-09', no: '09', type: 'DCIP', grade: '27', photo: 'assets/mentors/mentor-09.jpg',
+    name: 'RIKO',
+    catch: '自分らしい選択を、応援します。',
+    theme: '自分に合う会社を、ゆっくり探したい人へ',
+    features: ['企業選び', '自己分析', '不安の相談'],
+    career: [{ label: 'メーカー', kind: 'industry' }, { label: '事務職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
+    topics: ['企業選び', '自己分析', '不安の相談', 'オンライン面談'],
+    bio: 'はじめまして！27卒のRIKOです🌿\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\n焦らず、自分のペースで会社を選べるように、一緒に考えます。',
+    recommend: ['まわりと比べて焦っている', '自分に合う会社が分からない', '不安をだれかに話したい'],
+    style: 'あせらせず、あなたのペースで進めます。気になっていることから、話してください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）不安な気持ちを、ゆっくり聞いてもらえました。' },
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）会社選びの考え方が整理できました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-10', no: '10', type: 'ACTG', grade: '27', photo: 'assets/mentors/mentor-10.jpg',
+    name: 'MIO',
+    catch: '気軽に聞いてみてね。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['自己分析', 'ES'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['自己分析', 'ES', 'オンライン面談'],
+    bio: 'はじめまして！27卒のMIOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-11', no: '11', type: 'ACTP', grade: '27', photo: 'assets/mentors/mentor-11.jpg',
+    name: 'SOTA',
+    catch: '一緒に整理しよう。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['面接対策', '業界研究'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['面接対策', '業界研究', 'オンライン面談'],
+    bio: 'はじめまして！27卒のSOTAです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-12', no: '12', type: 'ACIP', grade: '28', photo: 'assets/mentors/mentor-12.jpg',
+    name: 'KAITO',
+    catch: '早めの準備を応援。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['インターン', '早期選考'],
+    career: [{ label: '28卒', kind: 'status' }],
+    topics: ['インターン', '早期選考', 'オンライン面談'],
+    bio: 'はじめまして！28卒のKAITOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-13', no: '13', type: 'DSTP', grade: '27', photo: 'assets/mentors/mentor-13.jpg',
+    name: 'NANAMI',
+    catch: '話すだけでも大丈夫。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['不安の相談', 'ガクチカ'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['不安の相談', 'ガクチカ', 'オンライン面談'],
+    bio: 'はじめまして！27卒のNANAMIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-14', no: '14', type: 'DCTG', grade: '28', photo: 'assets/mentors/mentor-14.jpg',
+    name: 'HINA',
+    catch: '強みを見つけよう。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['企業選び', '自己PR'],
+    career: [{ label: '28卒', kind: 'status' }],
+    topics: ['企業選び', '自己PR', 'オンライン面談'],
+    bio: 'はじめまして！28卒のHINAです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-15', no: '15', type: 'ASIP', grade: '27', photo: 'assets/mentors/mentor-15.jpg',
+    name: 'REN',
+    catch: '焦らなくて大丈夫。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['就活の軸', '自己分析'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['就活の軸', '自己分析', 'オンライン面談'],
+    bio: 'はじめまして！27卒のRENです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-16', no: '16', type: 'DSIG', grade: '27', photo: 'assets/mentors/mentor-16.jpg',
+    name: 'YUTO',
+    catch: '面接のコツ、教えます。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['面接練習', 'GD対策'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['面接練習', 'GD対策', 'オンライン面談'],
+    bio: 'はじめまして！27卒のYUTOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-17', no: '17', type: 'ASTG', grade: '28', photo: 'assets/mentors/mentor-17.jpg',
+    name: 'SAKI',
+    catch: 'まずは雑談から。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['ES添削', 'ガクチカ'],
+    career: [{ label: '28卒', kind: 'status' }],
+    topics: ['ES添削', 'ガクチカ', 'オンライン面談'],
+    bio: 'はじめまして！28卒のSAKIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
+  },
+  {
+    id: 'mentor-18', no: '18', type: 'DCIP', grade: '27', photo: 'assets/mentors/mentor-18.jpg',
+    name: 'DAIKI',
+    catch: '軸づくりを手伝います。',
+    theme: '（仮）詳しいプロフィールは準備中です。',
+    features: ['業界研究', '企業選び'],
+    career: [{ label: '27卒 内定者', kind: 'status' }],
+    topics: ['業界研究', '企業選び', 'オンライン面談'],
+    bio: 'はじめまして！27卒のDAIKIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
+    recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
+    style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
+    samples: [
+      { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    reviews: []
   }
 ];
 
