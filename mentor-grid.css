@@ -10,35 +10,42 @@
 .mg-filter button.on{background:var(--mg-ink);border-color:var(--mg-ink);color:#fff}
 .mg-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 12px}
 .mg-count{margin:0;font-size:12.5px;color:var(--mg-sub)}
-.mg-view{display:flex;background:#fff;border:1px solid var(--mg-line);border-radius:10px;overflow:hidden;flex:none}
-.mg-view button{border:0;background:none;font:inherit;font-weight:700;font-size:12.5px;color:var(--mg-sub);padding:8px 13px;min-height:36px;cursor:pointer}
-.mg-view button.on{background:var(--mg-ink);color:#fff}
-
-/* ---- カード ---- */
-.mg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
-.mg-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 8px}
-@media(min-width:900px){.mg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.mg-grid.c3{grid-template-columns:repeat(5,minmax(0,1fr))}}
-.mg-card{display:flex;flex-direction:column;min-width:0}
-.mg-open{display:block;flex:1 1 auto;width:100%;text-align:left;border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
-.mg-pic{position:relative;display:block;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#eaf4ff}
-.mg-pic>img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-.mg-chara{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 2px 8px #0003;padding:3px;display:block}
-.mg-chara{overflow:hidden}
+/* ---- カード（マッチャー風：3つのタグ＋面談プラン）---- */
+.mg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;align-items:start}
+@media(min-width:900px){.mg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mg-card{min-width:0;background:#fff;border:1px solid var(--mg-line);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px #172e4c14}
+.mg-open{display:block;width:100%;text-align:left;border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+.mp-tags{display:flex;width:100%}
+.mp-tags i{flex:1 1 0;min-width:0;font-style:normal;font-size:10.5px;font-weight:800;line-height:1;text-align:center;padding:9px 3px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mp-tags .ind{background:#e0627f}
+.mp-tags .job{background:#4a8fd6}
+.mp-tags .uni{background:#d9a21e}
+.mg-who{display:block;text-align:center;padding:14px 8px 12px;position:relative}
+.mg-avatar{display:block;position:relative;width:84px;height:84px;margin:0 auto 8px;border-radius:50%;border:3px solid #cfe0f5;background:#eaf4ff}
+.mg-avatar>img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 25%;display:block}
+.mg-chara{position:absolute;right:-6px;bottom:-4px;width:30px;height:30px;border-radius:50%;background:#fff;box-shadow:0 2px 6px #0003;padding:2px;overflow:hidden}
 .mg-chara img{width:100%;height:100%;object-fit:cover;object-position:50% 14%;border-radius:50%;display:block}
-.mg-grade{position:absolute;left:8px;bottom:8px;font-size:11px;font-weight:800;color:#fff;border-radius:999px;padding:3px 9px;background:var(--mg-pink)}
-.mg-grade.g28{background:var(--mg-blue)}
-.mg-ribbon{position:absolute;left:0;top:10px;background:var(--mg-pink);color:#fff;font-size:10px;font-weight:800;padding:3px 9px 3px 8px;border-radius:0 999px 999px 0}
-.mg-name{display:block;font-size:15px;font-weight:800;margin-top:8px;color:var(--mg-ink);overflow-wrap:anywhere}
-.mg-catch{display:block;font-size:12px;line-height:1.5;color:var(--mg-sub);margin-top:2px}
-.mg-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
-.mg-tags i{font-style:normal;font-size:10.5px;font-weight:700;background:var(--mg-pink-soft);color:#a8265a;border-radius:6px;padding:2px 6px}
-.mg-ask{display:block;text-align:center;margin-top:8px;border:1.5px solid var(--mg-pink);background:#fff;color:var(--mg-pink);border-radius:999px;font:inherit;font-weight:800;font-size:13px;padding:8px 0;min-height:40px;text-decoration:none;cursor:pointer}
-.mg-grid.c3 .mg-catch,.mg-grid.c3 .mg-tags,.mg-grid.c3 .mg-ask{display:none}
-.mg-grid.c3 .mg-name{font-size:12px;margin-top:6px}
-.mg-grid.c3 .mg-pic{border-radius:12px}
-.mg-grid.c3 .mg-chara{width:26px;height:26px;top:5px;right:5px;padding:2px}
-.mg-grid.c3 .mg-grade{font-size:9.5px;padding:2px 6px;left:5px;bottom:5px}
-.mg-grid.c3 .mg-ribbon{font-size:9px;padding:2px 7px 2px 6px}
+.mg-same{position:absolute;left:8px;top:10px;background:var(--mg-pink);color:#fff;font-size:10px;font-weight:800;border-radius:999px;padding:3px 8px}
+.mg-name{display:block;font-size:16px;font-weight:800;color:var(--mg-ink);overflow-wrap:anywhere}
+.mg-sub{display:block;font-size:11.5px;color:var(--mg-sub);margin-top:1px}
+.mg-catch{display:block;font-size:12px;line-height:1.5;color:var(--mg-ink);margin-top:5px}
+.mp-plan{display:flex;flex-direction:column;justify-content:flex-end;gap:3px;min-height:132px;padding:12px;color:#fff;background-size:cover;background-position:center}
+.mp-plan small{font-size:10.5px;opacity:.9}
+.mp-plan b{font-size:14px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.mp-plan em{font-style:normal;font-size:11px;opacity:.95}
+.mp-plan.t0{background-image:linear-gradient(135deg,#f06292,#ff9a76)}
+.mp-plan.t1{background-image:linear-gradient(135deg,#4a8fd6,#7ad0c4)}
+.mp-plan.t2{background-image:linear-gradient(135deg,#8064af,#e0627f)}
+.mp-plan.t3{background-image:linear-gradient(135deg,#d9a21e,#f08a5d)}
+.mg-more{display:block;text-align:center;font-size:12.5px;font-weight:800;color:var(--mg-pink);padding:10px 6px}
+
+/* ---- メンター詳細の面談プラン ---- */
+.mp-list{display:grid;gap:14px}
+.mp-item{background:#fff;border:1px solid var(--mg-line);border-radius:18px;overflow:hidden}
+.mp-item .mp-plan{min-height:120px}
+.mp-item p{margin:0;padding:12px 14px 4px;font-size:14px;line-height:1.7;color:var(--mg-ink)}
+.mp-ask{display:block;margin:8px 14px 14px;width:calc(100% - 28px);border:1.5px solid var(--mg-pink);background:#fff;color:var(--mg-pink);border-radius:999px;font:inherit;font-weight:800;font-size:14px;padding:10px;min-height:44px;cursor:pointer}
+.mc-hero-body .mp-tags{border-radius:10px;overflow:hidden;margin:6px 0 4px;max-width:360px}
 
 /* ---- 画面の下に固定する相談ボタン ---- */
 .fixed-cta{position:fixed;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;justify-content:center;padding:0 16px;pointer-events:none}

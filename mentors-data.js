@@ -5,6 +5,8 @@
   ・no        … 番号（ページには出していません。データの整理用）
   ・type      … 診断タイプ（4文字。例：ACTG）。写真の右上のキャラクターと「診断タイプ」に出ます。いまは仮です
   ・grade     … 卒業年度（'27' / '28'）。メンター一覧の「27卒／28卒」の絞り込みと、診断で選んだ卒業年度と同じ人を先頭に並べるのに使います
+  ・university … 出身学校名（一覧のカードの3つ目のタグに出ます）
+  ・plans     … 面談プラン（最大3つ）。title=タイトル、text=内容、duration=時間（例：30分）、place=場所（既定：オンライン）、image=背景画像のパス（空なら色のみ）
   ・photo     … 写真（assets/mentors/ の中）
   ・name      … お名前
   ・catch     … 写真の左にたてに出る、ひとこと（14文字くらいまで）
@@ -37,6 +39,11 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）部活の話ばかりで不安でしたが、強みとして話せるところを一緒に見つけてもらえました。' },
       { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）忙しい中での就活スケジュールの立て方が、とても参考になりました。' }
     ],
+    university: '〇〇大学',
+    plans: [
+      { title: '【体育会系】続けた経験を、就活の強みに', text: 'ガクチカと自己PRを、一緒に言葉にします。部活と就活の両立のコツもお話しします。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【自己分析】何から始める？をなくそう', text: 'これまでの経験を振り返って、次にやることを3つ決めます。', duration: '30分', place: 'オンライン', image: '' }
+    ],
     reviews: []
   },
   {
@@ -53,6 +60,11 @@ window.MENTORS = [
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）やりたいことがなくて悩んでいましたが、好きなことから会社の選び方が見えてきました。' },
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすい雰囲気で、緊張せずに相談できました。' }
+    ],
+    university: '△△大学',
+    plans: [
+      { title: '【軸づくり】「好き」から、会社選びを始めよう', text: '好きなことやワクワクすることを書き出して、仕事選びの軸を見つけます。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【業界研究】人材・企画の仕事のリアル', text: '選考で見られたことや、仕事のイメージを、体験をもとに話します。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -71,6 +83,11 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）サークルの経験を、面接で話せるガクチカにまとめることができました。' },
       { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）ベンチャーと大手の違いを、実体験をもとに教えてもらえて参考になりました。' }
     ],
+    university: '□□大学',
+    plans: [
+      { title: '【ガクチカ】チームの経験を、話せる形に', text: 'サークルやイベントの経験を、ガクチカと自己PRにまとめます。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【業界研究】IT・通信の選考で聞かれたこと', text: 'ベンチャーから大手まで、選考の流れと準備のコツを共有します。', duration: '30分', place: 'オンライン', image: '' }
+    ],
     reviews: []
   },
   {
@@ -87,6 +104,11 @@ window.MENTORS = [
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）焦っていた気持ちを聞いてもらえて、気持ちが軽くなりました。' },
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）面接で緊張しないための準備のしかたを、具体的に教えてもらえました。' }
+    ],
+    university: '◇◇大学',
+    plans: [
+      { title: '【不安OK】焦りや緊張を、一緒に軽くしよう', text: '何を聞けばいいか分からなくても大丈夫。気になることから話してください。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【面接準備】緊張しても話せる準備のしかた', text: '自分のペースで、面接の準備を一つずつ進めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -105,6 +127,11 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、緊張がほぐれました。' },
       { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）自己PRの伝え方が、具体的になりました。' }
     ],
+    university: '☆☆大学',
+    plans: [
+      { title: '【面接練習】緊張しても話せる自分に', text: '模擬面接をして、話し方や伝え方をフィードバックします。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【自己PR】営業職の選考で評価されたこと', text: '自己PRの作り方を、実際の例をもとにお話しします。', duration: '30分', place: 'オンライン', image: '' }
+    ],
     reviews: []
   },
   {
@@ -122,6 +149,11 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）好きなことから軸が見つかって、気持ちが楽になりました。' },
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）業界の選び方が、よく分かりました。' }
     ],
+    university: '◎◎大学',
+    plans: [
+      { title: '【自己分析】好きなことを、強みに変えよう', text: '好きなことや経験から、自分らしい強みを見つけます。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【企業選び】サービス・企画職の話', text: '企画職を目指したきっかけと、選考で大切だったことを話します。', duration: '30分', place: 'オンライン', image: '' }
+    ],
     reviews: []
   },
   {
@@ -130,7 +162,7 @@ window.MENTORS = [
     catch: '早めに動いて、ゆっくり選ぶ。',
     theme: 'インターンや早期選考を考え始めた人へ',
     features: ['インターン', '早期選考', 'ES'],
-    career: [{ label: '28卒', kind: 'status' }],
+    career: [{ label: 'IT・通信', kind: 'industry' }, { label: '28卒', kind: 'status' }],
     topics: ['インターン', '早期選考', 'ES添削', 'スケジュール管理'],
     bio: 'はじめまして！28卒のOTIBAです🌙\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\nインターンや早期選考の準備を、一緒に進めましょう。',
     recommend: ['インターンの選び方が分からない', '早期選考の準備を始めたい', '何から始めればいいか分からない'],
@@ -138,6 +170,11 @@ window.MENTORS = [
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）インターンの選び方が、具体的になりました。' },
       { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）スケジュールの立て方が参考になりました。' }
+    ],
+    university: '〇〇大学',
+    plans: [
+      { title: '【28卒】インターン選びを、一緒に', text: 'インターンの選び方と、応募の準備を一緒に進めます。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【ES添削】早期選考に向けて', text: 'ESを見ながら、伝わる書き方をアドバイスします。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -147,7 +184,7 @@ window.MENTORS = [
     catch: '仲間と一緒に、挑戦しよう。',
     theme: 'サークルやバイトの経験を話したい人へ',
     features: ['ガクチカ', 'サークル', 'チームワーク'],
-    career: [{ label: '28卒', kind: 'status' }],
+    career: [{ label: '商社', kind: 'industry' }, { label: '28卒', kind: 'status' }],
     topics: ['ガクチカ整理', 'サークル・バイトの経験', '自己分析', 'オンライン面談'],
     bio: 'はじめまして！28卒のMAXです🔥\n\n（仮のプロフィールです。本人に確認して書きかえてください。）\n\n仲間と挑戦した経験を、強みとして話せるように整理します。',
     recommend: ['ガクチカに自信がない', 'サークルやバイトの経験を話したい', 'チームでの役割を言葉にしたい'],
@@ -155,6 +192,10 @@ window.MENTORS = [
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）ガクチカの話が、まとまりました。' },
       { name: 'サンプル', stars: 4, date: '', text: '（表示イメージ）チームでの役割を言葉にできました。' }
+    ],
+    university: '△△大学',
+    plans: [
+      { title: '【28卒・ガクチカ】サークルの経験を整理しよう', text: '仲間と取り組んだ経験を、強みとして話せるようにします。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -173,6 +214,11 @@ window.MENTORS = [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）不安な気持ちを、ゆっくり聞いてもらえました。' },
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）会社選びの考え方が整理できました。' }
     ],
+    university: '□□大学',
+    plans: [
+      { title: '【企業選び】自分に合う会社を、ゆっくり探そう', text: '焦らず、自分のペースで会社を選ぶ考え方をお話しします。', duration: '30分', place: 'オンライン', image: '' },
+      { title: '【不安の相談】まわりと比べて焦っているあなたへ', text: '不安な気持ちを、まずは聞かせてください。', duration: '30分', place: 'オンライン', image: '' }
+    ],
     reviews: []
   },
   {
@@ -181,13 +227,17 @@ window.MENTORS = [
     catch: '気軽に聞いてみてね。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['自己分析', 'ES'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: '金融', kind: 'industry' }, { label: '総合職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['自己分析', 'ES', 'オンライン面談'],
     bio: 'はじめまして！27卒のMIOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '◇◇大学',
+    plans: [
+      { title: '【27卒】自己分析・ESを、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -197,13 +247,17 @@ window.MENTORS = [
     catch: '一緒に整理しよう。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['面接対策', '業界研究'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: '商社', kind: 'industry' }, { label: '営業職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['面接対策', '業界研究', 'オンライン面談'],
     bio: 'はじめまして！27卒のSOTAです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '☆☆大学',
+    plans: [
+      { title: '【27卒】面接対策・業界研究を、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -213,13 +267,17 @@ window.MENTORS = [
     catch: '早めの準備を応援。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['インターン', '早期選考'],
-    career: [{ label: '28卒', kind: 'status' }],
+    career: [{ label: 'IT・通信', kind: 'industry' }, { label: '28卒', kind: 'status' }],
     topics: ['インターン', '早期選考', 'オンライン面談'],
     bio: 'はじめまして！28卒のKAITOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '◎◎大学',
+    plans: [
+      { title: '【28卒】インターン・早期選考を、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -229,13 +287,17 @@ window.MENTORS = [
     catch: '話すだけでも大丈夫。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['不安の相談', 'ガクチカ'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: '広告', kind: 'industry' }, { label: '企画職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['不安の相談', 'ガクチカ', 'オンライン面談'],
     bio: 'はじめまして！27卒のNANAMIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '〇〇大学',
+    plans: [
+      { title: '【27卒】不安の相談・ガクチカを、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -245,13 +307,17 @@ window.MENTORS = [
     catch: '強みを見つけよう。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['企業選び', '自己PR'],
-    career: [{ label: '28卒', kind: 'status' }],
+    career: [{ label: '小売', kind: 'industry' }, { label: '28卒', kind: 'status' }],
     topics: ['企業選び', '自己PR', 'オンライン面談'],
     bio: 'はじめまして！28卒のHINAです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '△△大学',
+    plans: [
+      { title: '【28卒】企業選び・自己PRを、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -261,13 +327,17 @@ window.MENTORS = [
     catch: '焦らなくて大丈夫。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['就活の軸', '自己分析'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: 'コンサル', kind: 'industry' }, { label: 'コンサルタント', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['就活の軸', '自己分析', 'オンライン面談'],
     bio: 'はじめまして！27卒のRENです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '□□大学',
+    plans: [
+      { title: '【27卒】就活の軸・自己分析を、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -277,13 +347,17 @@ window.MENTORS = [
     catch: '面接のコツ、教えます。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['面接練習', 'GD対策'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: '不動産', kind: 'industry' }, { label: '営業職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['面接練習', 'GD対策', 'オンライン面談'],
     bio: 'はじめまして！27卒のYUTOです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '◇◇大学',
+    plans: [
+      { title: '【27卒】面接練習・GD対策を、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -293,13 +367,17 @@ window.MENTORS = [
     catch: 'まずは雑談から。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['ES添削', 'ガクチカ'],
-    career: [{ label: '28卒', kind: 'status' }],
+    career: [{ label: '広告', kind: 'industry' }, { label: '28卒', kind: 'status' }],
     topics: ['ES添削', 'ガクチカ', 'オンライン面談'],
     bio: 'はじめまして！28卒のSAKIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '☆☆大学',
+    plans: [
+      { title: '【28卒】ES添削・ガクチカを、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   },
@@ -309,13 +387,17 @@ window.MENTORS = [
     catch: '軸づくりを手伝います。',
     theme: '（仮）詳しいプロフィールは準備中です。',
     features: ['業界研究', '企業選び'],
-    career: [{ label: '27卒 内定者', kind: 'status' }],
+    career: [{ label: 'メーカー', kind: 'industry' }, { label: '開発職', kind: 'job' }, { label: '27卒 内定者', kind: 'status' }],
     topics: ['業界研究', '企業選び', 'オンライン面談'],
     bio: 'はじめまして！27卒のDAIKIです。\n\n（仮のプロフィールです。本人に確認して書きかえてください。）',
     recommend: ['何から始めればいいか分からない', '誰かに話を聞いてほしい'],
     style: 'まずは、今の状況を気軽に聞かせてください。（仮）',
     samples: [
       { name: 'サンプル', stars: 5, date: '', text: '（表示イメージ）話しやすくて、気持ちが楽になりました。' }
+    ],
+    university: '◎◎大学',
+    plans: [
+      { title: '【27卒】業界研究・企業選びを、一緒に整理しよう', text: '今の状況を聞いて、次にやることを一緒に決めます。', duration: '30分', place: 'オンライン', image: '' }
     ],
     reviews: []
   }

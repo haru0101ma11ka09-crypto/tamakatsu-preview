@@ -8,3 +8,5 @@
 .demo-account-field{margin-top:24px}.owner-panel .field{max-width:560px}.field input:disabled,.field textarea:disabled,.field select:disabled{background:#f7f8f3;color:#687566;opacity:1;cursor:default}.owner-panel .save-bar p{max-width:none}.mentor-card .card-meta>span:last-child{white-space:nowrap}
 
 .student-filters .filter-select{margin-left:0}.student-filters .search{flex:1}.student-profile-link{margin-bottom:22px}.student-event{border-bottom:1px solid var(--line);padding:0 0 18px;margin-bottom:18px}.student-event small{display:block;color:var(--muted);font-size:10px;overflow-wrap:anywhere;margin-top:8px}.student-event p{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.student-table th,.student-table td{padding:16px 12px}
+.plan-slot{border:1px solid #d8dee8;border-radius:12px;padding:12px 14px;margin:12px 0}
+.plan-slot legend{font-weight:700;padding:0 6px}

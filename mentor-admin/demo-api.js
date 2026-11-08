@@ -92,7 +92,11 @@
      if(!Array.isArray(body[key])||body[key].length>count||body[key].some(v=>typeof v!=='string'||!v.trim()||v.length>max))error(key+'の入力数・文字数を確認してください。');
     }
     if(!Array.isArray(body.career)||body.career.length>8||body.career.some(c=>!['industry','job','status'].includes(c.kind)||typeof c.label!=='string'||!c.label.trim()||c.label.length>60))error('業種・職種の入力を確認してください。');
+    if(body.university!==undefined&&(typeof body.university!=='string'||body.university.trim().length>40))error('出身学校の入力を確認してください。');
+    if(body.plans!==undefined&&(!Array.isArray(body.plans)||body.plans.length>3||body.plans.some(p=>!p||typeof p.title!=='string'||!p.title.trim()||p.title.length>50||typeof p.text!=='string'||p.text.length>200||typeof p.duration!=='string'||p.duration.length>20)))error('面談プランの入力数・文字数を確認してください。');
     for(const key of ['name','catch','theme','bio','style','type','features','topics','recommend','career'])m[key]=clone(body[key]);
+    m.university=typeof body.university==='string'?body.university.trim():(m.university||'');
+    if(Array.isArray(body.plans))m.plans=body.plans.map(p=>({title:p.title.trim(),text:p.text.trim(),duration:p.duration.trim(),place:'オンライン',image:''}));
    }else error('対応していない操作です。',405);
    m.version++;m.updatedAt=Math.floor(Date.now()/1000);audit(profile[2]?'photo.update':'profile.update',m.id);save();return response({ok:true});
   }
