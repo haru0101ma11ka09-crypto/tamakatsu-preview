@@ -35,3 +35,17 @@ html body #app .bc-float-arrow{flex:0 0 auto;width:36px;height:36px;border-radiu
 /* いつもの入口の分だけ、ページの下に余白 */
 html body #app .bc-page{padding-bottom:84px}
 @media (prefers-reduced-motion:reduce){html body #app .bc-float{transition:none}}
+
+/* ===== 色をそろえる（2026-11-08）=====
+   ・メンターの赤 → ワレタマのピンク（白い文字が読みやすいよう、少し濃いめの #D6336C。影は #A8234F）
+   ・就活面談の見出し → 紺ではなく黒（BEYOND CAFE の白黒にそろえる） */
+html body #app .mentor-entry{background:#D6336C!important;box-shadow:0 8px 0 #A8234F,0 16px 30px rgba(214,51,108,.28)!important}
+html body #app .mentor-entry:hover{box-shadow:0 11px 0 #A8234F,0 20px 34px rgba(214,51,108,.32)!important}
+html body #app .mentor-entry:active{box-shadow:0 2px 0 #A8234F,0 6px 14px rgba(214,51,108,.25)!important}
+html body #app .me-arrow svg{stroke:#D6336C!important}
+html body #app .bc-float{background:#D6336C!important;box-shadow:0 8px 22px rgba(214,51,108,.35)!important}
+html body #app .bc-float-arrow{color:#D6336C!important}
+html body #app .bc-page h1,html body #app .bc-page h2,html body #app .bc-page h1 *,html body #app .bc-page h2 *{color:#111!important}
+html body #app .bc-page .bc-entry h2,html body #app .bc-page .bc-entry h2 *{color:#fff!important}
+html body #app .bc-page .mentor-entry *{color:#fff}
+html body #app .bc-page .bc-steps b,html body #app .bc-page .bc-steps strong,html body #app .bc-page .bc-list b,html body #app .bc-page .bc-promise h2{color:#111!important}
