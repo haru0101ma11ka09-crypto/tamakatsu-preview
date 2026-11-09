@@ -234,4 +234,6 @@ html body #app .bc-note{margin:16px 0 0!important;padding:14px 16px;background:#
 html body #app .bc-close{margin-top:52px;padding:26px 18px 24px;background:#fff6fa;border:2px solid #111;box-shadow:6px 6px 0 #111}
 html body #app .bc-close h2{margin-top:0}
 html body #app .bc-close p{line-height:1.9}
+/* メンター一覧では、下の固定ボタンをやめたので、ページの下の余白を減らす（詳細ページは、固定ボタンがあるので、そのまま） */
+.mc-page{padding-bottom:96px}
 
