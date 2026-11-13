@@ -19,7 +19,7 @@
    - `git diff` で、意図しない変更が入っていないか確認する
 4. **反映**：コミットして `git push origin main` する
 5. **公開ページで確認して報告**
-   https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/ で反映を確認し、
+   https://beyond-cafe-team.github.io/tamakatsu-preview/ で反映を確認し、
    変更内容・バックアップブランチ名を報告する
 
 ## 元に戻すとき

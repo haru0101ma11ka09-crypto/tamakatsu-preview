@@ -1,6 +1,6 @@
 # タマ活（就活診断）LP 共同編集用リポジトリ
 
-公開ページ：https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/
+公開ページ：https://beyond-cafe-team.github.io/tamakatsu-preview/
 
 > このページは、実際にみんなが診断する本番ページとして使っています（tamakatsu.pages.dev は現在使っていません）。
 > 電話番号フォームは、同意にチェックして「次へ」を押すと、架電管理用のGoogleスプレッドシートに送信されます。送信先は`site-config.js`の`webhookUrl`で設定し、空のあいだは何も送信しません。公式LINE・予約はまだ未接続です。メンター紹介は実際のメンター4名（RYOUGA・AYAKA・HARUTO・RIONA）で、業種・自己紹介などの中身はすべて仮です（大学名は載せていません）。レビューは、本物が届くまで「サンプル」の表示イメージを出しています。メンターへのレビューは、Googleスプレッドシート（`apps-script/reviews.gs`）に保存され、書かれるとすぐ、そのメンターの「詳しく見る」ページに表示されます。載せたくないレビューは、シートの「非表示」にチェックを入れると消えます。送信先（`reviewWebhookUrl`）が空のあいだは送信せず、書いた人の端末にだけ表示します。
@@ -57,4 +57,4 @@ GitHub のページ上だけで編集できます。ソフトのインストー�
 ## 更新履歴（直したところの共有）
 
 直したときは、`changelog/index.html` に「何を・どこを・どう直したか」と、直す前／直した後のスクショ（`changelog/img/`）を足します。
-公開ページ：https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/changelog/
+公開ページ：https://beyond-cafe-team.github.io/tamakatsu-preview/changelog/

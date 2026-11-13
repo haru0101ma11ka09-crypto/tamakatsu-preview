@@ -28,7 +28,7 @@
  async function handle(path,options){
   const method=options.method||'GET';
   const body=typeof options.body==='string'?JSON.parse(options.body):options.body||{};
-  if(path==='/api/config')return response({mode:'demo',googleReady:false,publicSite:'https://haru0101ma11ka09-crypto.github.io/tamakatsu-preview/'});
+  if(path==='/api/config')return response({mode:'demo',googleReady:false,publicSite:'https://beyond-cafe-team.github.io/tamakatsu-preview/'});
   if(path==='/api/demo/accounts')return response({accounts:data.accounts.filter(a=>a.active).map(a=>({email:a.email,role:a.role}))});
   if(path==='/api/demo/login'){
    const account=body.email||(body.role==='admin'?'admin@example.test':body.role==='mentor'?'ryouga@example.test':null);
