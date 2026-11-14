@@ -515,3 +515,5 @@ dialog .sheet-close,.sheet-close{position:absolute!important;top:14px!important;
 #app .consent-option input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:#e5386f}
 #app .consent-option:has(input:checked){border-color:#e5386f;background:#fff5f8}
 #app .consent-option:has(input[aria-invalid="true"]){border-color:#aa2b2b}
+
+.legal-links{display:flex;gap:20px;justify-content:center;padding:4px 20px calc(110px + env(safe-area-inset-bottom));font:700 12px/1.5 'Noto Sans JP',sans-serif}.legal-links a{color:#777;text-decoration:underline}
